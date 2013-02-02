@@ -7,6 +7,7 @@ class Amount {
 
 
 		Seats	seats
+		
 		static 	belongsTo  = [individual:Individual]
 
     static constraints = {
