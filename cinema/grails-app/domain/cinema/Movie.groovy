@@ -11,7 +11,8 @@ class Movie {
 	String 	movCost
 	Date 	movDate
 	Date	movDateEnd
-	String 	movPicture
+	String 	movPicture640
+	String 	movPicture140
 
 
 	Rooms	rooms
