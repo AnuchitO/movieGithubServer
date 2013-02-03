@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="cinema.IndexDepositComposer">
+
+       <hbox align="center" width="800px" >
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}" />
+        </hbox>
+
+        
+ระบบรับฝากของ
+        <groupbox width="600px"  >
+            <caption label="ลงทะเบียนฝากของ"/>
+            <vbox align="Left" >
+                <hbox align="Center" height="25px">รหัสตั๋ว : <space bar="false" spacing="15px"/><textbox id="idep"/></hbox>
+                <hbox align="Center" height="25px">เลขที่ใบฝาก : <space bar="false"/><textbox id="numdep"  /><space bar="false"/></hbox>
+                <hbox align="Center" height="25px">วันที่ : <space bar="false" spacing="15px"/><space bar="false"/><datebox id="in" /></hbox>
+            </vbox>
+        </groupbox>
+
+        <groupbox width="600px"  >
+            <caption label="ข้อมูลส่วนตัว"/>
+            <vbox align="Left" >
+                <hbox>ชื่อ :<space bar="false"/><textbox id="name"/><space bar="false" spacing="50px"/>นามสกุล :<space bar="false" spacing="15px"/><textbox id="lname"/><separator/></hbox>
+                <hbox>เพศ :<space bar="false"/>
+                    <radiogroup id = "sex">
+                        <radio label="ชาย" />
+                        <radio label="หญิง" />
+                    </radiogroup>
+                </hbox>
+                <hbox>ที่อยู่ :<space bar="false"/><textbox id="address" rows="5" cols="80"/><separator/></hbox>
+                <hbox>เบอร์ติดต่อ :<space bar="false"/><textbox id="call"/><space bar="false"/>  E-mail :<space bar="false"/><textbox id="email"/><separator/></hbox>
+            </vbox>
+        </groupbox>
+        <separator spacing="10px" />
+
+        <groupbox width="600px"  >
+
+            <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px"/></vbox>
+        </groupbox>
+
+        <groupbox width="800px" >
+            <caption label="รายการผู้ฝากของ"/>
+            <vbox align="Center" width="800px"></vbox>
+                <grid width="795x" id ="gridbox">
+                    <columns>
+                    <column label="รหัสตั๋ว"  width ="60px" />
+                    <column label="เลขที่ใบฝาก"  width ="80px"/>
+                    <column label="ชื่อ"  width ="100px"/>
+                    <column label="นามสกุล"  width ="100px"/>
+                    <column label="เพศ"  width ="50px"/>
+                    <column label="ที่อยู่"  width ="200px"/>
+                    <column label="เบอร์โทร"  width ="100px"/>
+                    <column label="E-mail"  width ="100px"/>
+                    </columns>
+                    <rows>
+                    <row>
+                    </row>
+                    </rows>
+                </grid>
+            </groupbox>
+        <separator spacing="10px" />
+
+    </window>
+
+</zk>
