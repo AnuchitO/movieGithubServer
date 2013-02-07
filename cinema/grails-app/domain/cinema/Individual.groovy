@@ -2,6 +2,11 @@ package cinema
 
 class Individual {
 
+    static  hasMany = [amount:Amount,deposit:Deposit,sales:Sales]
+    static constraints = {
+    }
+
+    
 	String firstName
     String lastName
     String number
@@ -25,7 +30,5 @@ class Individual {
 
 
 
-	static 	hasMany = [amount:Amount,deposit:Deposit,sales:Sales]
-    static constraints = {
-    }
+	
 }
