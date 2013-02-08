@@ -6,6 +6,7 @@ class Sales {
 	String	salesDetail
 	String	salesPrice
 	String	salesAmount
+	String  salesProduct
 	Date	date
 
 
