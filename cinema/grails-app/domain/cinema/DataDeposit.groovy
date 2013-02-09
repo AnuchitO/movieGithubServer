@@ -5,7 +5,8 @@ class DataDeposit {
 	String	numbersDep
 	Date 	dateDep
 	String	timeDep
-	Deposit 	deposit
+	Deposit deposit
+
 
     static constraints = {
     }

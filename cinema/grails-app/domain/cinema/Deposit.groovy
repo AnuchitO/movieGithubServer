@@ -11,6 +11,7 @@ class Deposit {
 
 	DataDeposit		dataDeposit
 	
+	
 	static 	belongsTo  = [individual:Individual]
     static constraints = {
     }
