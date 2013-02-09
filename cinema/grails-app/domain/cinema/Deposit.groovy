@@ -6,7 +6,7 @@ class Deposit {
 	String	lastName
 	String	gender
 	String	address
-	String	phoneNumber
+	String	phoneDep
 	String	email
 
 	DataDeposit		dataDeposit

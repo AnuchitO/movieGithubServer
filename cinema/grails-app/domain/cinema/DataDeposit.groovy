@@ -4,7 +4,7 @@ class DataDeposit {
 
 	String	number
 	Date 	date
-	String	timeBegin
+	String	timeDep
 
 
 
