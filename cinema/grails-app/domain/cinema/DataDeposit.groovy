@@ -2,12 +2,9 @@ package cinema
 
 class DataDeposit {
 
-	String	number
-	Date 	date
+	String	numbersDep
+	Date 	dateDep
 	String	timeDep
-
-
-
 	Deposit 	deposit
 
     static constraints = {

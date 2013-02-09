@@ -4,15 +4,13 @@ class Deposit {
 
 	String	firstName
 	String	lastName
-	String	gender
-	String	address
+	String	genderDep
+	String	addressDep
 	String	phoneDep
-	String	email
+	String	emailDep
 
 	DataDeposit		dataDeposit
 	
-
-
 	static 	belongsTo  = [individual:Individual]
     static constraints = {
     }
