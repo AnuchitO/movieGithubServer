@@ -13,6 +13,7 @@ class Movie {
 	Date	movDateEnd
 	String 	movPicture640
 	String 	movPicture140
+	String 	longTime
 
 
 	Rooms	rooms
