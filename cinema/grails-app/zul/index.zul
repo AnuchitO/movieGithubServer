@@ -7,134 +7,145 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
        <style>
-            .sdaa{  
-            margin-top:30px;  
-            margin-left:30px;   
-            background-color: #ffb94b;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
-            background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
-            background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
-            background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
-            background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
-            background-image: linear-gradient(top, #fddb6f, #ffb94b);
-            
-            -moz-border-radius: 3px;
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            
-            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-            
-             -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-             -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
-            
-            border-width: 1px;
-            border-style: solid;
-            border-color: #d69e31 #e3a037 #d5982d #e3a037;
+          .bg1{
+             float:left;
+             filter:alpha(opacity=25);
+             -moz-opacity:.25;opacity:.25;
+            }
 
-          
-            padding: 0px;
-            width: 120px;
-            cursor: pointer;
-            font: bold 15px Arial, Helvetica;
-            color: #8f5a0a;
+          .text{
+                font-size:28px;
+               
+                text-shadow: 0 1px 0 #ccc, 
+                       0 2px 0 #c9c9c9,
+                       0 3px 0 #bbb,
+                       0 4px 0 #b9b9b9,
+                       0 5px 0 #aaa,
+                       0 6px 1px rgba(0,0,0,.1),
+                       0 0 5px rgba(0,0,0,.1),
+                       0 1px 3px rgba(0,0,0,.3),
+                       0 3px 5px rgba(0,0,0,.2),
+                       0 5px 10px rgba(0,0,0,.25),
+                       0 10px 10px rgba(0,0,0,.2),
+                       0 20px 20px rgba(0,0,0,.15);
+                background-color: none;
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-attachment: fixed;
+            }
+            .text:hover { 
+                color: #FF8C00; /* โค๊ดสีที่ต้องการให้เปลี่ยน */
+                text-decoration: underline; 
+            }
+            .text:visited {
+                text-decoration:none;
+                color:black;
         }
-
-        .sdaaa{  
-        margin-left:20%;     
-        margin-bottom:2px;
-            background-color: #CCFF33;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#99CC33), to(#CCFF33));
-            background-image: -webkit-linear-gradient(top, #99CC33, #CCFF33);
-            background-image: -moz-linear-gradient(top, #99CC33, #CCFF33);
-            background-image: -ms-linear-gradient(top, #99CC33, #CCFF33);
-            background-image: -o-linear-gradient(top, #99CC33, #CCFF33);
-            background-image: linear-gradient(top, #99CC33, #CCFF33);
-            
-            -moz-border-radius: 3px;
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            
-            text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-            
-             -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-             -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
-            
-            border-width: 1px;
-            border-style: solid;
-            border-color: #99cc33 #99cc33 #99cc33 #99cc33;
-
-            
-            height: 40px;
-            padding: 5px;
-            width: 200px;
-            cursor: pointer;
-            font: bold 15px Arial, Helvetica;
-            color: #8f5a0a;
+                             
+        .div-a {background:transparent;position:relative;bottom:50px;right:10px;}
+        .underHead{background:transparent;position:relative;bottom:50px;right:0px;}
+        .button {
+           
+            border: none;
         }
+        .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
-            
     </style>
-     <window apply="cinema.IndexComposer">
-    <borderlayout height="700px">
-        <west maxsize="600" size="12%" flex="true" border="none" splittable="false">
-            <div style="background:#CD5C5C">
-                <label value="12%" style="color:white;font-size:50px" />
+    <window apply="cinema.IndexComposer" style="background-image:url(./images/index/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <div id="testid"  style=";"  width="1366px"  height="800px" >
+    <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
+
+        <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
+            <div id="divWestBig" style="background-color:transparent" >
+               <!-- Insert  Content to West Here -->
+
             </div>
         </west>
-        <east size="12%" flex="true" border="none" collapsible="false">
-            <div style="background:#B8D335">
-                <label value="12%" style="color:white;font-size:50px" />
+
+        <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
+            <div id="divEastBig" style="background-color:transparent" >
+               <!--  Insert  Content to East Here -->
+
             </div>
         </east>
-    <center border="none">
-       <borderlayout>
-        <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" class="myWhite">
-            <borderlayout>
-             
-                <center border="none" flex="true">
-                    <hbox align="center">
-                        <div style="background:#B8D335" >
-                        <vbox align="center">  
-                            <label value="Here is a none border" style="color:gray;font-size:30px" />
+
+        <center border="none" style="background-color:transparent;">
+        <borderlayout style="background-color:transparent;" >
+
+        <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" style="background-color:transparent;" >
+            <borderlayout style="background-color:transparent;">
+                <center border="none" style="background-color:transparent;">
+                    <hbox align="center" height="100px" width="1040px" style="background-color:transparent;">
+                        <div id="divNorthContent" style="background-color:transparent;" >
+                        <vbox align="center" width="1040px" style="background-color:transparent;">  
+                            <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
+                                <image src="/images/index/logo.png"/>
+                                    <separator width="10px"/>
+                                <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
+                                    <separator width="40px"/>
+                                <label id="ticket" class="text" style="color:write ;">จองตั๋ว</label>
+                                    <separator width="40px"/>
+                                <label id="deposite" class="text" style="color:write ;">ฝากของ</label>
+                                    <separator width="40px"/>
+                                <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
+                                    <separator width="40px"/>
+                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
+                                    <separator width="40px"/>
+                                <label id="person" class="text" style="color:write ;">พนักงาน</label>
+                            </hbox>
                         </vbox>
                         </div>
                     </hbox>
                 </center>
-               
             </borderlayout>
         </north>
-        <center border="none" flex="true">
-               <hlayout spacing="50px">
-                    <div style="background:#EEC900" >
-                    <vlayout >
-                           <image src="${z.resource(dir:'images', file:'headBody.png')}" />       
 
-                            <tabbox width="1032px"  height="700px" vflex="true" hflex="true">
-                                <tabs id="tabs" align="end">
-                                    <tab id="A" label="Tab A" />
-                                    <tab id="B" label="Tab B" />
-                                    <tab id="C" label="Tab C" />
-                                    <tab id="D" label="Tab D" />
-                                    <tab id="E" label="Tab E" />
-                                </tabs>
-                                <tabpanels>
-                                    <tabpanel>This is panel 1</tabpanel>
-                                    <tabpanel><textbox width="1032px"/></tabpanel>
-                                </tabpanels>
-                            </tabbox>
-                       
+        <center border="none" flex="true" style="background-image:url(./images/index/bgColor.png) ;background-repeat:repeat;" >
+               <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
+                    <div id="divConterContentBig" style="background-color:transparent;" >
+                    <vlayout style="background-color:transparent;" >
+                        <div height="50px">   <image src="/images/index/headBody.png" />  
+                            <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
+                                <hbox align="center" height="50px">
+                                    <button id="btnheaderBodyButton" class="button" image="/images/index/headerBodyButton.png"  
+                                            style="background-color:transparent;"  height="50px"  />
+                                    <separator width="100px"/>
+                                    <textbox width="250px" height="20px" style="font-size:14pt;" />
+                                    <button id="btnShowTime" class="button" image="/images/index/showTimes.png"  
+                                            style="background-color:transparent;"  height="50px"  />
+                                </hbox>
+                            </div>
+                            <div id="underHeadBody"  class="underHead">
+                                <image src="/images/index/BodyBg.png" />  
+                            </div>
+                        </div> 
+                        <div id="centerContent" >
+                           <!-- Insert Content Center to Here -->
+
+
+                        </div>
                     </vlayout>
                     </div>
-                </hlayout>
-            </center>
+               </hlayout>
+        </center>
+
+        <south border="none" flex="true" style="background-color:transparent;" height="100px" >
+            <hlayout id="hlaySouthBig" spacing="50px" style="background-color:transparent;">
+                <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
+                    <vlayout style="background-color:#C68E17;" >
+                        <!-- Insert  Content  South to Here -->
+
+
+                    </vlayout>
+                </div>
+            </hlayout>
+        </south>
+
         </borderlayout>
-    </center>
+        </center>
 
     </borderlayout>
-            
-    
+    </div>
     </window>
 
 </zk>
