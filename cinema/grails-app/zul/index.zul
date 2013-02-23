@@ -43,7 +43,7 @@
         }
                              
         .div-a {background:transparent;position:relative;bottom:50px;right:10px;}
-        .underHead{background:transparent;position:relative;bottom:50px;right:0px;}
+        .underHead{background:transparent;position:relative;bottom:10px;right:0px;}
         .button {
            
             border: none;
@@ -65,7 +65,6 @@
         <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
             <div id="divEastBig" style="background-color:transparent" >
                <!--  Insert  Content to East Here -->
-
             </div>
         </east>
 
@@ -113,14 +112,18 @@
                                     <textbox width="250px" height="20px" style="font-size:14pt;" />
                                     <button id="btnShowTime" class="button" image="/images/index/showTimes.png"  
                                             style="background-color:transparent;"  height="50px"  />
+
                                 </hbox>
+                             
                             </div>
-                            <div id="underHeadBody"  class="underHead">
+                          
+                        </div> 
+                        <div id="underHeadBody"  class="underHead">
                                 <image src="/images/index/BodyBg.png" />  
-                            </div>
                         </div> 
                         <div id="centerContent" >
                            <!-- Insert Content Center to Here -->
+
 
 
                         </div>
