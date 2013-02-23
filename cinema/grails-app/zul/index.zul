@@ -118,7 +118,7 @@
                        
                         </div> 
                         <div id="underHeadBody"  class="underHead">
-                                <image src="/images/index/BodyBg.png" />  
+                            <image src="/images/index/BodyBg.png" />  
                         </div>
                         <div id="centerContent" >
                            <!-- Insert Content Center to Here -->
