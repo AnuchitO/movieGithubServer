@@ -6,9 +6,6 @@ class Seats {
 	String 	tel
 
 
-
-
-
 	Amount	amount
 	
 
