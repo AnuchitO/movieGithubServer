@@ -100,18 +100,17 @@
             </borderlayout>
         </north>
 
-        <center border="none" flex="true" style="background-image:url${z.resource(dir:'images', file:'bgColor.png')} ;background-repeat:repeat;" >
+        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
                <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
                     <div id="divConterContentBig" style="background-color:transparent;" >
                     <vlayout style="background-color:transparent;" >
                         <div height="70px">  <image src="${z.resource(dir:'images', file:'headBody.png')}"/> 
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
-                                    <button id="btnheaderBodyButton" class="button" image="~/headerBodyButton.png"  
-                                            style="background-color:transparent;"  height="50px"  />
+                                    <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
                                     <separator width="100px"/>
                                     <textbox width="250px" height="20px" style="font-size:14pt;" />
-                                    <button id="btnShowTime" class="button" image="~/showTimes.png"  
+                                    <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" 
                                             style="background-color:transparent;"  height="50px"  />
                                 </hbox>
                             </div>
