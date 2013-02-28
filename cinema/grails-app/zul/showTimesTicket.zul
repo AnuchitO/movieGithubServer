@@ -88,7 +88,7 @@
                         <div id="divNorthContent" style="background-color:transparent;" >
                         <vbox align="center" width="1040px" style="background-color:transparent;">  
                             <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
-                                <image src="./images/logo.png"/>
+                                <image src="/images/logo.png"/>
                                     <separator width="10px"/>
                                 <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
                                     <separator width="40px"/>
