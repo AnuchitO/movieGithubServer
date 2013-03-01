@@ -180,10 +180,8 @@
                                         </rows>
                                     </grid>
                                     <button label="submit" id="btnSubmit"/>
-                                </vbox>
-                                
+                                </vbox>                                
                             </div>
-
                         </div>
                     </vlayout>
                     </div>
