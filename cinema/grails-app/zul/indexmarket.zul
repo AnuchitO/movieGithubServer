@@ -52,7 +52,7 @@
 
     </style>
     <window apply="cinema.IndexmarketComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
-    <div id="testid"  style=";"  width="1366px"  height="800px" >
+    <div id="testid"  style=";"  width="1366px"  height="900px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -125,7 +125,7 @@
                                 
                                 <separator width="5px"/>
                                     <vbox>
-                                            <label style="font-size:20px">หน้าการขายสินค้า</label>
+                                             <image src="${z.resource(dir:'images', file:'1.png')}"/> 
                                                 
                                                 <hbox>
                                                     <label style="font-size:14px">สถานะ : เข้าใช้ระบบ</label>
@@ -166,8 +166,8 @@
                                                         <label value="  จำนวน:" width="150px" />
                                                         <textbox id="nums" width="70px" style="color:red !important;"/>
                                                         <space/><space/>
-                                                        <button id="inputbtn" src="${z.resource(dir:'images',file:'save.png')}" label="เพิ่มรายการ" width="100px" height="40px" />
-                                                         <button id="clearbtn" src="${z.resource(dir:'images',file:'save.png')}" label="ลบข้อมูลการขาย" width="120px" height="40px" />
+                                                        <button id="inputbtn"  label="เพิ่มรายการ" width="100px" height="40px" />
+                                                         <button id="clearbtn" label="ลบข้อมูลการขาย" width="120px" height="40px" />
                                                         </hbox> 
                                                         <grid height="250px" width="650px">  
                                                             <columns>                
@@ -182,7 +182,7 @@
                                                         </grid>
                                                         <separator/>
                                                         <hbox>
-                                                            <separator width="500px"/>
+                                                            <separator width="520px"/>
                                                             <label value="  ราคารวม:" width="150px" />
                                                             <textbox id="total" width="70px" height="20px" style="color:red !important;"/>
                                                         </hbox>   
@@ -194,8 +194,8 @@
                                                             <separator/>
                                                         <hbox>
                                                             <separator width="500px"/>
-                                                             <button id="savebtn" src="${z.resource(dir:'images',file:'save.png')}" label="บันทึก" width="120px" height="40px" />
-                                                              <button id="subbtn" src="${z.resource(dir:'images',file:'save.png')}" label="ดูยอดการขาย" width="120px" height="40px" /> ่   ่  
+                                                             <button id="savebtn"  label="บันทึก" width="120px" height="40px" />
+                                                              <button id="subbtn"  label="ดูยอดการขาย" width="120px" height="40px" />
                                                         </hbox>
                                                         </vbox>
 

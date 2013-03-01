@@ -65,7 +65,6 @@
         <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
             <div id="divEastBig" style="background-color:transparent" >
                <!--  Insert  Content to East Here -->
-
             </div>
         </east>
 
@@ -120,68 +119,72 @@
                         </div>                    
                         <div id="centerContent" align="center" >
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
-                                <!-- Insert Content Center to Here -->
                                 <separator width="1px"/>
+                                <!-- Insert Content Center to Here -->
                                 <vbox>
-                                    <hbox align="center">
-                                        <label value="MovieID :"/>
-                                        <textbox id="txtSearch"/>
-                                        <button id="btnSearch" label="Search"/>
-                                    </hbox>
-                                    <separator width="5px"/>
-                                    <grid width="610px">
+                                    <separator height="50px"/>
+                                    <grid width="640px">
                                         <columns>
                                             <column align="right" width="100px"/>
-                                            <column width="200px"/>
-                                            <column align="right" width="110px"/>
-                                            <column width="200px"/>
+                                            <column width="220px"/>
+                                            <column align="right" width="100px"/>
+                                            <column width="220px"/>
                                         </columns>
                                         <rows>
                                             <row>
-                                                <label value="MovieID :"/>
-                                                <label id="txtId"/>
-                                                <label value="Type :"/>
-                                                <label id="txtType"/>
+                                                <label value="MovieId"/>
+                                                <textbox id="movieId"/>
+                                                <label value="MovieType"/>
+                                                <textbox id="movieType"/>
                                             </row>
                                             <row>
-                                                <label value="Name :"/>
-                                                <label id="txtName"/>
-                                                <label value="Superintendent :"/>
-                                                <label id="txtSuperintendent"/>
+                                                <label value="MovieName"/>
+                                                <textbox id="movieName"/>
+                                                <label value="Superintendent"/>
+                                                <textbox id="Superintendent"/>                                           
                                             </row>
                                             <row>
-                                                <label value="Cost :"/>
-                                                <label id="txtCost"/>
-                                                <label value="Detail :"/>
-                                                <label id="txtDetail"/>
+                                                <label value="MovieDetail"/>
+                                                <textbox id="moveDetail"/>
+                                                <label value="MovieCost"/>
+                                                <textbox id="movieCost"/>
                                             </row>
                                             <row>
-                                                <label value="Date :"/>
-                                                <label id="txtDate"/>
-                                                <label value="DateEnd :"/>
-                                                <label id="txtDateEnd"/>
+                                                <label value="MovieDate"/>
+                                                <datebox id="movieDate"/>
+                                                <label value="MovieDateEnd"/>
+                                                <datebox id="movieDateEnd"/>
+                                                
                                             </row>
                                             <row>
-                                                <label value="Picture:"/>
-                                                <label id="txtPic"/>
-                                                <label value="LongTime:"/>
-                                                <label id="txtTime"/>
+                                                <label value="Picture640"/>
+                                                <hbox>
+                                                    <textbox id="pic640"/>
+                                                    <button id="btnPic640" label="Browse"/>
+                                                </hbox>               
+                                                <label value="Picture140"/>
+                                                <hbox>
+                                                    <textbox id="pic140"/>
+                                                    <button id="btnPic140" label="Browse"/>
+                                                </hbox>
                                             </row>
                                             <row>
-                                                <label value="Room"/>
-                                                <combobox id="room">
-                                                    <comboitem label="Room1"/>
-                                                    <comboitem label="Room2"/>
-                                                    <comboitem label="Room3"/>
-                                                </combobox>
+                                                <label value="MovieLongtime"/>
+                                                <textbox id="longTime"/>
+                                                <label/>
+                                                <label/>
+                                            </row>
+                                            <row>
+                                                <button id="btnSave" label="Save"/>
+                                                <label/>
                                                 <label/>
                                                 <label/>
                                             </row>
                                         </rows>
                                     </grid>
-                                    <button label="submit" id="btnSubmit"/>
                                 </vbox>                                
                             </div>
+
                         </div>
                     </vlayout>
                     </div>
@@ -193,6 +196,7 @@
                 <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
                     <vlayout style="background-color:#C68E17;" >
                         <!-- Insert  Content  South to Here -->
+
 
                     </vlayout>
                 </div>

@@ -51,8 +51,8 @@
         .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
     </style>
-    <window apply="cinema.IndexComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
-    <div id="testid"  style=";"  width="1366px"  height="800px" >
+    <window apply="cinema.TotalmarketComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <div id="testid"  style=";"  width="1366px"  height="900px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -119,69 +119,65 @@
                             </div> 
                         </div>                    
                         <div id="centerContent" align="center" >
-                            <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
+                            <div id="divShowTimes" width="1000px" style="background-color:transparent;">
+                                
                                 <!-- Insert Content Center to Here -->
-                                <separator width="1px"/>
-                                <vbox>
-                                    <hbox align="center">
-                                        <label value="MovieID :"/>
-                                        <textbox id="txtSearch"/>
-                                        <button id="btnSearch" label="Search"/>
-                                    </hbox>
-                                    <separator width="5px"/>
-                                    <grid width="610px">
-                                        <columns>
-                                            <column align="right" width="100px"/>
-                                            <column width="200px"/>
-                                            <column align="right" width="110px"/>
-                                            <column width="200px"/>
-                                        </columns>
-                                        <rows>
-                                            <row>
-                                                <label value="MovieID :"/>
-                                                <label id="txtId"/>
-                                                <label value="Type :"/>
-                                                <label id="txtType"/>
-                                            </row>
-                                            <row>
-                                                <label value="Name :"/>
-                                                <label id="txtName"/>
-                                                <label value="Superintendent :"/>
-                                                <label id="txtSuperintendent"/>
-                                            </row>
-                                            <row>
-                                                <label value="Cost :"/>
-                                                <label id="txtCost"/>
-                                                <label value="Detail :"/>
-                                                <label id="txtDetail"/>
-                                            </row>
-                                            <row>
-                                                <label value="Date :"/>
-                                                <label id="txtDate"/>
-                                                <label value="DateEnd :"/>
-                                                <label id="txtDateEnd"/>
-                                            </row>
-                                            <row>
-                                                <label value="Picture:"/>
-                                                <label id="txtPic"/>
-                                                <label value="LongTime:"/>
-                                                <label id="txtTime"/>
-                                            </row>
-                                            <row>
-                                                <label value="Room"/>
-                                                <combobox id="room">
-                                                    <comboitem label="Room1"/>
-                                                    <comboitem label="Room2"/>
-                                                    <comboitem label="Room3"/>
-                                                </combobox>
-                                                <label/>
-                                                <label/>
-                                            </row>
-                                        </rows>
-                                    </grid>
-                                    <button label="submit" id="btnSubmit"/>
-                                </vbox>                                
+                                
+                                <separator width="5px"/>
+                                    <vbox>
+                                                <image src="${z.resource(dir:'images', file:'2.png')}"/> 
+                                                
+                                                <hbox>
+                                                    <label style="font-size:14px">สถานะ : เข้าใช้ระบบ</label>
+                                                    <label style="font-size:14px">[</label>
+                                                    <label id= "logonName" style="font-size:14px"></label>
+                                                    <label style="font-size:14px">]</label>
+                                                    <label id="today" style="font-size:14px"></label>
+                                                    <button id="logout">ออกจากระบบ</button>
+
+                                                </hbox>
+                                        </vbox>
+                                        <separator/>
+                                        <separator/>
+                                        <separator/>
+                                        <separator/>
+                                        <vbox>   
+                                        <hbox>
+                                                                              
+                                        <space/><space/>                                        
+                                        </hbox> 
+                                        <grid height="250px" width="650px">  
+                                            <columns>                
+                                                <column label="วันที่" align="center" width="80px" />
+                                                <column label="รายการขาย" align="center"/>
+                                                <column label="จำนวน" align="center" width="80px" />
+                                                 <column label="ราคา(บาท)" align="center" width="80px" />
+                                            </columns>                           
+                                                <rows sclass="narrow">
+                                                    
+                                                </rows>         
+                                        </grid>
+                                        <separator/>
+                                        <hbox>
+                                            <separator width="500px"/>
+                                            <label value="  ยอดขายรวม:" width="150px" />
+                                            <textbox id="total" width="70px" height="20px" style="color:red !important;"/>
+                                        </hbox>   
+                                        </vbox>  
+                                        <vbox>
+                                        
+                                        <separator/>
+                                        <separator/>
+                                        <separator/>
+                                        <hbox>
+                                            <separator width="500px"/>
+                                             <button id="backbtn"  label="ย้อนกลับ" width="120px" height="40px" />
+                                             
+                                        </hbox>
+                                        </vbox>
+
                             </div>
+
                         </div>
                     </vlayout>
                     </div>
@@ -193,6 +189,7 @@
                 <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
                     <vlayout style="background-color:#C68E17;" >
                         <!-- Insert  Content  South to Here -->
+
 
                     </vlayout>
                 </div>
