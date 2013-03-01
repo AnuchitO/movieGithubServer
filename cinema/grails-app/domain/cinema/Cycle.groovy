@@ -6,6 +6,7 @@ class Cycle {
 	String 	cycTime
 	
 	static  belongsTo = [rooms:Rooms]
+	
 
     static constraints = {
     }
