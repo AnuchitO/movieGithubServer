@@ -79,7 +79,7 @@
                         <div id="divNorthContent" style="background-color:transparent;" >
                         <vbox align="center" width="1040px" style="background-color:transparent;">  
                             <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
-                                <image src="~/logo.png"/>
+                                <image src="${z.resource(dir:'images', file:'logo.png')}"/>
                                     <separator width="10px"/>
                                 <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
                                     <separator width="40px"/>
@@ -104,19 +104,18 @@
                <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
                     <div id="divConterContentBig" style="background-color:transparent;" >
                     <vlayout style="background-color:transparent;" >
-                        <div height="70px">   <image src="~/headBody.png" />  
+                        <div height="70px">  <image src="${z.resource(dir:'images', file:'headBody.png')}"/> 
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
-                                    <button id="btnheaderBodyButton" class="button" image="~/headerBodyButton.png"  
-                                            style="background-color:transparent;"  height="50px"  />
+                                    <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
                                     <separator width="100px"/>
                                     <textbox width="250px" height="20px" style="font-size:14pt;" />
-                                    <button id="btnShowTime" class="button" image="~/showTimes.png"  
+                                    <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" 
                                             style="background-color:transparent;"  height="50px"  />
                                 </hbox>
                             </div>
                             <div id="underHeadBody"  class="underHead" style="background-color:black;">
-                                <image src="~/BodyBg.png" />  
+                                <image src="${z.resource(dir:'images', file:'BodyBg.png')}"/>
                             </div> 
                         </div>                    
                         <div id="centerContent" align="center" >
