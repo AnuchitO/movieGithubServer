@@ -9,8 +9,6 @@ class Sales {
 	String  salesProduct
 	Date	date
 
-
-
 	Stock	stock
 
 	static 	belongsTo  = [individual:Individual]
