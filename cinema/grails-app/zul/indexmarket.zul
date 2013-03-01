@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+       <style>
+          .bg1{
+             float:left;
+             filter:alpha(opacity=25);
+             -moz-opacity:.25;opacity:.25;
+            }
+
+          .text{
+                font-size:28px;
+               
+                text-shadow: 0 1px 0 #ccc, 
+                       0 2px 0 #c9c9c9,
+                       0 3px 0 #bbb,
+                       0 4px 0 #b9b9b9,
+                       0 5px 0 #aaa,
+                       0 6px 1px rgba(0,0,0,.1),
+                       0 0 5px rgba(0,0,0,.1),
+                       0 1px 3px rgba(0,0,0,.3),
+                       0 3px 5px rgba(0,0,0,.2),
+                       0 5px 10px rgba(0,0,0,.25),
+                       0 10px 10px rgba(0,0,0,.2),
+                       0 20px 20px rgba(0,0,0,.15);
+                background-color: none;
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-attachment: fixed;
+            }
+            .text:hover { 
+                color: #FF8C00; /* โค๊ดสีที่ต้องการให้เปลี่ยน */
+                text-decoration: underline; 
+            }
+            .text:visited {
+                text-decoration:none;
+                color:black;
+        }
+                             
+        .div-a {background:transparent;position:relative;bottom:50px;right:10px;}
+        .underHead{background:transparent;position:relative;bottom:50px;right:0px;}
+        .button {
+           
+            border: none;
+        }
+        .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
+
+    </style>
+    <window apply="cinema.IndexmarketComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <div id="testid"  style=";"  width="1366px"  height="800px" >
+    <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
+
+        <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
+            <div id="divWestBig" style="background-color:transparent" >
+               <!-- Insert  Content to West Here -->
+
+            </div>
+        </west>
+
+        <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
+            <div id="divEastBig" style="background-color:transparent" >
+               <!--  Insert  Content to East Here -->
+
+            </div>
+        </east>
+
+        <center border="none" style="background-color:transparent;">
+        <borderlayout style="background-color:transparent;" >
+
+        <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" style="background-color:transparent;" >
+            <borderlayout style="background-color:transparent;">
+                <center border="none" style="background-color:transparent;">
+                    <hbox align="center" height="100px" width="1040px" style="background-color:transparent;">
+                        <div id="divNorthContent" style="background-color:transparent;" >
+                        <vbox align="center" width="1040px" style="background-color:transparent;">  
+                            <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
+                                <image src="${z.resource(dir:'images', file:'logo.png')}"/>
+                                    <separator width="10px"/>
+                                <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
+                                    <separator width="40px"/>
+                                <label id="ticket" class="text" style="color:write ;">จองตั๋ว</label>
+                                    <separator width="40px"/>
+                                <label id="deposite" class="text" style="color:write ;">ฝากของ</label>
+                                    <separator width="40px"/>
+                                <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
+                                    <separator width="40px"/>
+                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
+                                    <separator width="40px"/>
+                                <label id="person" class="text" style="color:write ;">พนักงาน</label>
+                            </hbox>
+                        </vbox>
+                        </div>
+                    </hbox>
+                </center>
+            </borderlayout>
+        </north>
+
+        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
+               <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
+                    <div id="divConterContentBig" style="background-color:transparent;" >
+                    <vlayout style="background-color:transparent;" >
+                        <div height="70px">  <image src="${z.resource(dir:'images', file:'headBody.png')}"/> 
+                            <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
+                                <hbox align="center" height="50px">
+                                    <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
+                                    <separator width="100px"/>
+                                    <textbox width="250px" height="20px" style="font-size:14pt;" />
+                                    <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" 
+                                            style="background-color:transparent;"  height="50px"  />
+                                </hbox>
+                            </div>
+                            <div id="underHeadBody"  class="underHead" style="background-color:black;">
+                                <image src="${z.resource(dir:'images', file:'BodyBg.png')}"/>
+                            </div> 
+                        </div>                    
+                        <div id="centerContent" align="center" >
+                            <div id="divShowTimes" width="1000px" style="background-color:transparent;">
+                                
+                                <!-- Insert Content Center to Here -->
+                                
+                                <separator width="5px"/>
+                                    <vbox>
+                                            <label style="font-size:20px">หน้าการขายสินค้า</label>
+                                                
+                                                <hbox>
+                                                    <label style="font-size:14px">สถานะ : เข้าใช้ระบบ</label>
+                                                    <label style="font-size:14px">[</label>
+                                                    <label id= "logonName" style="font-size:14px"></label>
+                                                    <label style="font-size:14px">]</label>
+                                                    <label id="today" style="font-size:14px"></label>
+                                                    <button id="logout">ออกจากระบบ</button>
+
+                                                </hbox>
+                                                            
+
+                                        </vbox>
+                                            <separator/>
+                                            <separator/>
+                                            <separator/>
+                                            <separator/>
+
+
+
+
+                                        <vbox>   
+
+                                                        <hbox>
+                                                        <label value="รายการสินค้า:" width="150px" />
+                                                        <vbox>
+                                                                    <combobox id="gproduct1" width="150px" tabindex="11">
+                                                                    <comboitem label="น้ำเปล่า" />
+                                                                    <comboitem label="ฮานามิ"/>
+                                                                    <comboitem label="เลย์"/>
+                                                                    <comboitem label="ทาโร่"/>
+                                                                    <comboitem label="ป๊อปคอน"/>
+                                                                    <comboitem label="ลุกอม"/>
+                                                                    <comboitem label="หมากฝรั่ง"/>
+                                                                    <comboitem label="น้ำอัดลม"/>
+                                                                </combobox>
+                                                        </vbox>
+                                                        <label value="  จำนวน:" width="150px" />
+                                                        <textbox id="nums" width="70px" style="color:red !important;"/>
+                                                        <space/><space/>
+                                                        <button id="inputbtn" src="${z.resource(dir:'images',file:'save.png')}" label="เพิ่มรายการ" width="100px" height="40px" />
+                                                         <button id="clearbtn" src="${z.resource(dir:'images',file:'save.png')}" label="ลบข้อมูลการขาย" width="120px" height="40px" />
+                                                        </hbox> 
+                                                        <grid height="250px" width="650px">  
+                                                            <columns>                
+                                                                <column label="No." align="center" width="60px" />
+                                                                <column label="รายการสินค้า" align="center"/>
+                                                                <column label="จำนวน" align="center" width="80px" />
+                                                                 <column label="ราคา(บาท)" align="center" width="80px" />
+                                                            </columns>                           
+                                                                <rows sclass="narrow">
+                                                                    
+                                                                </rows>         
+                                                        </grid>
+                                                        <separator/>
+                                                        <hbox>
+                                                            <separator width="500px"/>
+                                                            <label value="  ราคารวม:" width="150px" />
+                                                            <textbox id="total" width="70px" height="20px" style="color:red !important;"/>
+                                                        </hbox>   
+                                        </vbox>  
+                                                        <vbox>
+                                                        
+                                                            <separator/>
+                                                            <separator/>
+                                                            <separator/>
+                                                        <hbox>
+                                                            <separator width="500px"/>
+                                                             <button id="savebtn" src="${z.resource(dir:'images',file:'save.png')}" label="บันทึก" width="120px" height="40px" />
+                                                              <button id="subbtn" src="${z.resource(dir:'images',file:'save.png')}" label="ดูยอดการขาย" width="120px" height="40px" /> ่   ่  
+                                                        </hbox>
+                                                        </vbox>
+
+                            </div>
+
+                        </div>
+                    </vlayout>
+                    </div>
+               </hlayout>
+        </center>
+
+        <south border="none" flex="true" style="background-color:transparent;" height="100px" >
+            <hlayout id="hlaySouthBig" spacing="50px" style="background-color:transparent;">
+                <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
+                    <vlayout style="background-color:#C68E17;" >
+                        <!-- Insert  Content  South to Here -->
+
+
+                    </vlayout>
+                </div>
+            </hlayout>
+        </south>
+
+        </borderlayout>
+        </center>
+
+    </borderlayout>
+    </div>
+    </window>
+
+</zk>
