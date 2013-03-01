@@ -2,7 +2,7 @@ package cinema
 
 class Individual {
 
-    static  hasMany = [amount:Amount,deposit:Deposit,sales:Sales]
+    static  hasMany = [amount:Amount,datadeposit:DataDeposit,sales:Sales]
     static constraints = {
     }
 
