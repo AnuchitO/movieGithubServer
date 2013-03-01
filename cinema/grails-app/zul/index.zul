@@ -119,9 +119,13 @@
                             </div> 
                         </div>                    
                         <div id="centerContent" align="center" >
-                            <div id="divShowTimes" width="1000px" height="90%" style="background-color:white;">
+                            <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
+                                <separator width="1px"/>
                                 <!-- Insert Content Center to Here -->
-                                <label value="Insert Content Center to Here"/>
+
+
+
+                                
                             </div>
 
                         </div>
