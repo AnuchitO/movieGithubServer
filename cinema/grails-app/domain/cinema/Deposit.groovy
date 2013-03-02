@@ -9,10 +9,7 @@ class Deposit {
 	String	phoneDep
 	String	emailDep
 
-	DataDeposit		dataDeposit
 	
-	
-	static 	belongsTo  = [individual:Individual]
     static constraints = {
     }
 }

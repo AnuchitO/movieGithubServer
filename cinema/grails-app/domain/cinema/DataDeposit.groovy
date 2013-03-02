@@ -16,5 +16,6 @@ class DataDeposit {
 	static 	belongsTo  = [individual:Individual]
 
     static constraints = {
+    	individual nullable:true
     }
 }
