@@ -141,24 +141,20 @@
     <window apply="cinema.SeatsTicketComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
     <div id="testid"  style=";"  width="1366px"  height="1240px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
-
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
             <div id="divWestBig" style="background-color:transparent" >
                <!-- Insert  Content to West Here -->
 
             </div>
         </west>
-
         <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
             <div id="divEastBig" style="background-color:transparent" >
                <!--  Insert  Content to East Here -->
 
             </div>
         </east>
-
         <center border="none" style="background-color:transparent;">
         <borderlayout style="background-color:transparent;" >
-
         <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" style="background-color:transparent;" >
             <borderlayout style="background-color:transparent;">
                 <center border="none" style="background-color:transparent;">
@@ -186,7 +182,6 @@
                 </center>
             </borderlayout>
         </north>
-
         <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
                <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
                     <div id="divConterContentBig" style="background-color:transparent;" >
