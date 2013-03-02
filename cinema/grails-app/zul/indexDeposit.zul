@@ -5,67 +5,253 @@
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"
+    xmlns:c="client">
 
-    <window apply="cinema.IndexDepositComposer">
+    <style>
+          .bg1{
+             float:left;
+             filter:alpha(opacity=25);
+             -moz-opacity:.25;opacity:.25;
+            }
 
-       <hbox align="center" width="800px" >
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}" />
-        </hbox>
+          .text{
+                font-size:28px;
+               
+                text-shadow: 0 1px 0 #ccc, 
+                       0 2px 0 #c9c9c9,
+                       0 3px 0 #bbb,
+                       0 4px 0 #b9b9b9,
+                       0 5px 0 #aaa,
+                       0 6px 1px rgba(0,0,0,.1),
+                       0 0 5px rgba(0,0,0,.1),
+                       0 1px 3px rgba(0,0,0,.3),
+                       0 3px 5px rgba(0,0,0,.2),
+                       0 5px 10px rgba(0,0,0,.25),
+                       0 10px 10px rgba(0,0,0,.2),
+                       0 20px 20px rgba(0,0,0,.15);
+                background-color: none;
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-attachment: fixed;
+            }
+            .text:hover { 
+                color: #FF8C00; /* โค๊ดสีที่ต้องการให้เปลี่ยน */
+                text-decoration: underline; 
+            }
+            .text:visited {
+                text-decoration:none;
+                color:black;
+        }
+                             
+        .div-a {background:transparent;position:relative;bottom:50px;right:10px;}
+        .underHead{background:transparent;position:relative;bottom:50px;right:0px;}
+        .button {
+           
+            border: none;
+        }
+        .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
-        
-ระบบรับฝากของ
-        <groupbox width="600px"  >
-            <caption label="ลงทะเบียนฝากของ"/>
-            <vbox align="Left" >
-                <hbox align="Center" height="25px">รหัสตั๋ว : <space bar="false" spacing="15px"/><textbox id="idep"/></hbox>
-                <hbox align="Center" height="25px">เลขที่ใบฝาก : <space bar="false"/><textbox id="numdep"  /><space bar="false"/></hbox>
-                <hbox align="Center" height="25px">วันที่ : <space bar="false" spacing="15px"/><space bar="false"/><datebox id="in" /></hbox>
-            </vbox>
-        </groupbox>
+    </style>
 
-        <groupbox width="600px"  >
-            <caption label="ข้อมูลส่วนตัว"/>
-            <vbox align="Left" >
-                <hbox>ชื่อ :<space bar="false"/><textbox id="name"/><space bar="false" spacing="50px"/>นามสกุล :<space bar="false" spacing="15px"/><textbox id="lname"/><separator/></hbox>
-                <hbox>เพศ :<space bar="false"/>
-                    <radiogroup id = "sex">
-                        <radio label="ชาย" />
-                        <radio label="หญิง" />
-                    </radiogroup>
-                </hbox>
-                <hbox>ที่อยู่ :<space bar="false"/><textbox id="address" rows="5" cols="80"/><separator/></hbox>
-                <hbox>เบอร์ติดต่อ :<space bar="false"/><textbox id="call"/><space bar="false"/>  E-mail :<space bar="false"/><textbox id="email"/><separator/></hbox>
-            </vbox>
-        </groupbox>
-        <separator spacing="10px" />
+    <style>
+    .water-mark { 
+        color: gray; font-style: italic; 
+    }
+    .form {
+        border: 1px solid #E1E1E1;
+        background: url('../widgets/effects/form_effect/img/bg.png');
+        padding: 20px 20px;
+        -webkit-border-radius:4px;
+        -moz-border-radius:4px;
+        border-radius:4px;
+    }
+    .form .name {
+        display: block;
+        width: 100px;
+        text-align: center;
+    } 
+    </style>
+ 
+   
 
-        <groupbox width="600px"  >
+    <window apply="cinema.IndexDepositComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
 
-            <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px"/></vbox>
-        </groupbox>
+       <div id="testid"  style=";"  width="1366px"  height="1110px" >
+    <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
-        <groupbox width="800px" >
-            <caption label="รายการผู้ฝากของ"/>
-            <vbox align="Center" width="800px"></vbox>
-                <grid width="795x" id ="gridbox">
-                    <columns>
-                    <column label="รหัสตั๋ว"  width ="60px" />
-                    <column label="เลขที่ใบฝาก"  width ="80px"/>
-                    <column label="ชื่อ"  width ="100px"/>
-                    <column label="นามสกุล"  width ="100px"/>
-                    <column label="เพศ"  width ="50px"/>
-                    <column label="ที่อยู่"  width ="200px"/>
-                    <column label="เบอร์โทร"  width ="100px"/>
-                    <column label="E-mail"  width ="100px"/>
-                    </columns>
-                    <rows>
-                    <row>
-                    </row>
-                    </rows>
-                </grid>
-            </groupbox>
-        <separator spacing="10px" />
+        <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
+            <div id="divWestBig" style="background-color:transparent" >
+               <!-- Insert  Content to West Here -->
+
+            </div>
+        </west>
+
+        <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
+            <div id="divEastBig" style="background-color:transparent" >
+               <!--  Insert  Content to East Here -->
+
+            </div>
+        </east>
+
+        <center border="none" style="background-color:transparent;">
+        <borderlayout style="background-color:transparent;" >
+
+        <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" style="background-color:transparent;" >
+            <borderlayout style="background-color:transparent;">
+                <center border="none" style="background-color:transparent;">
+                    <hbox align="center" height="100px" width="1040px" style="background-color:transparent;">
+                        <div id="divNorthContent" style="background-color:transparent;" >
+                        <vbox align="center" width="1040px" style="background-color:transparent;">  
+                            <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
+                                <image src="${z.resource(dir:'images', file:'logo.png')}"/>
+                                    <separator width="10px"/>
+                                <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
+                                    <separator width="40px"/>
+                                <label id="ticket" class="text" style="color:write ;">จองตั๋ว</label>
+                                    <separator width="40px"/>
+                                <label id="deposite" class="text" style="color:write ;">ฝากของ</label>
+                                    <separator width="40px"/>
+                                <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
+                                    <separator width="40px"/>
+                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
+                                    <separator width="40px"/>
+                                <label id="person" class="text" style="color:write ;">พนักงาน</label>
+                            </hbox>
+                        </vbox>
+                        </div>
+                    </hbox>
+                </center>
+            </borderlayout>
+        </north>
+
+        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
+               <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;" >
+                    <div id="divConterContentBig" style="background-color:transparent;" >
+                    <vlayout style="background-color:transparent;" >
+                          
+                        <div height="43.5px">  <image src="${z.resource(dir:'images', file:'headDeposit.png')}"/> 
+                            <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
+                               
+                            </div>
+                            <div id="underHeadBody"  class="underHead" style="background-color:black;">
+                                <image src="${z.resource(dir:'images', file:'BodyBg.png')}"/>
+                            </div> 
+                        </div>            
+
+                        <div id="centerContent"  >
+                            
+                                
+                                    <div width="1000px" height="800px" class="form">
+
+                                                                <vlayout spacing="7px">
+                                                                    
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="รหัสตั๋ว :" />
+                                                                        <textbox id="idep" width='150px' />
+                                                                        (ID-1234)
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="เลขที่ใบฝาก :" />
+                                                                        <textbox id="numdep" width='150px' />
+                                                                        (No.0001)
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="วันที่ :" />
+                                                                        <datebox id="indep" width='155px ' cols="12" format="short " />
+                                                                        <label value=" (วัน/เดือน/ปี)" />
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="เวลาเริ่มฉาย:" />
+                                                                        <timebox id="time" width='155px' />
+                                                                        <label value='(00:00:00)' />
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="ชื่อ:" />
+                                                                        <textbox id="name" width='150px' />
+                                                                        <label value='(Masker)' />
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="นามสกุล :" />
+                                                                        <textbox id="lname" width='150px' />
+                                                                        (Watermark)
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="เพศ :" />
+                                                                        <radiogroup id = "gender">
+                                                                            <radio label="ชาย" />
+                                                                            <radio label="หญิง" />
+                                                                        </radiogroup>
+                                                                       
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="ที่อยู่ :" />
+                                                                        <textbox id="address" rows="5" cols="80" />
+                                                                        
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="เบอร์โทร :" />
+                                                                        <textbox id="phone" width='150px' />
+                                                                        (090-1234XXX)
+                                                                    </hlayout>
+                                                                    <hlayout spacing="20px">
+                                                                        <label class="name" value="E-mail:" />
+                                                                        <textbox id="email" width='150px' />
+                                                                        (abcd@hotmail.com)
+                                                                    </hlayout>
+                                                                    
+                                                                </vlayout>
+                                                                 <separator spacing="25px" />
+
+                                                                <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px"/></vbox>
+
+                                                                <separator spacing="25px" />
+                                                                
+                                                                    <grid width="795x" height="500px" id ="gridbox">
+                                                                        <columns>
+                                                                        <column label="วันที่"  width ="90px" />
+                                                                        <column label="เลขที่ใบฝาก"  width ="80px"/>
+                                                                        <column label="ชื่อ"  width ="100px"/>
+                                                                        <column label="นามสกุล"  width ="100px"/>
+                                                                        <column label="เพศ"  width ="50px"/>
+                                                                        <column label="ที่อยู่"  width ="250px"/>
+                                                                        <column label="เบอร์โทร"  width ="150px"/>
+                                                                        <column label="E-mail"  width ="100px"/>
+                                                                        </columns>
+
+                                                                        <rows id = "grow">
+                                                                        
+                                                                        </rows>
+                                                                    </grid>
+                                                            
+
+                                                            </div>
+                                
+                            
+
+                        </div>
+                    </vlayout>
+                    </div>
+               </hlayout>
+        </center>
+
+        <south border="none" flex="true" style="background-color:transparent;" height="100px" >
+            <hlayout id="hlaySouthBig" spacing="50px" style="background-color:transparent;">
+                <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
+                    <vlayout style="background-color:#C68E17;" >
+                        <!-- Insert  Content  South to Here -->
+
+
+                    </vlayout>
+                </div>
+            </hlayout>
+        </south>
+
+        </borderlayout>
+        </center>
+
+    </borderlayout>
+    </div>
 
     </window>
 
