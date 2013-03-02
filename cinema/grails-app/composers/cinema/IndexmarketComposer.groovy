@@ -8,6 +8,10 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class IndexmarketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
-        // initialize components here
+        $("#nextbtn").on("click", {
+				redirect(uri:'totalmarket.zul')
+			})
+
+
     }
 }
