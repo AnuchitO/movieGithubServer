@@ -195,9 +195,7 @@
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
-                                    <separator width="100px"/>
-                                    <!-- <textbox width="250px" height="20px" style="font-size:14pt;" />
-                                    <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" style="background-color:transparent;"  height="50px"  /> -->
+                                    <separator width="100px"/>                                    
                                 </hbox>
                             </div>
                             <div id="underHeadBody"  class="underHead" style="background-color:black;">
@@ -253,21 +251,12 @@
                                             </listitem>
                                         </listbox>                                       
                                     </vbox>
-                                    </hbox> 
-                                    
+                                    </hbox>                                     
                                 </groupbox>
                                 <separator width="40px"/>
                                 <button   class="button" image="${z.resource(dir:'seatsTicket', file:'screen2.png')}" style="background-color:transparent;" width="900px" height="50px"  />
                                 <separator width="40px"/>
                                 <listbox id="listboxSeats" multiple="false" checkmark="false" width="900px">
-                                    <!-- <listhead>
-                                        <listheader label="Name" />
-                                        <listheader label="Gender" />
-                                        <listheader label="Age" />
-                                        <listheader label="Name" />
-                                        <listheader label="Gender" />
-                                        <listheader label="Age" />
-                                    </listhead> -->
                                     <listitem selected="false" style="background-color:white;">
                                         <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >K</label></listcell>
                                         <listcell class="seats"></listcell>
