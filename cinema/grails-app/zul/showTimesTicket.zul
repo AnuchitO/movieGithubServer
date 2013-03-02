@@ -65,7 +65,31 @@
             text-align: right;
             text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);
         }
-
+        .result-text{
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+            color: rgb(143, 43, 25);
+            line-height: 36px;
+            font-size: 34px;
+            padding: 0px 0px 0px 10px;
+                padding-top: 0px;
+                padding-right-value: 0px;
+                padding-bottom: 0px;
+                padding-left-value: 10px;
+                padding-left-ltr-source: physical;
+                padding-left-rtl-source: physical;
+                padding-right-ltr-source: physical;
+                padding-right-rtl-source: physical;
+            margin: 0px;
+                margin-top: 0px;
+                margin-right-value: 0px;
+                margin-bottom: 0px;
+                margin-left-value: 0px;
+                margin-left-ltr-source: physical;
+                margin-left-rtl-source: physical;
+                margin-right-ltr-source: physical;
+                margin-right-rtl-source: physical;
+            float: left;
+        }
     </style>
     <window apply="cinema.ShowTimesTicketComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
         
@@ -138,6 +162,7 @@
                         <div id="centerContent" align="center" height="100%">
                             <!-- Insert Content Center to Here -->
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
+                                
                                 <listbox id="box" multiple="false" checkmark="false">
                                    <!--  <listhead>
                                         <listheader label="Name" />
@@ -174,7 +199,7 @@
                                                 <label style="font-size:16pt;text-align: left" class="theater-name"  > แม่มดแคสเตอร์</label>
                                                 <separator width="20px"/>
                                                 <hbox> 
-                                                <button id="btnT1" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
+                                                <button id="btnT1" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes" style="color: rgb(143, 43, 25);"/>
                                                 <button id="btnT2" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/> 
                                                 <button id="btnT3" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
                                                 <button id="btnT4" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
