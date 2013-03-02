@@ -47,7 +47,25 @@ class IndexDepositComposer extends GrailsComposer {
 
 				s.save()
 
-			
+				def X = DataDeposit.findAllByVersion(0)
+
+				$('#grow > row').detach()
+				for(f in X){
+				
+				$('#grow').append{
+						row (){
+							label( value: f.idDep)
+							label( value: f.numDep)
+							label( value: f.nameDep)
+							label( value: f.lnameDep)
+							label( value: f.sexDep)
+							label( value: f.addressDep)
+							label( value: f.phoneDep)
+							label( value: f.emailDep)
+							
+						}
+					}
+				}
 
 			}
 		})
