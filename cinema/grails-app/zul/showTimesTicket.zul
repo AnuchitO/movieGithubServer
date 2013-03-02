@@ -171,7 +171,7 @@
                                     </listhead> -->
                                     <listitem>
                                         <listcell label="">
-                                            <groupbox mold="3d" width="980px" height="224px" style="margin-left: auto;margin-right: auto ;vertical-align: middle">
+                                            <groupbox mold="3d" width="980px" height="224px" style="margin-left: auto;margin-right: auto ;vertical-align: middle;background-image:url(./ext/showTimeTicketPicture/Bgresult.png)">
                                                 <!-- <caption image="${z.resource(dir:'images',file:'key.png')}" label="ระบบยืนยันตัวแพทย์"/> -->
                                             <hbox>
                                             <vbox>
