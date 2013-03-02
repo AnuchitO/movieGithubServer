@@ -52,7 +52,7 @@
 
     </style>
     <window apply="cinema.IndexmarketComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
-    <div id="testid"  style=";"  width="1366px"  height="900px" >
+    <div id="testid"  style=";"  width="1366px"  height="1050px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -133,71 +133,117 @@
                                                     <label id= "logonName" style="font-size:14px"></label>
                                                     <label style="font-size:14px">]</label>
                                                     <label id="today" style="font-size:14px"></label>
-                                                    <button id="logout">ออกจากระบบ</button>
+                                                    <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>
 
                                                 </hbox>
                                                             
 
                                         </vbox>
-                                            <separator/>
-                                            <separator/>
-                                            <separator/>
+
                                             <separator/>
 
+                                        <vbox>  
+                                        <hbox>
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'Hanami.png')}" width="95px" height="95px"/></window>
+                                               <textbox id="b1" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn1"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>
 
 
+                                                <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'Lays.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b2" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn2"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>
 
-                                        <vbox>   
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'snack.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b3" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn3"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>
+                                                
+                                                <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'Taro.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b4" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn4"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox> 
 
-                                                        <hbox>
-                                                        <label value="รายการสินค้า:" width="150px" />
-                                                        <vbox>
-                                                                    <combobox id="gproduct1" width="150px" tabindex="11">
-                                                                    <comboitem label="น้ำเปล่า" />
-                                                                    <comboitem label="ฮานามิ"/>
-                                                                    <comboitem label="เลย์"/>
-                                                                    <comboitem label="ทาโร่"/>
-                                                                    <comboitem label="ป๊อปคอน"/>
-                                                                    <comboitem label="ลุกอม"/>
-                                                                    <comboitem label="หมากฝรั่ง"/>
-                                                                    <comboitem label="น้ำอัดลม"/>
-                                                                </combobox>
-                                                        </vbox>
-                                                        <label value="  จำนวน:" width="150px" />
-                                                        <textbox id="nums" width="70px" style="color:red !important;"/>
-                                                        <space/><space/>
-                                                        <button id="inputbtn"  label="เพิ่มรายการ" width="100px" height="40px" />
-                                                         <button id="clearbtn" label="ลบข้อมูลการขาย" width="120px" height="40px" />
-                                                        </hbox> 
-                                                        <grid height="250px" width="650px">  
-                                                            <columns>                
-                                                                <column label="No." align="center" width="60px" />
-                                                                <column label="รายการสินค้า" align="center"/>
-                                                                <column label="จำนวน" align="center" width="80px" />
-                                                                 <column label="ราคา(บาท)" align="center" width="80px" />
-                                                            </columns>                           
-                                                                <rows sclass="narrow">
-                                                                    
-                                                                </rows>         
-                                                        </grid>
-                                                        <separator/>
-                                                        <hbox>
-                                                            <separator width="520px"/>
-                                                            <label value="  ราคารวม:" width="150px" />
-                                                            <textbox id="total" width="70px" height="20px" style="color:red !important;"/>
-                                                        </hbox>   
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'jub.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b5" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn5"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>  
+
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'popcorn.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b6" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn6"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>  
+
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'coke.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b7" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn7"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>  
+
+                                               <vbox  align="center"  width="100px">
+                                               <window title="" zclass="z-window-overlapped" border="normal" width="120px" height="120px" >
+                                               <image src="${z.resource(dir:'images', file:'water1.png')}" width="90px" height="90px"/></window>
+                                               <textbox id="b8" width="30px" style="color:red !important;"/>
+                                               <button id="inputbtn8"  src="${z.resource(dir:'images',file:'edit.png')}"  label="เพิ่ม" width="60px" height="40px" />
+                                               
+                                               </vbox>  
+                                            
+                                          </hbox>
+                                          <separator/>
+                                            <separator/>
+                                        <vbox align="center"  width="1000px"> 
+                                        <grid height="250px" width="650px">  
+                                            <columns>                
+                                               
+                                                <column label="รายการสินค้า" align="center"/>
+                                                <column label="จำนวน" align="center" width="80px" />
+                                                 <column label="ราคา(บาท)" align="center" width="80px" />
+                                            </columns>                           
+                                                <rows sclass="narrow">
+                                                    
+                                                </rows>         
+                                        </grid>
+                                        </vbox> 
+                                        <separator/>
+                                        <hbox>
+                                            <separator width="680px"/>
+                                            <label value="  ราคารวม:" width="150px" style="font-size:18px" />
+                                            <textbox id="total" width="70px" height="30px" style="font-size:18px"/>
+                                        </hbox>   
                                         </vbox>  
-                                                        <vbox>
-                                                        
-                                                            <separator/>
-                                                            <separator/>
-                                                            <separator/>
-                                                        <hbox>
-                                                            <separator width="500px"/>
-                                                             <button id="savebtn"  label="บันทึก" width="120px" height="40px" />
-                                                              <button id="subbtn"  label="ดูยอดการขาย" width="120px" height="40px" />
-                                                        </hbox>
-                                                        </vbox>
+                                        <vbox>
+                                            <separator/>
+                                            <separator/>
+                                            <separator/>
+                                        <hbox>
+                                            <separator width="450px"/>
+                                              <button id="clearbtn" src="${z.resource(dir:'images',file:'cross.png')}"  label="ลบข้อมูลการขาย" width="130px" height="40px" />
+                                             <button id="savebtn"  src="${z.resource(dir:'images',file:'save.png')}" label="บันทึก" width="100px" height="40px" />
+                                             <button id="nextbtn"  src="${z.resource(dir:'images',file:'search.png')}" label="ดูยอดการขาย" width="120px" height="40px" />
+                                        </hbox>
+                                        </vbox>
+
 
                             </div>
 

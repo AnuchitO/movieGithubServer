@@ -133,7 +133,7 @@
                                                     <label id= "logonName" style="font-size:14px"></label>
                                                     <label style="font-size:14px">]</label>
                                                     <label id="today" style="font-size:14px"></label>
-                                                    <button id="logout">ออกจากระบบ</button>
+                                                    <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>
 
                                                 </hbox>
                                         </vbox>
@@ -171,7 +171,7 @@
                                         <separator/>
                                         <hbox>
                                             <separator width="500px"/>
-                                             <button id="backbtn"  label="ย้อนกลับ" width="120px" height="40px" />
+                                             <button id="backbtn" src="${z.resource(dir:'images',file:'back.png')}" label="กลับสู่หน้าการขาย" width="150px" height="40px" />
                                              
                                         </hbox>
                                         </vbox>
