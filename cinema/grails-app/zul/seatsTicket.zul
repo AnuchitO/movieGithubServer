@@ -215,10 +215,12 @@
                                     </vbox>
                                     <separator width="3px"/>
                                     <vbox>
-                                        <listbox id="listboxInfoMovie" width="350px" multiple="false" checkmark="false">
+                                        <listbox id="listboxInfoMovie" width="373px" multiple="false" checkmark="false">
                                             <listhead>
-                                                <listheader width="120px"  />
-                                                <listheader width="230px" />
+                                                <listheader width="100px"  />
+                                                <listheader width="90px"/>
+                                                <listheader width="70px" />
+                                                <listheader width="70px" />
                                             </listhead>
                                             <listitem style="background-color:white;text-align:right" width="50px">
                                                 <listcell >
@@ -226,7 +228,13 @@
                                                 </listcell>
                                                 <listcell style="background-color:white;text-align:left">
                                                     <label  id="labRoom" class="Info" value="1" />
-                                                </listcell>                     
+                                                </listcell>
+                                                <listcell >
+                                                    <label class="Info" value="ประเภท: " width="50px" />
+                                                </listcell>
+                                                <listcell style="background-color:white;text-align:left">
+                                                    <label  id="labType" class="Info" value="action" />
+                                                </listcell>
                                             </listitem>
                                             <listitem style="background-color:white;text-align:right" width="50px">
                                                 <listcell>
