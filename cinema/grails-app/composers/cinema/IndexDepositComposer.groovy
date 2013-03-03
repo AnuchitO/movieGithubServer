@@ -4,6 +4,7 @@ import org.zkoss.zk.grails.composer.*
 
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
+import org.zkoss.zk.ui.Executions
 
 class IndexDepositComposer extends GrailsComposer {
 
@@ -11,6 +12,7 @@ class IndexDepositComposer extends GrailsComposer {
         // initialize components here
 
          //println($('#submit'))
+       
 
 		$('#submit').on('click',{
 
@@ -30,7 +32,7 @@ class IndexDepositComposer extends GrailsComposer {
 			}
 
 			else{
-				alert('OK')
+				alert('กรอกข้อมูลเรียบร้อย')
 
 				def s = new DataDeposit()
 
@@ -45,16 +47,24 @@ class IndexDepositComposer extends GrailsComposer {
 					s.addressDep = ($('#address').getText())
 					s.emailDep = ($('#email').getText())
 
-				s.save()
 
-				def X = DataDeposit.findAllByVersion(0)
+				s.save()
+				//redirect(uri: "indexDeposit.zul")
+				def X = DataDeposit.findAll()
+
+				
 
 				$('#grow > row').detach()
 				for(f in X){
 				
 				$('#grow').append{
+
 						row (){
-							label( value: f.idDep)
+
+							
+							Integer c = f.id
+
+							label( value: f.inDep)
 							label( value: f.numDep)
 							label( value: f.nameDep)
 							label( value: f.lnameDep)
@@ -63,12 +73,61 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.phoneDep)
 							label( value: f.emailDep)
 							
+							button(label: "ลบ" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
+
+							def button = e.target
+							button.parent.detach()
+							
+							def r = DataDeposit.findById(c)
+							
+							r.delete()
+							
+							})
 						}
 					}
 				}
 
 			}
 		})
-        
+        $('#check').on('click',{
+
+        		def X = DataDeposit.findAll()
+
+				
+
+				$('#grow > row').detach()
+				for(f in X){
+				
+				$('#grow').append{
+
+						row (){
+
+							Integer c = f.id
+
+							label( value: f.inDep)
+							label( value: f.numDep)
+							label( value: f.nameDep)
+							label( value: f.lnameDep)
+							label( value: f.sexDep)
+							label( value: f.addressDep)
+							label( value: f.phoneDep)
+							label( value: f.emailDep)
+							
+							
+							button(label: "ลบ" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
+
+							def button = e.target
+							button.parent.detach()
+							
+							def r = DataDeposit.findById(c)
+							
+							r.delete()
+							
+							})
+							
+						}
+					}
+				}			
+        })       
     }
 }
