@@ -6,7 +6,7 @@ class Stock {
 	String 	productTotal
 	Date	date
 
-	Sales	sales
+
 	
     static constraints = {
     }

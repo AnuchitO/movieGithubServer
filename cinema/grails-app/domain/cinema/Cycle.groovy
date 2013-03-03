@@ -2,7 +2,7 @@ package cinema
 
 class Cycle {
 
-	String	cycId
+	String	cycDay
 	String 	cycTime
 	
 	static  belongsTo = [rooms:Rooms]

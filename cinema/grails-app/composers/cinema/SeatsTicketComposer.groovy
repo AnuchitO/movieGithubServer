@@ -58,7 +58,8 @@ class SeatsTicketComposer extends GrailsComposer {
                 seatNameSelect=sn;             
                 seats.save();
            	} else {
-               k00=0;       		
+               k00=0; 
+               seatNameSelect="";       		
         	   $("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;color:gold");
                seats = Seats.findBySeatNumber(sn)
                seats.delete()
@@ -75,16 +76,26 @@ class SeatsTicketComposer extends GrailsComposer {
             def seats= new Seats(seatNumber:sn,tel:"123456")
             if(k01==0) {
                 $("#K1").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
-                k01=1;             
+                k01=1; 
+                seatNameSelect=sn;             
                 seats.save()
             } else {
                 k01=0;
+                seatNameSelect="";
                 $("#K1").setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;color:gold");
                seats = Seats.findBySeatNumber(sn)
                 seats.delete()
             }       
         })
-       
+
+
+        $("#btnBuyTicket").on("click", {
+            alert(seatNameSelect)
+            session.namepp = seatNameSelect
+            redirect(uri:'price.zul')
+                
+        })
+        
 
     }
 }

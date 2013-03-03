@@ -153,7 +153,7 @@
                                                 <column label="จำนวน" align="center" width="80px" />
                                                  <column label="ราคา(บาท)" align="center" width="80px" />
                                             </columns>                           
-                                                <rows sclass="narrow">
+                                                <rows id="row2">
                                                     
                                                 </rows>         
                                         </grid>
