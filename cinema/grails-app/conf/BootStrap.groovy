@@ -2,7 +2,11 @@ import cinema.Movie
 class BootStrap {
 
     def init = { servletContext ->
-    	def c = new Movie(
+
+    	def movie
+    	def seats
+
+    	movie = new Movie(
     		movId:"0000",
 		 	movType:"Drama",
 		 	movName:"Demo",
@@ -15,6 +19,27 @@ class BootStrap {
 		 	movPicture140:"./image/demo140",
 			longTime:120	
     	).save()
+
+
+
+    seats= new Seats(seatNumber:"AA",tel:"123456")
+ 	if (seats.validate()) {
+        seats.save()
+     }else println seats.errors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     def destroy = {
     }

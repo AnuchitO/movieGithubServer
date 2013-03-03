@@ -23,27 +23,21 @@ class SeatsTicketComposer extends GrailsComposer {
         }
 
         int k00=0;
+        //def seats= new Seats(seatNumber:"AA",tel:"123456",amount:null,rooms:null)
         $("#K0").on("click", {
         	//$("#K0").setStyle("background-color: black; position: relative;");  //ok
         	if(k00==0) {
         		$("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
-                k00=1;
-
-                def seat = new Seats(
-                    //amount:amount,
-                    //rooms:rooms,
-                    seatNumber:"K0",
-                    tel:"12345879")
-                
-                   seat.save()
+                k00=1;             
+                    //seats.save()
            	} else {
                 k00=0;
         		//$("#K0").setLabel(".");  //ok
         	   $("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;color:gold");
                //def seats=Seats.findByAll(seatNumber)
-               def seats = Seats.findAllBySeatNumberLike("K0")
+               //def seats = Seats.findAllBySeatNumberLike("K0")
               // def seats = Seats.get(1)
-                seats.delete()(flush:true)
+                //seats.delete()
         	}
         	
 
