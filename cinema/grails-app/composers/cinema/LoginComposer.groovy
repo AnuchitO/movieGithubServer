@@ -25,6 +25,7 @@ class LoginComposer extends GrailsComposer {
 				$("#pass").val(null)
 			}
         })
+        
 		
 		$("#clear").on("click", {
 
