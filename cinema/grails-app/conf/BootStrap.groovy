@@ -39,8 +39,8 @@ class BootStrap {
 		 	movCost:"2M",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
-		 	movPicture640:"./image/demo640",
-		 	movPicture140:"./image/demo140",
+		 	movPicture640:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
+		 	movPicture140:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
 			longTime:120	
     	).save()
 
