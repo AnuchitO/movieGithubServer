@@ -8,6 +8,7 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class IndexShowIndividualComposer extends GrailsComposer {
 
     def afterCompose = { window ->
-        // initialize components here
+       
+					
     }
 }

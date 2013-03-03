@@ -123,6 +123,7 @@
                         <div id="centerContent" align="center" >
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
+                                <button id="add" label="ADD" width="100px"/>
                                 <grid id="gid">
                                      <columns>
                                          <column label="ชื่อ"  width="350px"/>
@@ -135,6 +136,7 @@
         
                                      </rows>
                                 </grid>
+                                
 
 
 
