@@ -77,7 +77,7 @@
 
     <window apply="cinema.IndexDepositComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
 
-       <div id="testid"  style=";"  width="1366px"  height="1110px" >
+       <div id="testid"  style=";"  width="1366px"  height="1225px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -125,7 +125,7 @@
             </borderlayout>
         </north>
 
-        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
+        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;"  >
                <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;" >
                     <div id="divConterContentBig" style="background-color:transparent;" >
                     <vlayout style="background-color:transparent;" >
@@ -142,81 +142,88 @@
                         <div id="centerContent"  >
                             
                                 
-                                    <div width="1000px" height="800px" class="form">
+                                    <div width="1000px" height="915px" class="form">
 
                                                                 <vlayout spacing="7px">
-                                                                    
+                                                                    <image src="${z.resource(dir:'images', file:'registerDeposit.png')}" width='130px'/>
+                                                                    <separator spacing="25px" />
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="รหัสตั๋ว :" />
+                                                                        <label class="name" value="รหัสตั๋ว :" style="font-size:15px;" />
                                                                         <textbox id="idep" width='150px' />
-                                                                        (ID-1234)
+                                                                        <label value='(ID-1234)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="เลขที่ใบฝาก :" />
+                                                                        <label class="name" value="เลขที่ใบฝาก :" style="font-size:15px;"/>
                                                                         <textbox id="numdep" width='150px' />
-                                                                        (No.0001)
+                                                                        <label value='(No.0001)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="วันที่ :" />
+                                                                        <label class="name" value="วันที่ :" style="font-size:15px;"/>
                                                                         <datebox id="indep" width='155px ' cols="12" format="short " />
                                                                         <label value=" (วัน/เดือน/ปี)" />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="เวลาเริ่มฉาย:" />
+                                                                        <label class="name" value="เวลาเริ่มฉาย:" style="font-size:15px;"/>
                                                                         <timebox id="time" width='155px' />
                                                                         <label value='(00:00:00)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="ชื่อ:" />
+                                                                        <label class="name" value="ชื่อ:" style="font-size:15px;"/>
                                                                         <textbox id="name" width='150px' />
                                                                         <label value='(Masker)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="นามสกุล :" />
+                                                                        <label class="name" value="นามสกุล :" style="font-size:15px;"/>
                                                                         <textbox id="lname" width='150px' />
-                                                                        (Watermark)
+                                                                        <label value='(Watermark)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="เพศ :" />
+                                                                        <label class="name" value="เพศ :" style="font-size:15px;"/>
                                                                         <radiogroup id = "gender">
-                                                                            <radio label="ชาย" />
-                                                                            <radio label="หญิง" />
+                                                                            <radio label="ชาย" style="font-size:15px;"/>
+                                                                            <radio label="หญิง" style="font-size:15px;"/>
                                                                         </radiogroup>
                                                                        
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="ที่อยู่ :" />
+                                                                        <label class="name" value="ที่อยู่ :" style="font-size:15px;"/>
                                                                         <textbox id="address" rows="5" cols="80" />
                                                                         
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="เบอร์โทร :" />
+                                                                        <label class="name" value="เบอร์โทร :" style="font-size:15px;"/>
                                                                         <textbox id="phone" width='150px' />
-                                                                        (090-1234XXX)
+                                                                        <label value='(090-1234XXX)' />
                                                                     </hlayout>
                                                                     <hlayout spacing="20px">
-                                                                        <label class="name" value="E-mail:" />
+                                                                        <label class="name" value="E-mail:" style="font-size:15px;"/>
                                                                         <textbox id="email" width='150px' />
-                                                                        (abcd@hotmail.com)
+                                                                        <label value='(abcd@hotmail.com)' />
                                                                     </hlayout>
                                                                     
                                                                 </vlayout>
                                                                  <separator spacing="25px" />
 
-                                                                <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px"/></vbox>
-
+                                                                <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px" height="45px"/></vbox>
                                                                 <separator spacing="25px" />
                                                                 
-                                                                    <grid width="795x" height="500px" id ="gridbox">
+                                                                <image src="${z.resource(dir:'images', file:'dataCustumer1.png')}" width="240px"/>
+                                                                <separator spacing="25px" />
+
+                                                                <vbox  width="600px"><button id="check" label="ตรวจสอบ" width="125px" height="45px"/></vbox>
+                                                                <separator spacing="25px" />
+
+                                                                    <grid width="750x" height="300px" id ="gridbox">
                                                                         <columns>
                                                                         <column label="วันที่"  width ="90px" />
                                                                         <column label="เลขที่ใบฝาก"  width ="80px"/>
                                                                         <column label="ชื่อ"  width ="100px"/>
                                                                         <column label="นามสกุล"  width ="100px"/>
                                                                         <column label="เพศ"  width ="50px"/>
-                                                                        <column label="ที่อยู่"  width ="250px"/>
-                                                                        <column label="เบอร์โทร"  width ="150px"/>
-                                                                        <column label="E-mail"  width ="100px"/>
+                                                                        <column label="ที่อยู่"  width ="245px"/>
+                                                                        <column label="เบอร์โทร"  width ="120px"/>
+                                                                        <column label="E-mail"  width ="125px"/>
+                                                                        <column label="ลบข้อมูล"  width ="70px"/>
                                                                         </columns>
 
                                                                         <rows id = "grow">
