@@ -46,7 +46,7 @@ class IndexIndividualComposer extends GrailsComposer {
   })
 
 
-//กรอกข้อมูล
+ //กรอกข้อมูล
                 $('#btnsubmit').on('click',{
 					def zz =new Individual(
 					firstName : $('#namebox')[0].text,
