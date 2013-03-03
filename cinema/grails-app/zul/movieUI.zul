@@ -121,68 +121,139 @@
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
                                 <!-- Insert Content Center to Here -->
-                                <vbox>
-                                    <separator height="50px"/>
-                                    <grid width="640px">
-                                        <columns>
-                                            <column align="right" width="100px"/>
-                                            <column width="220px"/>
-                                            <column align="right" width="100px"/>
-                                            <column width="220px"/>
-                                        </columns>
-                                        <rows>
-                                            <row>
-                                                <label value="MovieId"/>
-                                                <textbox id="movieId"/>
-                                                <label value="MovieType"/>
-                                                <textbox id="movieType"/>
-                                            </row>
-                                            <row>
-                                                <label value="MovieName"/>
-                                                <textbox id="movieName"/>
-                                                <label value="Superintendent"/>
-                                                <textbox id="Superintendent"/>                                           
-                                            </row>
-                                            <row>
-                                                <label value="MovieDetail"/>
-                                                <textbox id="moveDetail"/>
-                                                <label value="MovieCost"/>
-                                                <textbox id="movieCost"/>
-                                            </row>
-                                            <row>
-                                                <label value="MovieDate"/>
-                                                <datebox id="movieDate"/>
-                                                <label value="MovieDateEnd"/>
-                                                <datebox id="movieDateEnd"/>
-                                                
-                                            </row>
-                                            <row>
-                                                <label value="Picture640"/>
-                                                <hbox>
-                                                    <textbox id="pic640"/>
-                                                    <button id="btnPic640" label="Browse"/>
-                                                </hbox>               
-                                                <label value="Picture140"/>
-                                                <hbox>
-                                                    <textbox id="pic140"/>
-                                                    <button id="btnPic140" label="Browse"/>
-                                                </hbox>
-                                            </row>
-                                            <row>
-                                                <label value="MovieLongtime"/>
-                                                <textbox id="longTime"/>
-                                                <label/>
-                                                <label/>
-                                            </row>
-                                            <row>
-                                                <button id="btnSave" label="Save"/>
-                                                <label/>
-                                                <label/>
-                                                <label/>
-                                            </row>
-                                        </rows>
-                                    </grid>
-                                </vbox>                                
+                                <button id="a" label="a"/>
+                                <tabbox id="tabbox">
+                                    <tabs>
+                                        <tab id="add" label="Add Movie"/>
+                                        <tab id="man" label="Manage"/>
+                                    </tabs>   
+                                    <tabpanels>
+                                        <tabpanel>
+                                            <grid id="ga" width="640px">
+                                                <columns>
+                                                    <column align="right" width="100px"/>
+                                                    <column width="220px"/>
+                                                    <column align="right" width="100px"/>
+                                                    <column width="220px"/>
+                                                </columns>
+                                                <rows>
+                                                    <row>
+                                                        <label value="MovieId"/>
+                                                        <textbox id="movieId"/>
+                                                        <label value="MovieType"/>
+                                                        <textbox id="movieType"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="MovieName"/>
+                                                        <textbox id="movieName"/>
+                                                        <label value="Superintendent"/>
+                                                        <textbox id="super"/>                             
+                                                    </row>
+                                                     <row>
+                                                        <label value="MovieDetail"/>
+                                                        <textbox id="moveDetail"/>
+                                                        <label value="MovieCost"/>
+                                                        <textbox id="movieCost"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="MovieDate"/>
+                                                        <datebox id="movieDate"/>
+                                                        <label value="MovieDateEnd"/>
+                                                        <datebox id="movieDateEnd"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Picture640"/>
+                                                        <hbox>
+                                                            <textbox id="pic640"/>
+                                                            <button id="btnPic640" label="Browse"/>
+                                                        </hbox>               
+                                                        <label value="Picture140"/>
+                                                        <hbox>
+                                                            <textbox id="pic140"/>
+                                                            <button id="btnPic140" label="Browse"/>
+                                                        </hbox>
+                                                    </row>
+                                                    <row>
+                                                        <label value="MovieLongtime"/>
+                                                        <intbox id="longTime"/>
+                                                        <label value=""/>
+                                                        <label value=""/>
+                                                    </row>
+                                                    <row>
+                                                        <button id="btnSave" label="Save"/>
+                                                        <label/>
+                                                        <label/>
+                                                        <label/>
+                                                    </row>
+                                                </rows>
+                                            </grid>
+                                        </tabpanel>
+                                        <tabpanel>
+                                            <hbox align="center">
+                                                <label value="MovieID :"/>
+                                                <textbox id="txtSearch"/>
+                                                <button id="btnSearch" label="Search"/>
+                                            </hbox>
+                                            <separator width="5px"/>
+                                            <grid width="610px">
+                                                <columns>
+                                                    <column align="right" width="100px"/>
+                                                    <column width="200px"/>
+                                                    <column align="right" width="110px"/>
+                                                    <column width="200px"/>
+                                                </columns>
+                                                <rows>
+                                                    <row>
+                                                        <label value="MovieID :"/>
+                                                        <label id="txtId"/>
+                                                        <label value="Type :"/>
+                                                        <label id="txtType"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Name :"/>
+                                                        <label id="txtName"/>
+                                                        <label value="Superintendent :"/>
+                                                        <label id="txtSuperintendent"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Cost :"/>
+                                                        <label id="txtCost"/>
+                                                        <label value="Detail :"/>
+                                                        <label id="txtDetail"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Date :"/>
+                                                        <label id="txtDate"/>
+                                                        <label value="DateEnd :"/>
+                                                        <label id="txtDateEnd"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Picture:"/>
+                                                        <label id="txtPic"/>
+                                                        <label value="LongTime:"/>
+                                                        <label id="txtTime"/>
+                                                    </row>
+                                                    <row>
+                                                        <label value="Room"/>
+                                                        <combobox id="room">
+                                                            <comboitem label="Room1"/>
+                                                            <comboitem label="Room2"/>
+                                                            <comboitem label="Room3"/>
+                                                        </combobox>
+                                                        <label/>
+                                                        <label/>
+                                                    </row>
+                                                    <row>
+                                                        <button label="submit" id="btnSubmit"/>
+                                                        <label/>
+                                                        <label/>
+                                                        <label/>
+                                                    </row>
+                                                </rows>
+                                            </grid>
+                                        </tabpanel>
+                                    </tabpanels>      
+                                </tabbox>                     
                             </div>
 
                         </div>
