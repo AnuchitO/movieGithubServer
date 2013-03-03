@@ -51,7 +51,7 @@
         .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
     </style>
-    <window apply="cinema.IndexComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <window apply="cinema.MovieUIComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
     <div id="testid"  style=";"  width="1366px"  height="800px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
@@ -121,15 +121,14 @@
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
                                 <!-- Insert Content Center to Here -->
-                                <button id="a" label="a"/>
-                                <tabbox id="tabbox">
+                                   <tabbox id="tab">
                                     <tabs>
                                         <tab id="add" label="Add Movie"/>
-                                        <tab id="man" label="Manage"/>
+                                        <tab label="Manage"/>
                                     </tabs>   
                                     <tabpanels>
                                         <tabpanel>
-                                            <grid id="ga" width="640px">
+                                            <grid id="p1" width="640px">
                                                 <columns>
                                                     <column align="right" width="100px"/>
                                                     <column width="220px"/>
@@ -253,7 +252,7 @@
                                             </grid>
                                         </tabpanel>
                                     </tabpanels>      
-                                </tabbox>                     
+                                </tabbox>                  
                             </div>
 
                         </div>

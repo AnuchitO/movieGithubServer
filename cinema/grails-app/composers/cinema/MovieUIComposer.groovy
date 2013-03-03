@@ -10,6 +10,9 @@ class MovieUIComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here
+        $("#btnSave").on('click',{
+            alert("hello")
+            })
         /*def id = $('#movieId').getText()
             def type = $('#moveType').getText()
             def name = $('#moviename').getText()
