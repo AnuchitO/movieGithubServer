@@ -18,17 +18,54 @@ class IndexDepositComposer extends GrailsComposer {
 			   $('#numdep')[0].getText().size()==0||
 			   $('#name')[0].getText().size()==0||
 			   $('#lname')[0].getText().size()==0||   
-			   $('#sex > radio[checked=true]').size()==0||
-			   $('#in')[0].getText().size()==0||
-			   $('#call')[0].getText().size()==0||
+			   $('#gender > radio[checked=true]').size()==0||
+			   $('#indep')[0].getText().size()==0||
+			   $('#time')[0].getText().size()==0||
+			   $('#phone')[0].getText().size()==0||
 			   $('#email')[0].getText().size()==0||
 			   $('#address')[0].getText().size()==0){
 			   
 				alert('กรอกข้อมูลไม่ครบ')
+				
 			}
 
 			else{
 				alert('OK')
+
+				def s = new DataDeposit()
+
+					s.idDep = ($('#idep').getText())
+					s.numDep = ($('#numdep').getText())
+					s.timeDep = ($('#time').getText())
+					s.nameDep = ($('#name').getText())
+					s.lnameDep = ($('#lname').getText())
+					s.sexDep = ( $('#gender > radio[checked=true]').getLabel())
+					s.inDep = ($('#indep').getText())
+					s.phoneDep = ($('#phone').getText())
+					s.addressDep = ($('#address').getText())
+					s.emailDep = ($('#email').getText())
+
+				s.save()
+
+				def X = DataDeposit.findAllByVersion(0)
+
+				$('#grow > row').detach()
+				for(f in X){
+				
+				$('#grow').append{
+						row (){
+							label( value: f.idDep)
+							label( value: f.numDep)
+							label( value: f.nameDep)
+							label( value: f.lnameDep)
+							label( value: f.sexDep)
+							label( value: f.addressDep)
+							label( value: f.phoneDep)
+							label( value: f.emailDep)
+							
+						}
+					}
+				}
 
 			}
 		})

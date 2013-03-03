@@ -6,17 +6,581 @@
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+    <style>
+        .bg1{
+         float:left;
+         filter:alpha(opacity=25);
+         -moz-opacity:.25;opacity:.25;
+        }
 
-    <window apply="cinema.SeatsTicketComposer">
+        .text{
+            font-size:28px;
+           
+            text-shadow: 0 1px 0 #ccc, 
+                   0 2px 0 #c9c9c9,
+                   0 3px 0 #bbb,
+                   0 4px 0 #b9b9b9,
+                   0 5px 0 #aaa,
+                   0 6px 1px rgba(0,0,0,.1),
+                   0 0 5px rgba(0,0,0,.1),
+                   0 1px 3px rgba(0,0,0,.3),
+                   0 3px 5px rgba(0,0,0,.2),
+                   0 5px 10px rgba(0,0,0,.25),
+                   0 10px 10px rgba(0,0,0,.2),
+                   0 20px 20px rgba(0,0,0,.15);
+            background-color: none;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+        }
+        .text:hover { 
+            color: #FF8C00; /* โค๊ดสีที่ต้องการให้เปลี่ยน */
+            text-decoration: underline; 
+        }
+        .text:visited {
+            text-decoration:none;
+            color:black;
+    }
+                         
+    .div-a {background:transparent;position:relative;bottom:50px;right:10px;}
+    .underHead{background:transparent;position:relative;bottom:50px;right:0px;}
+    .button {
+       
+        border: none;
+    }
+    .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
-        <hbox align="center">
-            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
-            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
-        </hbox>
+    .result-text{
+            display: block;
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);
+            color: rgb(143, 43, 25);
+            line-height: 36px;
+            font-size: 30px;
+            padding: 0px 0px 0px 10px;
+                padding-top: 0px;
+                padding-right-value: 0px;
+                padding-bottom: 0px;
+                padding-left-value: 10px;
+                padding-left-ltr-source: physical;
+                padding-left-rtl-source: physical;
+                padding-right-ltr-source: physical;
+                padding-right-rtl-source: physical;
+            margin: 0px;
+                margin-top: 0px;
+                margin-right-value: 0px;
+                margin-bottom: 0px;
+                margin-left-value: 0px;
+                margin-left-ltr-source: physical;
+                margin-left-rtl-source: physical;
+                margin-right-ltr-source: physical;
+                margin-right-rtl-source: physical;
+            float: left;
 
-        <vbox id="scaffoldingBox"/>
-        
+        }
+        .seats{
+            width:1px;
+            height: 42px;
+            line-height: 38px;
+            text-align: center;
+            font-size: 16px;
+            padding: 0px;
+                padding-top: 0px;
+                padding-right-value: 0px;
+                padding-bottom: 0px;
+                padding-left-value: 0px;
+                padding-left-ltr-source: physical;
+                padding-left-rtl-source: physical;
+                padding-right-ltr-source: physical;
+                padding-right-rtl-source: physical;
+            position: relative;
+        }
+        .tr.z-row td.z-row-inner, tr.z-row td.z-cell, tr.z-group td.z-group-inner, tr.z-groupfoot td.z-groupfoot-inner {
+        padding: 0px 0px 0px 0px;
+        }
+        td.z-listcell {
+        border: 0px solid transparent;
+        }
+        tr.z-row td.z-row-inner, tr.z-row .z-cell {
+        line-height: 12px;
+        }
+        div.z-listbox-body .z-listcell {
+        padding: 0px;
+        }
+        tr.z-row td.z-row-inner, tr.z-row .z-cell, tr.z-row {
+        background: none repeat scroll 0% 0% white;
+        }
+        tr.z-grid-odd td.z-row-inner, tr.z-grid-odd .z-cell, tr.z-grid-odd {
+        background: none repeat scroll 0% 0% rgb(240, 250, 255);
+        } 
+        .theater-name{
+            display: block;
+            <!-- font-size: 40px; -->
+            line-height: 40px;
+            font-weight: bolder;
+            text-align: right;
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);
+        }  
+        .Info{
+            width:1px;
+            height: 42px;
+            line-height: 38px;
+            text-align: center;
+            font-size: 16px;
+            padding: 0px;
+                padding-top: 0px;
+                padding-right-value: 0px;
+                padding-bottom: 0px;
+                padding-left-value: 0px;
+                padding-left-ltr-source: physical;
+                padding-left-rtl-source: physical;
+                padding-right-ltr-source: physical;
+                padding-right-rtl-source: physical;
+            position: relative;
+        }   
+    </style>
+    <window apply="cinema.SeatsTicketComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <div id="testid"  style=";"  width="1366px"  height="1240px" >
+    <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
+        <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
+            <div id="divWestBig" style="background-color:transparent" >
+               <!-- Insert  Content to West Here -->
 
+            </div>
+        </west>
+        <east size="12%" flex="true" border="none" collapsible="false" style="background-color:transparent;">
+            <div id="divEastBig" style="background-color:transparent" >
+               <!--  Insert  Content to East Here -->
+
+            </div>
+        </east>
+        <center border="none" style="background-color:transparent;">
+        <borderlayout style="background-color:transparent;" >
+        <north maxsize="300" size="100px" splittable="false" collapsible="false" border="none" style="background-color:transparent;" >
+            <borderlayout style="background-color:transparent;">
+                <center border="none" style="background-color:transparent;">
+                    <hbox align="center" height="100px" width="1040px" style="background-color:transparent;">
+                        <div id="divNorthContent" style="background-color:transparent;" >
+                        <vbox align="center" width="1040px" style="background-color:transparent;">  
+                            <hbox align="center" height="100px" width="1040px" style="background-color:transparent;" >
+                                <image src="${z.resource(dir:'images', file:'logo.png')}"/>
+                                    <separator width="10px"/>
+                                <label id="movie"  class="text"  style="color:write ;">ภาพยนต์</label>
+                                    <separator width="40px"/>
+                                <label id="ticket" class="text" style="color:write ;">จองตั๋ว</label>
+                                    <separator width="40px"/>
+                                <label id="deposite" class="text" style="color:write ;">ฝากของ</label>
+                                    <separator width="40px"/>
+                                <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
+                                    <separator width="40px"/>
+                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
+                                    <separator width="40px"/>
+                                <label id="person" class="text" style="color:write ;">พนักงาน</label>
+                            </hbox>
+                        </vbox>
+                        </div>
+                    </hbox>
+                </center>
+            </borderlayout>
+        </north>
+        <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
+               <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
+                    <div id="divConterContentBig" style="background-color:transparent;" >
+                    <vlayout style="background-color:transparent;" >
+                        <div height="70px">  <image src="${z.resource(dir:'images', file:'headBody.png')}"/> 
+                            <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
+                                <hbox align="center" height="50px">
+                                    <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
+                                    <separator width="100px"/>                                    
+                                </hbox>
+                            </div>
+                            <div id="underHeadBody"  class="underHead" style="background-color:black;">
+                                <image src="${z.resource(dir:'images', file:'BodyBg.png')}"/>
+                            </div> 
+                        </div>                    
+                        <div id="centerContent" align="center" >
+                            <vbox align="center">
+                            <label class="result-text" >เลือกที่นั่ง</label>
+                            <div id="divShowTimes" width="1000px" height="900px" style="background-color:white;">
+                                <separator width="1px"/>
+                                <!-- Insert Content Center to Here -->
+                                <vbox align="center">
+                                <groupbox mold="3d" width="700px" height="135px" style="margin-left: auto;margin-right: auto ;vertical-align:left;background-image:url(./ext/seatsTicket/result.png) ;background-repeat:repeat;" >
+                                    <hbox width="700px" height="135px">
+                                        <image id="imgMovieSeats" width="100px" height="123px" src="${z.resource(dir:'showTimeTicketPicture', file:'movie_picture_beautiful-creatures-big-140x210.jpg')}"/>
+                                        <separator width="3px"/>
+                                    <vbox>
+                                        <label id="labNameMovieEng" style="font-size:15pt;text-align: left;" class="theater-name">Beautiful Creatures</label>
+                                        <!-- <separator width="2px"/>                                              -->
+                                        <label id="labNameMovieTh" style="color:gray;font-size:14pt;text-align: left" class="theater-name"> แม่มดแคสเตอร์</label>
+                                    </vbox>
+                                    <separator width="3px"/>
+                                    <vbox>
+                                        <listbox id="listboxInfoMovie" width="350px" multiple="false" checkmark="false">
+                                            <listhead>
+                                                <listheader width="120px"  />
+                                                <listheader width="230px" />
+                                            </listhead>
+                                            <listitem style="background-color:white;text-align:right" width="50px">
+                                                <listcell >
+                                                    <label class="Info" value="โรงฉาย:" width="50px" />
+                                                </listcell>
+                                                <listcell style="background-color:white;text-align:left">
+                                                    <label  id="labRoom" class="Info" value="1" />
+                                                </listcell>                     
+                                            </listitem>
+                                            <listitem style="background-color:white;text-align:right" width="50px">
+                                                <listcell>
+                                                    <label class="Info" value="รอบฉายวันที่:" width="50px"/>
+                                                </listcell>
+                                                <listcell style="background-color:white;text-align:left">
+                                                    <label id="labRound" class="Info" value="02/03/2556" />
+                                                </listcell>                        
+                                            </listitem>
+                                            <listitem style="background-color:white;text-align:right" width="50px">
+                                                <listcell>
+                                                    <label class="Info" value="เวลา:" width="50px"/>
+                                                </listcell>
+                                                <listcell style="background-color:white;text-align:left" >
+                                                    <label id="labTime" class="Info" value="13:30"/>
+                                                </listcell>
+                                            </listitem>
+                                        </listbox>                                       
+                                    </vbox>
+                                    </hbox>                                     
+                                </groupbox>
+                                <separator width="40px"/>
+                                <button   class="button" image="${z.resource(dir:'seatsTicket', file:'screen2.png')}" style="background-color:transparent;" width="900px" height="50px"  />
+                                <separator width="40px"/>
+                                <listbox id="listboxSeats" multiple="false" checkmark="false" width="900px">
+                                    <listitem selected="false" style="background-color:white;">
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >K</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="K0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="K18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >K</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;" >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >J</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="J0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="J18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >J</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >I</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="I0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="I18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >I</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >H</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="H0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="H18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >H</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >G</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="G0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="G18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >G</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >F</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="F0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="F18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >F</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >E</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="E0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="E18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >E</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >D</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="D0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="D18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >D</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >C</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="C0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="C18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >C</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;"  >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >B</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="B0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="B18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >B</label></listcell>
+                                    </listitem>
+                                    <listitem selected="false" style="background-color:white;" >
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >A</label></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><button id="A0"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A1"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A2"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A3"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A4"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A5"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A6"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A7"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A8"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A9"  width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A10" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A11" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A12" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A13" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A14" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A15" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A16" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A17" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"><button id="A18" width="32px" height="42px" style="font-size:17px;" ></button></listcell>
+                                        <listcell class="seats"></listcell>
+                                        <listcell class="seats"><label width="32px" height="42px" style="font-size:17px;" >A</label></listcell>
+                                    </listitem>
+                                </listbox>
+                                <separator width="5px"/>
+                                <button  id="btnBuyTicket" width="350px" height="100px" style="color:#504A4B;font-size:20pt;text-align:center;" class="theater-name">ซื้อตั๋ว</button>     
+                                </vbox>                       
+                            </div>
+                            </vbox>
+                        </div>
+                    </vlayout>
+                    </div>
+               </hlayout>
+        </center>
+
+        <south border="none" flex="true" style="background-color:transparent;" height="100px" >
+            <hlayout id="hlaySouthBig" spacing="50px" style="background-color:transparent;">
+                <div id="divSouthContentBig"  style="background-color:back;" class="southCon">
+                    <vlayout style="background-color:#C68E17;" >
+                        <!-- Insert  Content  South to Here -->
+
+
+                    </vlayout>
+                </div>
+            </hlayout>
+        </south>
+
+        </borderlayout>
+        </center>
+
+    </borderlayout>
+    </div>
     </window>
 
 </zk>
