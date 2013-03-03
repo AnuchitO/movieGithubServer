@@ -1,10 +1,34 @@
-import cinema.Movie
+import cinema.*
 class BootStrap {
 
     def init = { servletContext ->
 
     	def movie
     	def seats
+        def account
+
+        account = new Individual(
+            firstName:"apichat",
+            lastName:"eakwongsa",
+            number:"123",
+            date:"123",
+            status:"123",
+            address:"123",
+            moo:"123",
+            district:"123",
+            canton:"123",
+            county:"123",
+            post:"123",
+            phone:"123",
+            email:"123",
+            degree:"123",
+            major:"123",
+            university:"123",
+            position:"123",
+            userId:"admin",
+            password:"admin",
+            rePassword:"admin"
+            ).save()
 
     	movie = new Movie(
     		movId:"0000",
