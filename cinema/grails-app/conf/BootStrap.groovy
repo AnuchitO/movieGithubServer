@@ -22,10 +22,10 @@ class BootStrap {
 
 
 
-    seats= new Seats(seatNumber:"AA",tel:"123456")
- 	if (seats.validate()) {
-        seats.save()
-     }else println seats.errors
+    //seats= new Seats(seatNumber:"AA",tel:"123456",amount:null,rooms:null)
+ 	//if (seats.validate()) {
+    //    seats.save()
+    // }else println seats.errors
 
 
 
