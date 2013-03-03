@@ -2,6 +2,8 @@
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 
+
+
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -51,7 +53,7 @@
         .southCon{background:transparent;position:relative;bottom:0px;right:0px;}
 
     </style>
-    <window apply="cinema.IndexIndividualComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+    <window apply="cinema.IndexShowIndividualComposer"  style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
     <div id="testid"  style=";"  width="1366px"  height="800px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
@@ -121,106 +123,18 @@
                         <div id="centerContent" align="center" >
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
-                                <groupbox width="1000px" height="50px" style="margin-left:25px;margin-top:15px">
-                <caption  label="เข้าสู่ระบบ" />
-                
-                    <vbox>
-                        <hbox>
-                        <label value="User:"/>
-                            <textbox id="userbox"/>
-                        
-                        <label value="Password:"/>
-                            <textbox id="passbox" type="password"/>
-                        
-                        <button style="background:#878787; margin-left:17px;margin-top:0px" id="btnlogin" height="22px" width="80px" label="Login"/>
-                        </hbox>
-                    </vbox>
-                </groupbox>
-
-                <groupbox width="1000px" height="600px" style="margin-left:25px;margin-top:15px">
-                    <caption  label="กรอกข้อมูล" />
-                    <vbox>
-                        <hbox>
-                        <label value="  ชื่อ"/>
-                        <textbox id="namebox" />
+                                <grid id="gid">
+                                     <columns>
+                                         <column label="ชื่อ"  width="350px"/>
+                                        <column label=" นามสกุล" width="350px"/>
+                                        <column label=" ตำแหน่ง" align="center" width="150px"/>
+                                         
+                    
+                                    </columns>
+                                     <rows>
         
-                
-                        <label value="  นามสกุล"/>
-                        <textbox id="lastnamebox" />
-                        </hbox>        
-                        <hbox>
-                        <label value="  รหัสบัตรประชาชน"/>
-                        <textbox id="sebox" />
-                        </hbox>
-                        <hbox>
-                        <label value="  วันเดือนปีเกิด"/>
-                        <textbox id="datebox" />
-                        <label value="dd/mm/yyyy (ค.ศ.)"/>
-                        </hbox>
-                        <hbox>
-                        <label value=" สถานะ"/>
-                        <textbox id="bbox" />
-                        </hbox>    
-                        <hbox>
-                        <label value="   ที่อยู่ บ้านเลขที่"/>
-                        <textbox id="addressbox" />
-                        <label value="หมู่"/>
-                        <textbox id="addbox" />
-                
-                        <label value=" ตำบล"/>
-                        <textbox id="amphoebox" />
-                        </hbox>
-                        <hbox>
-                        <label value=" อำเภอ"/>
-                        <textbox id="ampbox" />
-                        <label value="  จังหวัด "/>
-                        <textbox id="jnamebox" />
-                        <label value="  รหัสไปรษณีย์"/>
-                        <textbox id="postbox" />
-                        </hbox>
-                        <hbox>
-                        <label value="  เบอร์โทร "/>
-                        <textbox id="berbox" />
-                        </hbox>    
-                        <hbox>
-                        <label value="  E-mail "/>
-                        <textbox id="maibox" />
-                        </hbox>
-                        <hbox>
-                        <label value=" ระดับการศึกษาที่จบสูงสุด"/>
-                        <textbox id="stbox" />
-                        </hbox> 
-                        <hbox>
-                        <label value=" หลักสูตรที่จบ"/>
-                        <textbox id="rbox" />
-                        </hbox>    
-                        <hbox>
-                        <label value=" สถานศึกษาที่จบสูงสุด"/>
-                        <textbox id="ubox" />
-                        </hbox> 
-                        <hbox>
-                         <label value=" ตำแหน่งงาน"/>
-                        <textbox id="position" />
-                        </hbox>     
-                        <hbox>        
-                        <label value=" Username  "/>
-                        <textbox id="usrbox" />
-                        </hbox>
-                         <hbox>        
-                         <label value="  Password"/>
-                         <textbox id="pasbox" type="password" />
-                        </hbox>
-                        <hbox>        
-                        <label value="  Repassword"/>
-                        <textbox id="repassbox" type="password" />
-                        </hbox> 
-        
-                                 
-                        <hbox>
-                        <button style="background:#878787; margin-left:17px;margin-top:0px" id="btnsubmit" height="22px" width="80px" label="Submit"/>
-                        </hbox>
-                    </vbox>
-                </groupbox>
+                                     </rows>
+                                </grid>
 
 
 
