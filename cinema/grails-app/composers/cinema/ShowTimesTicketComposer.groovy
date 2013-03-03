@@ -9,5 +9,8 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here
+
+
+        //ItemList
     }
 }
