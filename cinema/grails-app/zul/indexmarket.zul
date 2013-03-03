@@ -69,6 +69,8 @@
             </div>
         </east>
 
+
+
         <center border="none" style="background-color:transparent;">
         <borderlayout style="background-color:transparent;" >
 
@@ -99,6 +101,7 @@
                 </center>
             </borderlayout>
         </north>
+
 
         <center border="none" flex="true" style="background-image:url(./images/bgColor.png) ;background-repeat:repeat;" >
                <hlayout id="hlayCenterBig" spacing="50px" style="background-color:transparent;">
