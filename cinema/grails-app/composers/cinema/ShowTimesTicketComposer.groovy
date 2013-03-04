@@ -12,5 +12,33 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
 
         //ItemList
+
+        //def patient = session.editPatient
+        /*def rooms = Rooms.findAll()
+        rooms.each{room -> 
+        def nameMovie = "${room.movie.movName}"	
+
+			$('#btnT1').on("click", {
+
+				aleat(nameMovie)
+			})
+
+
+
+		}*/
+
+		def movie = Movie.findByMovName("Demo")
+
+		$('#btnT1').on("click", {
+
+				$('#labNameMovie').val(movie.movName)
+
+				//$('#btnT2').setText(move.movId)
+
+				alert(movie.movName)
+			})
+
+
+
     }
 }
