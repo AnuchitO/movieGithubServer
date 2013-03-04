@@ -160,14 +160,7 @@ class IndexmarketComposer extends GrailsComposer {
                i++; 
             })
 
-            //branch = Sales.findAll()
-            //if(branch){
-            //String s = branch.buyCount
-               
-            //    if(s==1){
-            //    $("#total").val(branch.salesprice)
-            //    }
-            //}
+         
            
         }
 
