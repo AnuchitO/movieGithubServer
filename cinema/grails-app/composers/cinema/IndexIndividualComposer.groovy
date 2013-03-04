@@ -10,40 +10,27 @@ class IndexIndividualComposer extends GrailsComposer {
     def afterCompose = { window ->
 
 //login
-    $("#btnlogin").on('click',{
-  
-      def idin = $('#userbox')[0].text
-        def pwin = $('#passbox')[0].text
 
-        def checked = Individual.findByUser(idin)
+		
+		$("#login").on("click", {
 
-        if(idin.size() == 0 && pwin.size() == 0){
-          alert("Password Or User Has Wrong")
-          $('#userbox')[0].text=''
-          $('#passbox')[0].text=''
-         }
-
-         else{
-        if(checked == null){
-          
-          alert("Password Or Id Has Wrong")
-          $('#userbox')[0].text=''
-          $('#passbox')[0].text=''
-        }
-        else if(idin == checked.user && pwin == checked.passq){
-                  if(idin.charAt(0) == 'S'){
-            
-                  }
-
-                  else{
-                       Executions.sendRedirect("/movieUI.zul")
-                       $('#userbox')[0].text=''
-                $('#passbox')[0].text=''
-                  }
-         }
+        	def user = Individual.findByUserIdAndPassword($("#user").val(), $("#pass").val())
+        	if (user) {
+        		session.user = user
+        		redirect(uri:'/showTimesTicket.zul')
+        	}else {
+				$("#user").val(null)
+				$("#pass").val(null)
+			}
+        })
         
-        } 
-  })
+		
+		$("#clear").on("click", {
+
+				$("#user").val(null)
+				$("#pass").val(null)
+			
+        })
 
 
  //กรอกข้อมูล
@@ -70,7 +57,7 @@ class IndexIndividualComposer extends GrailsComposer {
 					password : $('#pasbox')[0].text,
 					rePassword : $('#repassbox')[0].text
 					)
-					zz.save()
+					
 					$('#namebox')[0].text = ""
 					$('#lastnamebox')[0].text = ""
 					$('#sebox')[0].text = ""
@@ -91,6 +78,7 @@ class IndexIndividualComposer extends GrailsComposer {
 					$('#usrbox')[0].text = ""
 					$('#pasbox')[0].text = ""
 					$('#repassbox')[0].text = ""
+					zz.save()
 			})
 
     }

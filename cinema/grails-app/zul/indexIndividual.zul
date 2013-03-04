@@ -124,17 +124,24 @@
                                 <groupbox width="1000px" height="50px" style="margin-left:25px;margin-top:15px">
                 <caption  label="เข้าสู่ระบบ" />
                 
-                    <vbox>
-                        <hbox>
-                        <label value="User:"/>
-                            <textbox id="userbox"/>
-                        
-                        <label value="Password:"/>
-                            <textbox id="passbox" type="password"/>
-                        
-                        <button style="background:#878787; margin-left:17px;margin-top:0px" id="btnlogin" height="22px" width="80px" label="Login"/>
-                        </hbox>
-                    </vbox>
+                                <vbox>
+                                    <hbox>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                         <label style="font-size:20px">USER</label>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <textbox id="user" value="" width="150px" tabindex="1" />                                      
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                         <label style="font-size:20px">PASSWORD</label>
+                                        <separator/><separator/><separator/>
+                                        <textbox id="pass" type="password" value="" width="150px" tabindex="2" />                                               
+                                    
+                                      
+                                        <button id="login" label="login"/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <button id="clear" label="clear"/>
+                                    </hbox>
+                                </vbox>
                 </groupbox>
 
                 <groupbox width="1000px" height="600px" style="margin-left:25px;margin-top:15px">
