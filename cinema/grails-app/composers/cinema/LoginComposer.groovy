@@ -10,7 +10,7 @@ class LoginComposer extends GrailsComposer {
     def afterCompose = { window ->
         // initialize components here
         if (session['user'])
-			redirect(uri:'/showTimesTicket.zul')
+	        	redirect(uri:'/showTimesTicket.zul')
 		else
 			window.visible = true
 		
@@ -18,8 +18,22 @@ class LoginComposer extends GrailsComposer {
 
         	def user = Individual.findByUserIdAndPassword($("#user").val(), $("#pass").val())
         	if (user) {
-        		session.user = user
-        		redirect(uri:'/showTimesTicket.zul')
+        		if(user.position=="Ticker"){
+	        		session.user = user
+	        		redirect(uri:'/showTimesTicket.zul')
+        		}
+        		if(user.position=="Market"){
+	        		session.user = user
+	        		redirect(uri:'/totalmarket.zul')
+        		}
+        		if(user.position=="Room"){
+	        		session.user = user
+	        		redirect(uri:'/movieUI.zul')
+        		}
+        		if(user.position=="Deposit"){
+	        		session.user = user
+	        		redirect(uri:'/indexDeposit.zul')
+        		}
         	}else {
 				$("#user").val(null)
 				$("#pass").val(null)

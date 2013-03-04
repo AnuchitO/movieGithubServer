@@ -6,11 +6,14 @@ class BootStrap {
     	def movie
         def movie2
     	def seats
-        def account
+        def account1
+		def account2
+		def account3
+		def account4
         def room
         def room2
 
-        account = new Individual(
+        account1 = new Individual(
             firstName:"apichat",
             lastName:"eakwongsa",
             number:"123",
@@ -27,12 +30,78 @@ class BootStrap {
             degree:"123",
             major:"123",
             university:"123",
-            position:"123",
-            userId:"admin",
-            password:"admin",
-            rePassword:"admin"
+            position:"Ticker",
+            userId:"admin1",
+            password:"admin1",
+            rePassword:"admin1"
             ).save()
-
+			
+		account2 = new Individual(
+            firstName:"โอเด้ง",
+            lastName:"โชติชัย",
+            number:"123",
+            date:"123",
+            status:"123",
+            address:"123",
+            moo:"123",
+            district:"123",
+            canton:"123",
+            county:"123",
+            post:"123",
+            phone:"123",
+            email:"123",
+            degree:"123",
+            major:"123",
+            university:"123",
+            position:"Market",
+            userId:"admin2",
+            password:"admin2",
+            rePassword:"admin2"
+            ).save()
+		account3 = new Individual(
+            firstName:"ต้อม",
+            lastName:"นะ",
+            number:"123",
+            date:"123",
+            status:"123",
+            address:"123",
+            moo:"123",
+            district:"123",
+            canton:"123",
+            county:"123",
+            post:"123",
+            phone:"123",
+            email:"123",
+            degree:"123",
+            major:"123",
+            university:"123",
+            position:"Room",
+            userId:"admin3",
+            password:"admin3",
+            rePassword:"admin3"
+            ).save()
+		account4 = new Individual(
+            firstName:"เก๋",
+            lastName:"โหด",
+            number:"123",
+            date:"123",
+            status:"123",
+            address:"123",
+            moo:"123",
+            district:"123",
+            canton:"123",
+            county:"123",
+            post:"123",
+            phone:"123",
+            email:"123",
+            degree:"123",
+            major:"123",
+            university:"123",
+            position:"Deposit",
+            userId:"admin4",
+            password:"admin4",
+            rePassword:"admin4"
+            ).save()
     	movie = new Movie(
     		movId:"0000",
 		 	movType:"Drama",
