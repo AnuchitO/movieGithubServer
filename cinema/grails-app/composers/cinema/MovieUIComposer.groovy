@@ -160,12 +160,8 @@ class MovieUIComposer extends GrailsComposer {
                         rooms:r
                     ).save()
                 }
-
-
-
             }
 
         })
-
     }
 }
