@@ -159,9 +159,9 @@
                                         </grid>
                                         <separator/>
                                         <hbox>
-                                            <separator width="500px"/>
-                                            <label value="  ยอดขายรวม:" width="150px" />
-                                            <textbox id="total" width="70px" height="20px" style="color:red !important;"/>
+                                            <separator width="470px"/>
+                                            <label value="  ยอดขายรวม:" width="150px" style="font-size:18px" />
+                                            <textbox id="total" width="70px" height="20px" style="font-size:18px" />
                                         </hbox>   
                                         </vbox>  
                                         <vbox>
