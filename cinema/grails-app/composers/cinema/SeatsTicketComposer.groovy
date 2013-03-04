@@ -90,11 +90,10 @@ class SeatsTicketComposer extends GrailsComposer {
 
 
         $("#btnBuyTicket").on("click", {
-            alert(seatNameSelect)
-            session.namepp = seatNameSelect
             redirect(uri:'price.zul')
                 
         })
+
         
 
     }

@@ -109,9 +109,9 @@
                             <div id="divShowTimes" width="1040px" height="90%" style="background-color:white;">
                                 <tabbox width="1000px"  height="600px" vflex="true" hflex="true" style="background-color:#f3d491;"> 
                                    <tabs id="tabs" align="end" style="background-image:url(./images/bg.jpg)">
-                                        <tab id="A" label="คิดเงิน" />
-                                        <tab id="B" label="บันทึกการเงิน" />
-                                        <tab id="" label="ตั๋วหนัง" />
+                                        <tab id="A" disabled="true" label="คิดเงิน" />
+                                        <tab id="B" disabled="true" label="บันทึกการเงิน" />
+                                        <tab id="C" disabled="true" label="ตั๋วหนัง" />
                                     </tabs> 
                                     <tabpanels>
 
@@ -154,7 +154,7 @@
                                                               <label style="font-size:20px">รอบ</label>
                                                               <separator/><separator/><separator/><separator/>
                                                               <separator/><separator/><separator/><separator/><separator/>
-                                                              <textbox id="runt" style="color:blue !important;" disabled="true"/>                                                        
+                                                              <textbox id="runt" style="color:blue !important;" disabled="true" width="170px"/>                                                        
                                                             </hbox>
                                                             <separator/><separator/><separator/> 
                                                             <hbox>
@@ -284,6 +284,7 @@
                                                                         <separator/><separator/><separator/>
                                                                         <textbox id="telePhPanukngan" style="color:blue !important;" width="150px" disabled="true"/>    
                                                                     </hbox>
+                                                                    <button id="bun" label="กลับหน้าจองตั๋ว"/>
                                                                 </vbox>
                                                             </groupbox>
                                                         </hbox>
@@ -409,6 +410,7 @@
                                                       </hbox>
                                                       <separator/><separator/><separator/><separator/><separator/><separator/><separator/><separator/>
                                                       <button id="bak" label="กลับหน้าจองต๋ว"/>
+                                                      <button id="bak2" label="ดูบันทึกการเงิน"/>
                                                     </vbox>
                                                   </hbox>                                                
                                                 </east>

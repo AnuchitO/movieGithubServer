@@ -38,23 +38,45 @@ class PriceComposer extends GrailsComposer {
             })
 
         }
+        def movie1 = new Movie(movType:"Action",movName:"spiderman",)
+        def cycle1 = new Cycle(cycTime:"13/12/13",cycDay:"12.30-14.20 น.")
+        def rooms1 = new Rooms(roomId:"Room3",movie:movie1,cycle:cycle1)
+        def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms1)
+        
         // initialize components here
-        $('#moviename1').val("Ironman3")
-        $('#moviename2').val("Ironman3")
-        $('#blanch').val("Ironman3")
-        $('#runt').val("Ironman3")
-        $('#seat').val("Ironman3")
-        $('#plant').val("Ironman3")
-        $('#promotion').val("Ironman3")
-        $('#sum').val("Ironman3")
+        $('#moviename1').val(non.rooms.movie.movName)
+        $('#moviename2').val(non.rooms.movie.movType)
+        $('#blanch').val("Team13")
+        $('#runt').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+        $('#seat').val(non.seatNumber)
+        $('#plant').val(non.rooms.roomId)
+        $('#promotion').val("ไม่มีโปรโมชั่น")
+        int sumprice = 120;
+        $('#sum').val(sumprice)
         $('#IDPnuknanSearch').val("Ironman3")
         $('#namePanukngan').val(session.user.firstName + " " + session.user.lastName)
         $('#livePanukngan').val(session.user.address + " " + session.user.moo + " "+session.user.county)
         $('#telePhPanukngan').val(session.user.phone)
 
+        //=====================================================================================================
+
+        //=====================================================================================================
+
 
         $('#send').on('click',{
+            $('#mov').val(non.rooms.movie.movName)
+            $('#rob').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+            $('#teenung').val(non.seatNumber)
+            $('#rong').val(non.rooms.roomId)
+            $('#mony').val(sumprice)
+
+            $('#mov2').val(non.rooms.movie.movName)
+            $('#rob2').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+            $('#teenung2').val(non.seatNumber)
+            $('#rong2').val(non.rooms.roomId)
+            $('#mony2').val(sumprice)
         	$('#C').setSelected(true)
+
 		})
 
 		$('#clear').on('click',{
@@ -64,5 +86,11 @@ class PriceComposer extends GrailsComposer {
 		$('#bak').on('click',{
         	redirect(uri:'SeatsTicket.zul')
 		})
+        $('#bak2').on('click',{
+            $('#B').setSelected(true)
+        })
+        $('#bun').on('click',{
+            redirect(uri:'SeatsTicket.zul')
+        })
     }
 }
