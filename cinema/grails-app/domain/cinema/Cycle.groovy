@@ -7,7 +7,6 @@ class Cycle {
 	
 	static  belongsTo = [rooms:Rooms]
 	
-
     static constraints = {
     	cycTime 	nullable:true
     	cycDay 		nullable:true
