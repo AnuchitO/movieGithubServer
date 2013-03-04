@@ -17,10 +17,13 @@ class ShowTimesTicketComposer extends GrailsComposer {
         //def rooms = Rooms.findAll()
         def rooms 	= Rooms.findByRoomId("Room1")
         def cycles
+        if (rooms) {
+        	
+        
         rooms.each{room -> 
         def nameMovie = "${room.movie.movName}"	
         	$('#labNameMovie').val(rooms.movie.movName)
-        	 cycles=Cycle.findAllWhere(rooms:room)
+        	 cycles=Cycle.findAllWhere(rooms:room,[sort:"${room.cycle.cycTime}", order: "asc"])
         	//alert(cycles)
         	addToGrid(cycles,rooms)
 //$('#btnT1').on("click", {
@@ -29,11 +32,14 @@ class ShowTimesTicketComposer extends GrailsComposer {
 //$('#btnT1').on("click", {
 //	$('#btnT2').setLabel("${rooms.movie.movId}")			
 //})
+			}
+		}else{
+			//alert("AAA")
 		}
 		
 		//def cycles = Cycle.findAllByRooms("1")
 		//alert(cycles)
-		}
+	}
 
 
  def addToGrid(dataCycle,dataRooms) {
