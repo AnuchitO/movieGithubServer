@@ -38,6 +38,28 @@ class PriceComposer extends GrailsComposer {
             })
 
         }
+        //==============================================================
+        def results = Amount.findAll()
+        
+        int sumpri = 0;
+        int i =0;
+        if(results){
+                //$("grid > rows").detach()
+                for(c in results)
+                    $("grid > rows").append{
+                                row{
+                                    label(value:c.movie1)
+                                    label(value:c.rop)
+                                    label(value:c.rong)
+                                    label(value:c.sit)
+                                    label(value:c.price)
+                                    i++
+                                }
+                    }
+        }
+        sumpri = 120*i;
+
+        //===============================================================
         def movie1 = new Movie(movType:"Action",movName:"spiderman",)
         def cycle1 = new Cycle(cycTime:"13/12/13",cycDay:"12.30-14.20 น.")
         def rooms1 = new Rooms(roomId:"Room3",movie:movie1,cycle:cycle1)
@@ -53,13 +75,15 @@ class PriceComposer extends GrailsComposer {
         $('#promotion').val("ไม่มีโปรโมชั่น")
         int sumprice = 120;
         $('#sum').val(sumprice)
-        $('#IDPnuknanSearch').val("Ironman3")
+        $('#IDPnuknanSearch').val(sumpri)
         $('#namePanukngan').val(session.user.firstName + " " + session.user.lastName)
         $('#livePanukngan').val(session.user.address + " " + session.user.moo + " "+session.user.county)
         $('#telePhPanukngan').val(session.user.phone)
 
         //=====================================================================================================
+    
 
+        
         //=====================================================================================================
 
 
@@ -76,6 +100,17 @@ class PriceComposer extends GrailsComposer {
             $('#rong2').val(non.rooms.roomId)
             $('#mony2').val(sumprice)
         	$('#C').setSelected(true)
+            def amount = new Amount(
+                price:sumprice,
+                name:session.user.firstName + " " + session.user.lastName,
+                movie1:non.rooms.movie.movName,
+                rop:non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0],
+                rong:non.rooms.roomId,
+                sit:non.seatNumber,
+                seats:non,
+                individual:session.user
+                )
+            amount.save()
 
 		})
 
