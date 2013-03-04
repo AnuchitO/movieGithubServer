@@ -2,7 +2,6 @@ package cinema
 
 class Movie {
 
-
 	String	movId
 	String 	movType
 	String 	movName
