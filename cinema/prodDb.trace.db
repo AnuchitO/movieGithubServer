@@ -1,0 +1,6 @@
+03-04 20:13:58 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'n' (AMOUNT: INDIVIDUAL_ID BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."AMOUNT"("ID","VERSION","DATE","FIRST_NAME","INDIVIDUAL_ID","PRICE","SEATS_ID")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [22018-164]
+03-04 20:13:58 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'n' (AMOUNT: INDIVIDUAL_ID BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."AMOUNT"("ID","VERSION","DATE","FIRST_NAME","INDIVIDUAL_ID","PRICE","SEATS_ID")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [22018-164]
