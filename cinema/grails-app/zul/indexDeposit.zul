@@ -145,7 +145,22 @@
                                     <div width="1000px" height="915px" class="form">
 
                                                                 <vlayout spacing="7px">
-                                                                    <image src="${z.resource(dir:'images', file:'registerDeposit.png')}" width='130px'/>
+
+                                                                    
+                                                                    <vbox>
+                                                                        
+                                                                            <image src="${z.resource(dir:'images', file:'registerDeposit.png')}" width='130px'/> <separator spacing="25px" />
+                                                                            <hbox>
+                                                                                <label style="font-size:14px">สถานะ : เข้าใช้ระบบ</label>
+                                                                                <label style="font-size:14px">[</label>
+                                                                                <label id= "logonName" style="font-size:14px"></label>
+                                                                                <label style="font-size:14px">]</label>
+                                                                                <label id="today" style="font-size:14px"></label>
+                                                                                <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>
+
+                                                                            </hbox>                  
+
+                                                                    </vbox>
                                                                     <separator spacing="25px" />
                                                                     <hlayout spacing="20px">
                                                                         <label class="name" value="รหัสตั๋ว :" style="font-size:15px;" />
