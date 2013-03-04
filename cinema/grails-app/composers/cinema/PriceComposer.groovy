@@ -60,16 +60,16 @@ class PriceComposer extends GrailsComposer {
         sumpri = 120*i;
 
         //===============================================================
-        def movie1 = new Movie(movType:"Action",movName:"spiderman",)
-        def cycle1 = new Cycle(cycTime:"13/12/13",cycDay:"12.30-14.20 น.")
-        def rooms1 = new Rooms(roomId:"Room3",movie:movie1,cycle:cycle1)
-        def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms1)
+        def movie = new Movie(movType:"Action",movName:"spiderman")
+        def cycle = new Cycle(cycTime:"12.00-13.00 น.")
+        def rooms = new Rooms(roomId:"Room3",movie:movie,cycle:cycle)
+        def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms)
         
         // initialize components here
         $('#moviename1').val(non.rooms.movie.movName)
         $('#moviename2').val(non.rooms.movie.movType)
         $('#blanch').val("Team13")
-        $('#runt').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+        $('#runt').val(non.rooms.cycle.cycTime[0])
         $('#seat').val(non.seatNumber)
         $('#plant').val(non.rooms.roomId)
         $('#promotion').val("ไม่มีโปรโมชั่น")
@@ -89,13 +89,13 @@ class PriceComposer extends GrailsComposer {
 
         $('#send').on('click',{
             $('#mov').val(non.rooms.movie.movName)
-            $('#rob').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+            $('#rob').val(non.rooms.cycle.cycTime[0])
             $('#teenung').val(non.seatNumber)
             $('#rong').val(non.rooms.roomId)
             $('#mony').val(sumprice)
 
             $('#mov2').val(non.rooms.movie.movName)
-            $('#rob2').val(non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0])
+            $('#rob2').val(non.rooms.cycle.cycTime[0])
             $('#teenung2').val(non.seatNumber)
             $('#rong2').val(non.rooms.roomId)
             $('#mony2').val(sumprice)
@@ -104,7 +104,7 @@ class PriceComposer extends GrailsComposer {
                 price:sumprice,
                 name:session.user.firstName + " " + session.user.lastName,
                 movie1:non.rooms.movie.movName,
-                rop:non.rooms.cycle.cycTime[0]+" "+"เวลา"+non.rooms.cycle.cycDay[0],
+                rop:non.rooms.cycle.cycTime[0],
                 rong:non.rooms.roomId,
                 sit:non.seatNumber,
                 seats:non,
@@ -115,17 +115,17 @@ class PriceComposer extends GrailsComposer {
 		})
 
 		$('#clear').on('click',{
-        	redirect(uri:'SeatsTicket.zul')
+        	redirect(uri:'showTimesTicket.zul')
 		})
 
 		$('#bak').on('click',{
-        	redirect(uri:'SeatsTicket.zul')
+        	redirect(uri:'showTimesTicket.zul')
 		})
         $('#bak2').on('click',{
             $('#B').setSelected(true)
         })
         $('#bun').on('click',{
-            redirect(uri:'SeatsTicket.zul')
+            redirect(uri:'showTimesTicket.zul')
         })
     }
 }
