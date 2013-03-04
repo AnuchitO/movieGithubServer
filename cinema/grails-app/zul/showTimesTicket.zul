@@ -15,25 +15,25 @@
             }
 
           .text{
-                font-size:28px;
-               
-                text-shadow: 0 1px 0 #ccc, 
-                       0 2px 0 #c9c9c9,
-                       0 3px 0 #bbb,
-                       0 4px 0 #b9b9b9,f
-                       0 5px 0 #aaa,
-                       0 6px 1px rgba(0,0,0,.1),
-                       0 0 5px rgba(0,0,0,.1),
-                       0 1px 3px rgba(0,0,0,.3),
-                       0 3px 5px rgba(0,0,0,.2),
-                       0 5px 10px rgba(0,0,0,.25),
-                       0 10px 10px rgba(0,0,0,.2),
-                       0 20px 20px rgba(0,0,0,.15);
-                background-color: none;
-                background-repeat: no-repeat;
-                background-position: top center;
-                background-attachment: fixed;
-            }
+            font-size:28px;
+           
+            text-shadow: 0 1px 0 #ccc, 
+                   0 2px 0 #c9c9c9,
+                   0 3px 0 #bbb,
+                   0 4px 0 #b9b9b9,
+                   0 5px 0 #aaa,
+                   0 6px 1px rgba(0,0,0,.1),
+                   0 0 5px rgba(0,0,0,.1),
+                   0 1px 3px rgba(0,0,0,.3),
+                   0 3px 5px rgba(0,0,0,.2),
+                   0 5px 10px rgba(0,0,0,.25),
+                   0 10px 10px rgba(0,0,0,.2),
+                   0 20px 20px rgba(0,0,0,.15);
+            background-color: none;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+        }
             .text:hover { 
                 color: #FF8C00; /* โค๊ดสีที่ต้องการให้เปลี่ยน */
                 text-decoration: underline; 
@@ -194,12 +194,12 @@
                                             <separator width="10px"/>
                                             <vbox>
                                                 <separator width="10px"/>
-                                                <label style="font-size:20pt;text-align: left;" class="theater-name" >Beautiful Creatures</label>
+                                                <label id="labNameMovie" style="font-size:20pt;text-align: left;" class="theater-name" >Beautiful Creatures</label>
                                                 <separator width="10px"/>                                             
-                                                <label style="font-size:16pt;text-align: left" class="theater-name"  > แม่มดแคสเตอร์</label>
+                                                <!-- <label style="font-size:16pt;text-align: left" class="theater-name"  > แม่มดแคสเตอร์</label> -->
                                                 <separator width="20px"/>
                                                 <hbox> 
-                                                <button id="btnT1" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes" style="color: rgb(143, 43, 25);"/>
+                                                <button id="btnT1" label="--:--"  orient="vertical" width="65px"  height="45px" class="showtimes" style="color: rgb(143, 43, 25);"/>
                                                 <button id="btnT2" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/> 
                                                 <button id="btnT3" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
                                                 <button id="btnT4" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>

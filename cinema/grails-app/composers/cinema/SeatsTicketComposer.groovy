@@ -12,6 +12,8 @@ class SeatsTicketComposer extends GrailsComposer {
 
        // def patient = session.room
         //$("#labRound").val(new Date())
+
+
        	int j=0;
        	int i=65;
     //Fill  background Empty
@@ -35,7 +37,7 @@ class SeatsTicketComposer extends GrailsComposer {
                         if(${seats.seatNumber}==${X}){
                             String B="#"+seats.seatNumber
                             $(B).setStyle("background-image:url(./ext/seatsTicket/seatsSeleted.png); position: relative;");
-                            
+                            $(B).setDisabled(true)
                         }                        
                     }
                 } 
@@ -43,15 +45,15 @@ class SeatsTicketComposer extends GrailsComposer {
                 //alert("AAAA")
             }else {
                    
-                alert("BBB")
+                //alert("BBB")
             }
 // Seats Selected
-
-    String seatNameSelect="";
+def seats
+String seatNameSelect="";
         int k00=0;
         $("#K0").on("click", {
             String sn="K0";
-            def seats= new Seats(seatNumber:sn,tel:"123456")
+            seats= new Seats(seatNumber:sn,tel:"123456")
         	if(k00==0) {
         		$("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
                 k00=1;
@@ -73,7 +75,7 @@ class SeatsTicketComposer extends GrailsComposer {
         int k01=0;
         $("#K1").on("click", {
             String sn="K1";
-            def seats= new Seats(seatNumber:sn,tel:"123456")
+            seats= new Seats(seatNumber:sn,tel:"123456")
             if(k01==0) {
                 $("#K1").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
                 k01=1; 
@@ -90,7 +92,8 @@ class SeatsTicketComposer extends GrailsComposer {
 
 
         $("#btnBuyTicket").on("click", {
-            alert(seatNameSelect)
+            //alert(seatNameSelect)
+            def namepp
             session.namepp = seatNameSelect
             redirect(uri:'price.zul')
                 
