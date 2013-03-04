@@ -30,8 +30,6 @@ class MovieUIComposer extends GrailsComposer {
             def pict640 = $('#pic640').getText()
             def time = $('#longTime').val()
 
-            //alert(pict140)
-
             def c = new Movie(
                 movId:id,
                 movType:type,
