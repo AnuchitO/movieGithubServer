@@ -7,8 +7,6 @@ class Sales {
 	int	salesAmount
 	int salesprice	
 	Date	date
-
-
 	static 	belongsTo  = [individual:Individual]
 
     static constraints = {
