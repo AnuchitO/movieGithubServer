@@ -77,7 +77,7 @@
 
     <window apply="cinema.IndexDepositComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
 
-       <div id="testid"  style=";"  width="1366px"  height="1225px" >
+       <div id="testid"  style=";"  width="1366px"  height="1280px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -142,7 +142,7 @@
                         <div id="centerContent"  >
                             
                                 
-                                    <div width="1000px" height="915px" class="form">
+                                    <div width="1000px" height="970px" class="form">
 
                                                                 <vlayout spacing="7px">
 
@@ -228,7 +228,7 @@
                                                                 <vbox  width="600px"><button id="check" label="ตรวจสอบ" width="125px" height="45px"/></vbox>
                                                                 <separator spacing="25px" />
 
-                                                                    <grid width="750x" height="300px" id ="gridbox">
+                                                                    <grid width="750x" height="315px" id ="gridbox">
                                                                         <columns>
                                                                         <column label="วันที่"  width ="90px" />
                                                                         <column label="เลขที่ใบฝาก"  width ="80px"/>
