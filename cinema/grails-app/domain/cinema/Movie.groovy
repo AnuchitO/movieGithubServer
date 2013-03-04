@@ -15,6 +15,8 @@ class Movie {
 	String 	movPicture140
 	Integer	longTime
 
+	Rooms 	rooms
+
 	
     static constraints = {
     }
