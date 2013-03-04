@@ -33,7 +33,7 @@ class BootStrap {
     	movie = new Movie(
     		movId:"0000",
 		 	movType:"Drama",
-		 	movName:"Demo",
+		 	movName:'Demo',
 		 	movSuperintendent:"pad Nong",
 		 	movDetail:"Love",
 		 	movCost:"2M",
