@@ -11,12 +11,15 @@ class TotalmarketComposer extends GrailsComposer {
         $("#backbtn").on("click", {
 				redirect(uri:'indexmarket.zul')
 			})
+
          def X = Sales.findAll()
-       	 $('#row2 > row').detach()
+       	 def price = 0
+         $('#row2 > row').detach()
         for(f in X){
+            price = price + f.salesprice
         $('#row2').append{
                         row (){  
-                            label( value: f.date)                  
+                            label( value: f.date.format("dd MMMM yyyy"))                  
                             label( value: f.salesProduct) 
                             label( value: f.salesAmount)
                             label( value: f.salesprice)
@@ -24,5 +27,7 @@ class TotalmarketComposer extends GrailsComposer {
                             }
                         }
        }
+       def priceTotal = price
+       $("#total").val(priceTotal)
     }
 }

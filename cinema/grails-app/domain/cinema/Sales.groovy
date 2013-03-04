@@ -17,5 +17,7 @@ class Sales {
     	date nullable:true
     	salesprice  nullable:true
     	buyCount nullable:true
+    	salesProduct nullable:true
+    	salesAmount nullable:true
     }
 }
