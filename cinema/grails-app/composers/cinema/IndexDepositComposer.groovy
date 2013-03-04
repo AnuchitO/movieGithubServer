@@ -50,20 +50,7 @@ class IndexDepositComposer extends GrailsComposer {
 			}
 
 			else{
-
-				$('#idep').val(null)
-			    $('#numdep').val(null)
-			    $('#name').val(null)
-			    $('#lname').val(null)
-			    $('#gender > radio[checked=true]').val(null)
-			    $('#indep').val(null)
-			    $('#time').val(null)
-			    $('#phone').val(null)
-			    $('#email').val(null)
-			    $('#address').val(null)
-			
-				alert('กรอกข้อมูลเรียบร้อย')
-
+	
 				def s = new DataDeposit()
 
 					s.idDep = ($('#idep').getText())
@@ -79,7 +66,20 @@ class IndexDepositComposer extends GrailsComposer {
 
 
 				s.save()
-				//redirect(uri: "indexDeposit.zul")
+
+				alert('กรอกข้อมูลเรียบร้อย')
+
+				$('#idep').val(null)
+			    $('#numdep').val(null)
+			    $('#name').val(null)
+			    $('#lname').val(null)
+			    $('#gender > radio[checked=true]').val(null)
+			    $('#indep').val(null)
+			    $('#time').val(null)
+			    $('#phone').val(null)
+			    $('#email').val(null)
+			    $('#address').val(null)
+				
 				def X = DataDeposit.findAll()
 
 				
