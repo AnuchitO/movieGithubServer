@@ -12,8 +12,7 @@ class TotalmarketComposer extends GrailsComposer {
 				redirect(uri:'indexmarket.zul')
 			})
 
-        
-             def X = Sales.findAll()
+            def X = Sales.findAll()
                      def price = 0
                      $('#row2 > row').detach()
                     for(f in X){
