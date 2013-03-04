@@ -4,14 +4,12 @@ class BootStrap {
     def init = { servletContext ->
 
     	def movie
-        def movie2
     	def seats
         def account1
 		def account2
 		def account3
 		def account4
         def room
-        def room2
 
         account1 = new Individual(
             firstName:"apichat",
@@ -116,7 +114,7 @@ class BootStrap {
 			longTime:120	
     	).save()
 
-        movie2 = new Movie(
+        def movie2 = new Movie(
             movId:"0001",
             movType:"Action",
             movName:"COCO",
@@ -124,7 +122,20 @@ class BootStrap {
             movDetail:"BOOM",
             movCost:"3M",
             movDate:"1/2/1111",
-            movDateEnd:"1/3/1111",    
+            movDateEnd:"1/3/1111", 
+            longTime:160   
+        ).save()
+
+        def movie3 = new Movie(
+            movId:"0002",
+            movType:"SiFi",
+            movName:"Core",
+            movSuperintendent:"Kopeeno",
+            movDetail:"Earth",
+            movCost:"2.5M",
+            movDate:"1/3/1111",
+            movDateEnd:"1/4/1111", 
+            longTime:180   
         ).save()
 
         room = new Rooms(
@@ -132,9 +143,14 @@ class BootStrap {
             movie:movie
         ).save()
 
-        room2 = new Rooms(
+        room = new Rooms(
             roomId:"Room2",
             movie:movie2
+        ).save()
+
+        room = new Rooms(
+            roomId:"Room3",
+            movie:movie3
         ).save()
 
 

@@ -121,6 +121,9 @@
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
                                 <!-- Insert Content Center to Here -->
+                                <hbox align="rigth">
+                                    <button id="logout" label="Log out"/>
+                                </hbox>
                                    <tabbox id="tab">
                                     <tabs>
                                         <tab id="add" label="Add Movie"/>
