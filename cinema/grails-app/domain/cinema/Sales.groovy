@@ -2,17 +2,21 @@ package cinema
 
 class Sales {
 
-	String	firstName
-	String	salesDetail
-	String	salesPrice
-	String	salesAmount
-	String  salesProduct
+	int	buyCount
+	String  salesProduct	
+	int	salesAmount
+	int salesprice	
 	Date	date
 
-	Stock	stock
 
 	static 	belongsTo  = [individual:Individual]
 
     static constraints = {
+    	individual nullable:true
+    	date nullable:true
+    	salesprice  nullable:true
+    	buyCount nullable:true
+    	salesProduct nullable:true
+    	salesAmount nullable:true
     }
 }

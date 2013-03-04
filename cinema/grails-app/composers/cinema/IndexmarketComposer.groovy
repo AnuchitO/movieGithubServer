@@ -6,16 +6,17 @@ import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 
 class IndexmarketComposer extends GrailsComposer {
-def puproduct
+    
     def afterCompose = { window ->
 
         def x = new Sales(buyCount:1)
+        println(x.buyCount)
         def i = x.buyCount
         def branch
-        
-         $("#nextbtn").on("click", {
+        $("#nextbtn").on("click", {
                 redirect(uri:'totalmarket.zul')
-            })      
+            })
+        
 
        $("#inputbtn1").on("click", {
             if($('#b1')[0].getText().size()==0){
@@ -170,6 +171,7 @@ def puproduct
             //}
            
         }
+
         def addToGrid(data) {
         def X = Sales.findAllByBuyCount(data.buyCount)
         def price = 0
@@ -190,3 +192,5 @@ def puproduct
         $("#total").val(price1)
         }
 }
+    
+
