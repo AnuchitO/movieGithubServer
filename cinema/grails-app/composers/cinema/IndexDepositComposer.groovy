@@ -12,7 +12,25 @@ class IndexDepositComposer extends GrailsComposer {
         // initialize components here
 
          //println($('#submit'))
-       
+
+		
+
+			if (!session['user'])
+            redirect(uri:'/login.zul')
+	        else {
+	            window.visible = true
+
+	            $("#logonName").val(session.user.firstName + " " + session.user.lastName)
+	            
+
+	            $("#logout").on("click", {
+	                session.user = null
+	                redirect(uri:'/login.zul')
+
+	            })
+
+	        }
+		    
 
 		$('#submit').on('click',{
 
@@ -32,6 +50,18 @@ class IndexDepositComposer extends GrailsComposer {
 			}
 
 			else{
+
+				$('#idep').val(null)
+			    $('#numdep').val(null)
+			    $('#name').val(null)
+			    $('#lname').val(null)
+			    $('#gender > radio[checked=true]').val(null)
+			    $('#indep').val(null)
+			    $('#time').val(null)
+			    $('#phone').val(null)
+			    $('#email').val(null)
+			    $('#address').val(null)
+			
 				alert('กรอกข้อมูลเรียบร้อย')
 
 				def s = new DataDeposit()
