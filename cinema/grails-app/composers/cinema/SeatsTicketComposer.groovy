@@ -92,12 +92,10 @@ String seatNameSelect="";
 
 
         $("#btnBuyTicket").on("click", {
-<<<<<<< HEAD
-=======
+
             //alert(seatNameSelect)
             def namepp
             session.namepp = seatNameSelect
->>>>>>> dev
             redirect(uri:'price.zul')
                 
         })
