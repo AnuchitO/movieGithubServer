@@ -66,7 +66,9 @@ class ShowTimesTicketComposer extends GrailsComposer {
 				def cycleTimedFromShowTimes
 				
 				session.roomFromShowTimes = dataRooms
-				session.cycleTimedFromShowTimes = cycle
+				session.cycleTimedFromShowTimes = cycle.cycTime
+				session.cycleRoundFromShowTimes = cycle.cycDay
+				
 				redirect(uri:'/seatsTicket.zul')
 			})
 

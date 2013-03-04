@@ -211,14 +211,14 @@
                                     <vbox>
                                         <label id="labNameMovieEng" style="font-size:15pt;text-align: left;" class="theater-name">Beautiful Creatures</label>
                                         <!-- <separator width="2px"/>                                              -->
-                                        <label id="labNameMovieTh" style="color:gray;font-size:14pt;text-align: left" class="theater-name"> แม่มดแคสเตอร์</label>
+                                        <!-- <label id="labNameMovieTh" style="color:gray;font-size:14pt;text-align: left" class="theater-name"> แม่มดแคสเตอร์</label> -->
                                     </vbox>
                                     <separator width="3px"/>
                                     <vbox>
-                                        <listbox id="listboxInfoMovie" width="373px" multiple="false" checkmark="false">
+                                        <listbox id="listboxInfoMovie" width="450px" multiple="false" checkmark="false">
                                             <listhead>
                                                 <listheader width="100px"  />
-                                                <listheader width="90px"/>
+                                                <listheader width="150px"/>
                                                 <listheader width="70px" />
                                                 <listheader width="70px" />
                                             </listhead>

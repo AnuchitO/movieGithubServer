@@ -12,8 +12,19 @@ class SeatsTicketComposer extends GrailsComposer {
 
        // def patient = session.room
         //$("#labRound").val(new Date())
+        def rooms=session.roomFromShowTimes
+        def cycleTimed=session.cycleTimedFromShowTimes
+        //def cycleDay=session.cycleRoundFromShowTimes
+//test CycleDay
+        Date cycleDay =new Date()
 
-
+        //alert(cycleTimed.[0])
+        $('#labNameMovieEng').val(rooms.movie.movName)
+        $('#labRoom').val(rooms.roomId)             
+        $('#labRound').val(cycleDay.format("dd MMMM yyyy"))
+        $('#labTime').val(cycleTimed)
+        $('#labType').val(rooms.movie.movType)
+        
        	int j=0;
        	int i=65;
     //Fill  background Empty
@@ -48,12 +59,13 @@ class SeatsTicketComposer extends GrailsComposer {
                 //alert("BBB")
             }
 // Seats Selected
+
 def seats
 String seatNameSelect="";
         int k00=0;
         $("#K0").on("click", {
             String sn="K0";
-            seats= new Seats(seatNumber:sn,tel:"123456")
+            seats= new Seats(seatNumber:sn,tel:"",rooms:rooms)
         	if(k00==0) {
         		$("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
                 k00=1;
@@ -92,10 +104,9 @@ String seatNameSelect="";
 
 
         $("#btnBuyTicket").on("click", {
-
-            //alert(seatNameSelect)
+          
             def namepp
-            session.namepp = seatNameSelect
+            session.namepp = seats
             redirect(uri:'price.zul')
                 
         })
