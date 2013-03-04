@@ -2,11 +2,16 @@ package cinema
 
 class Amount {
 		Date	date
-		String	firstName
-		int	price
-		Seats	seats
+		int		price
+
+		static hasMany = [seats: Seats]
 		static 	belongsTo  = [individual:Individual]
 
     static constraints = {
+    	date 	nullable:true
+    	price 	nullable:true
+    	seats 	nullable:true
+    	individual nullable:true
+
     }
 }

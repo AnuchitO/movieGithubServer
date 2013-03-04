@@ -5,11 +5,7 @@ class Seats {
 	String	seatNumber
 	String 	tel
 
-	Amount	amount
-
-	static belongsTo = [rooms:Rooms]
-
-	
+	static belongsTo = [rooms:Rooms,amount:Amount]
 
     static constraints = {
     	seatNumber nullable:true

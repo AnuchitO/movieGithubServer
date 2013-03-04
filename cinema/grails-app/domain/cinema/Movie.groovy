@@ -14,10 +14,21 @@ class Movie {
 	String 	movPicture640
 	String 	movPicture140
 	Integer	longTime
-
-	Rooms 	rooms
-
+	static hasOne = [rooms: Rooms]
 	
     static constraints = {
+
+	movId 		 			nullable:true
+ 	movType 				nullable:true
+ 	movName 				nullable:true
+ 	movSuperintendent 		nullable:true
+ 	movDetail 				nullable:true
+ 	movCost 				nullable:true
+ 	movDate 				nullable:true
+	movDateEnd 				nullable:true
+ 	movPicture640 			nullable:true
+ 	movPicture140 			nullable:true
+	longTime	 			nullable:true
+	rooms 					nullable:true
     }
 }
