@@ -24,7 +24,7 @@ class LoginComposer extends GrailsComposer {
         		}
         		if(user.position=="Market"){
 	        		session.user = user
-	        		redirect(uri:'/totalmarket.zul')
+	        		redirect(uri:'/indexmarket.zul')
         		}
         		if(user.position=="Room"){
 	        		session.user = user

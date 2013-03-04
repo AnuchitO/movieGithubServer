@@ -8,6 +8,25 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class IndexmarketComposer extends GrailsComposer {
     
     def afterCompose = { window ->
+        
+         if (!session['user'])
+            redirect(uri:'/login.zul')
+        else {
+            window.visible = true
+
+            $("#logonName").val(session.user.firstName + " " + session.user.lastName)
+           
+
+            $("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
+
+           
+        }
+        //===========================================
+
         def x = new Sales(buyCount:1)
         println(x.buyCount)
         def i = x.buyCount
