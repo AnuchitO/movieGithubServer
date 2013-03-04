@@ -8,7 +8,6 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class IndexmarketComposer extends GrailsComposer {
     
     def afterCompose = { window ->
-
         def x = new Sales(buyCount:1)
         println(x.buyCount)
         def i = x.buyCount
