@@ -40,12 +40,14 @@ class MovieUIComposer extends GrailsComposer {
             ).save()
             
         })
-
+        
+        def g
+        def s
 
         $('#btnSearch').on('click',{
 
-            def g = $('#txtSearch').getText()
-            def s = Movie.findByMovId(g)
+            g = $('#txtSearch').getText()
+            s = Movie.findByMovId(g)
             $('#txtSearch').val("")
     
             $('#txtId').val(s.movId)
@@ -59,20 +61,38 @@ class MovieUIComposer extends GrailsComposer {
             $('#txtPic')[0].src = s.movPicture140
             $('#txtTime').val(s.longTime)
 
-            $('#btnSubmit').on('click',{
+        })
 
-                def a = $('#room').text()
+        def a
+        def r
 
-                if(a=="")
-                    alert("Please Selected Room")
-                else {
-                    def r = new Rooms(
-                        roomId:a,
-                        movie:s
-                    ).save()
+        $('#btnSubmit').on('click',{
+
+            a = $('#room').text()
+
+            if(a=="")
+                alert("Please Selected Room")
+            else {
+                r = new Rooms(
+                    roomId:a,
+                    movie:s
+                ).save()
+
+                if(s.longTime>100&&s.longTime<=120){
+
+                    alert("100-120")
+
+                } else if(s.longTime>120&&s.longTime<=180) {
+
+                    alert("121-180")
+
+                } else(s.longTime>180) {
+                    
+                    alert(">180")
+
                 }
+            }
 
-            })
         })
 
     }

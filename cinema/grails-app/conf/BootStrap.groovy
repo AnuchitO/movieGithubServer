@@ -4,8 +4,11 @@ class BootStrap {
     def init = { servletContext ->
 
     	def movie
+        def movie2
     	def seats
         def account
+        def room
+        def room2
 
         account = new Individual(
             firstName:"apichat",
@@ -43,6 +46,27 @@ class BootStrap {
 		 	movPicture140:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
 			longTime:120	
     	).save()
+
+        movie2 = new Movie(
+            movId:"0001",
+            movType:"Action",
+            movName:"COCO",
+            movSuperintendent:"9Deng",
+            movDetail:"BOOM",
+            movCost:"3M",
+            movDate:"1/2/1111",
+            movDateEnd:"1/3/1111",    
+        ).save()
+
+        room = new Rooms(
+            roomId:"Room1",
+            movie:movie
+        ).save()
+
+        room2 = new Rooms(
+            roomId:"Room2",
+            movie:movie2
+        ).save()
 
 
 
