@@ -199,15 +199,10 @@
                                                 <!-- <label style="font-size:16pt;text-align: left" class="theater-name"  > แม่มดแคสเตอร์</label> -->
                                                 <separator width="20px"/>
                                                 <hbox> 
-                                                <grid width="300px" mold="paging" pageSize="4">
-                                                    <columns >
-                                                       
-                                                    </columns>
-                                                    
-                                                    <rows id="result">
-                                                    </rows>
-
-                                                </grid>
+                                                <button id="btnT1" label="--:--"  orient="vertical" width="65px"  height="45px" class="showtimes" style="color: rgb(143, 43, 25);"/>
+                                                <button id="btnT2" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/> 
+                                                <button id="btnT3" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
+                                                <button id="btnT4" label="13:30"  orient="vertical" width="65px"  height="45px" class="showtimes"/>
                                                 
                                                 </hbox>
                                             </vbox>
