@@ -143,14 +143,29 @@ class BootStrap {
             movie:movie
         ).save()
 
-        room = new Rooms(
+        def room2 = new Rooms(
             roomId:"Room2",
             movie:movie2
         ).save()
 
-        room = new Rooms(
+        def room3 = new Rooms(
             roomId:"Room3",
             movie:movie3
+        ).save()
+
+        def c = new Cycle(
+            cycTime:"09.00-12.00",
+            rooms:room
+        ).save()
+
+        def c2 = new Cycle(
+            cycTime:"09.00-11.00",
+            rooms:room2
+        ).save()
+
+        def c3 = new Cycle(
+            cycTime:"09.00-12.30",
+            rooms:room3
         ).save()
 
 
