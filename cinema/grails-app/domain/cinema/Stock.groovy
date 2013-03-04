@@ -2,7 +2,9 @@ package cinema
 
 class Stock {
 
-	String 	product
+	
+
+String 	product
 	String 	productTotal
 	Date	date
 
@@ -11,6 +13,7 @@ class Stock {
     	product 		nullable:true
 		productTotal 	nullable:true
 		date 			nullable:true
+		
 		
 		
 	
