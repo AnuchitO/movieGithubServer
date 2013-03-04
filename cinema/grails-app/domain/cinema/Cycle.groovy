@@ -9,5 +9,8 @@ class Cycle {
 	
 
     static constraints = {
+    	cycTime 	nullable:true
+    	cycDay 		nullable:true
+    	rooms 		nullable:true
     }
 }
