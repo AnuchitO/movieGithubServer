@@ -15,11 +15,10 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
         //def patient = session.editPatient
         //def rooms = Rooms.findAll()
-        def rooms 	= Rooms.findByRoomId("Room1")
-        def cycles
-        if (rooms) {
+        def rooms 	= Rooms.findByRoomId("Room1")	
         	
-        
+        def cycles
+        if (rooms) {     
         rooms.each{room -> 
         def nameMovie = "${room.movie.movName}"	
         	$('#labNameMovie').val(rooms.movie.movName)
@@ -39,6 +38,38 @@ class ShowTimesTicketComposer extends GrailsComposer {
 		
 		//def cycles = Cycle.findAllByRooms("1")
 		//alert(cycles)
+
+		def rooms2 	= Rooms.findByRoomId("Room2")
+        def cycles2
+        if (rooms2) {   
+         
+        rooms2.each{room -> 
+        def nameMovie = "${room.movie.movName}"	
+        	$('#labNameMovie2').val(rooms2.movie.movName)
+        	 cycles2=Cycle.findAllWhere(rooms:room)
+        	//alert(cycles)
+
+        	addToGrid2(cycles2,rooms2)
+		}
+		}else{
+			//alert("AAA")
+		}
+
+		def rooms3	= Rooms.findByRoomId("Room3")
+        def cycles3
+        if (rooms3) {   
+         
+        rooms3.each{room -> 
+        def nameMovie = "${room.movie.movName}"	
+        	$('#labNameMovie3').val(rooms3.movie.movName)
+        	 cycles3=Cycle.findAllWhere(rooms:room)
+        	//alert(cycles)
+
+        	addToGrid3(cycles3,rooms3)
+		}
+		}else{
+			//alert("AAA")
+		}
 	}
 
 
@@ -47,11 +78,87 @@ class ShowTimesTicketComposer extends GrailsComposer {
     	def selectCycleInfoBtn
     	//def saveSymptomBtn
 
-		$("grid columns").detach()
-		$("grid").append { columns()}
+		$("#gridTheat1 columns").detach()
+		$("#gridTheat1").append { columns()}
 		dataCycle.each { cycle ->
 			String cycleShow 
-			$("grid columns").append {
+			$("#gridTheat1 columns").append {
+				column() {
+					hbox () {
+						button(label:"${cycle.cycTime}",width:"50px",height:"50px")
+					}
+				}
+			}
+			cycleShow = cycle.cycTime
+			selectCycleInfoBtn =  $("grid columns column:last-child button[label='${cycleShow}']")
+			selectCycleInfoBtn.on("click",{
+				//alert("AAAAA")
+				def roomFromShowTimes
+				def cycleTimedFromShowTimes
+				
+				session.roomFromShowTimes = dataRooms
+				session.cycleTimedFromShowTimes = cycle.cycTime
+				session.cycleRoundFromShowTimes = cycle.cycDay
+				
+				redirect(uri:'/seatsTicket.zul')
+			})
+
+
+
+		//count++
+		}
+	
+    }
+    def addToGrid2(dataCycle,dataRooms) {
+    	//def count = 1
+
+    	def selectCycleInfoBtn
+    	//def saveSymptomBtn
+
+		$("#gridTheat2 columns").detach()
+		$("#gridTheat2").append { columns()}
+		dataCycle.each { cycle ->
+			String cycleShow 
+			$("#gridTheat2 columns").append {
+				//alert(cycle.cycTime)
+				column() {
+					hbox () {
+						button(label:"${cycle.cycTime}",width:"50px",height:"50px")
+					}
+				}
+			}
+			cycleShow = cycle.cycTime
+			selectCycleInfoBtn =  $("grid columns column:last-child button[label='${cycleShow}']")
+			selectCycleInfoBtn.on("click",{
+				//alert("AAAAA")
+				def roomFromShowTimes
+				def cycleTimedFromShowTimes
+				
+				session.roomFromShowTimes = dataRooms
+				session.cycleTimedFromShowTimes = cycle.cycTime
+				session.cycleRoundFromShowTimes = cycle.cycDay
+				
+				redirect(uri:'/seatsTicket.zul')
+			})
+
+
+
+		//count++
+		}
+	
+    }
+    def addToGrid3(dataCycle,dataRooms) {
+    	//def count = 1
+
+    	def selectCycleInfoBtn
+    	//def saveSymptomBtn
+
+		$("#gridTheat3 columns").detach()
+		$("#gridTheat3").append { columns()}
+		dataCycle.each { cycle ->
+			String cycleShow 
+			$("#gridTheat3 columns").append {
+				//alert(cycle.cycTime)
 				column() {
 					hbox () {
 						button(label:"${cycle.cycTime}",width:"50px",height:"50px")
