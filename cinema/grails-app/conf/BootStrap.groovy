@@ -154,17 +154,17 @@ class BootStrap {
         ).save()
 
         def c = new Cycle(
-            cycTime:"09.00-12.00",
+            cycTime:"09.00",
             rooms:room
         ).save()
 
         def c2 = new Cycle(
-            cycTime:"09.00-11.00",
+            cycTime:"09.00",
             rooms:room2
         ).save()
 
         def c3 = new Cycle(
-            cycTime:"09.00-12.30",
+            cycTime:"09.00",
             rooms:room3
         ).save()
 
