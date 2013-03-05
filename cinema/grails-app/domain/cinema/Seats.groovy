@@ -3,13 +3,13 @@ package cinema
 class Seats {
 
 	String	seatNumber
-	String 	tel
+	String 	time
 
 	static belongsTo = [rooms:Rooms,amount:Amount]
 
     static constraints = {
     	seatNumber nullable:true
-    	tel 	nullable:true
+    	time 	nullable:true
     	amount 	nullable:true
     	rooms 	nullable:true 
     }
