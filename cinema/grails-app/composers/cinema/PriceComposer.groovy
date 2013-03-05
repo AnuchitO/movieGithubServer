@@ -60,18 +60,19 @@ class PriceComposer extends GrailsComposer {
         sumpri = 120*i;
 
         //===============================================================
-        def movie = new Movie(movType:"Action",movName:"spiderman")
-        def cycle = new Cycle(cycTime:"12.00-13.00 น.")
-        def rooms = new Rooms(roomId:"Room3",movie:movie,cycle:cycle)
-        def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms)
-        
+        //def movie = new Movie(movType:"Action",movName:"spiderman")
+        //def cycle = new Cycle(cycTime:"12.00-13.00 น.")
+        //def rooms = new Rooms(roomId:"Room3",movie:movie,cycle:cycle)
+        //def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms)
+        def non = session.namepp
+        def rooms = session.namepp2
         // initialize components here
-        $('#moviename1').val(non.rooms.movie.movName)
-        $('#moviename2').val(non.rooms.movie.movType)
+        $('#moviename1').val(rooms.movie.movName)
+        $('#moviename2').val(rooms.movie.movType)
         $('#blanch').val("Team13")
-        $('#runt').val(non.rooms.cycle.cycTime[0])
+        $('#runt').val(rooms.cycle.cycTime[0])
         $('#seat').val(non.seatNumber)
-        $('#plant').val(non.rooms.roomId)
+        $('#plant').val(rooms.roomId)
         $('#promotion').val("ไม่มีโปรโมชั่น")
         int sumprice = 120;
         $('#sum').val(sumprice)
@@ -88,24 +89,24 @@ class PriceComposer extends GrailsComposer {
 
 
         $('#send').on('click',{
-            $('#mov').val(non.rooms.movie.movName)
-            $('#rob').val(non.rooms.cycle.cycTime[0])
+            $('#mov').val(rooms.movie.movName)
+            $('#rob').val(rooms.cycle.cycTime[0])
             $('#teenung').val(non.seatNumber)
-            $('#rong').val(non.rooms.roomId)
+            $('#rong').val(rooms.roomId)
             $('#mony').val(sumprice)
 
-            $('#mov2').val(non.rooms.movie.movName)
-            $('#rob2').val(non.rooms.cycle.cycTime[0])
+            $('#mov2').val(rooms.movie.movName)
+            $('#rob2').val(rooms.cycle.cycTime[0])
             $('#teenung2').val(non.seatNumber)
-            $('#rong2').val(non.rooms.roomId)
+            $('#rong2').val(rooms.roomId)
             $('#mony2').val(sumprice)
         	$('#C').setSelected(true)
             def amount = new Amount(
                 price:sumprice,
                 name:session.user.firstName + " " + session.user.lastName,
-                movie1:non.rooms.movie.movName,
-                rop:non.rooms.cycle.cycTime[0],
-                rong:non.rooms.roomId,
+                movie1:rooms.movie.movName,
+                rop:rooms.cycle.cycTime[0],
+                rong:rooms.roomId,
                 sit:non.seatNumber,
                 seats:non,
                 individual:session.user

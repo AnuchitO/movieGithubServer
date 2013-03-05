@@ -110,7 +110,7 @@
                                 <tabbox width="1000px"  height="600px" vflex="true" hflex="true" style="background-color:#f3d491;"> 
                                    <tabs id="tabs" align="end" style="background-image:url(./images/bg.jpg)">
                                         <tab id="A" disabled="true" label="คิดเงิน" />
-                                        <tab id="B" disabled="true" label="บันทึกการเงิน" />
+                                        <tab id="B" label="บันทึกการเงิน" />
                                         <tab id="C" disabled="true" label="ตั๋วหนัง" />
                                     </tabs> 
                                     <tabpanels>
