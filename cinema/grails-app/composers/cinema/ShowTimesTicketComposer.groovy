@@ -9,14 +9,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here
-
-
-        //ItemList
-
-        //def patient = session.editPatient
-        //def rooms = Rooms.findAll()
         def rooms 	= Rooms.findByRoomId("Room1")	
-        	
         def cycles
         if (rooms) {     
         rooms.each{room -> 
@@ -74,11 +67,8 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
 
  def addToGrid(dataCycle,dataRooms) {
-    	//def count = 1
     	def selectCycleInfoBtn
-    	//def saveSymptomBtn
-
-		$("#gridTheat1 columns").detach()
+    	$("#gridTheat1 columns").detach()
 		$("#gridTheat1").append { columns()}
 		dataCycle.each { cycle ->
 			String cycleShow 
@@ -102,20 +92,13 @@ class ShowTimesTicketComposer extends GrailsComposer {
 				
 				redirect(uri:'/seatsTicket.zul')
 			})
-
-
-
-		//count++
+		
 		}
 	
     }
     def addToGrid2(dataCycle,dataRooms) {
-    	//def count = 1
-
-    	def selectCycleInfoBtn
-    	//def saveSymptomBtn
-
-		$("#gridTheat2 columns").detach()
+      	def selectCycleInfoBtn
+    	$("#gridTheat2 columns").detach()
 		$("#gridTheat2").append { columns()}
 		dataCycle.each { cycle ->
 			String cycleShow 
@@ -140,10 +123,6 @@ class ShowTimesTicketComposer extends GrailsComposer {
 				
 				redirect(uri:'/seatsTicket.zul')
 			})
-
-
-
-		//count++
 		}
 	
     }
