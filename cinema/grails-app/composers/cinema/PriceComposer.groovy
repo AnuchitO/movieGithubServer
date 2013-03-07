@@ -70,7 +70,7 @@ class PriceComposer extends GrailsComposer {
         $('#moviename1').val(rooms.movie.movName)
         $('#moviename2').val(rooms.movie.movType)
         $('#blanch').val("Team13")
-        $('#runt').val(rooms.cycle.cycTime[0])
+        $('#runt').val(non.time)
         $('#seat').val(non.seatNumber)
         $('#plant').val(rooms.roomId)
         $('#promotion').val("ไม่มีโปรโมชั่น")
@@ -90,13 +90,13 @@ class PriceComposer extends GrailsComposer {
 
         $('#send').on('click',{
             $('#mov').val(rooms.movie.movName)
-            $('#rob').val(rooms.cycle.cycTime[0])
+            $('#rob').val(non.time)
             $('#teenung').val(non.seatNumber)
             $('#rong').val(rooms.roomId)
             $('#mony').val(sumprice)
 
             $('#mov2').val(rooms.movie.movName)
-            $('#rob2').val(rooms.cycle.cycTime[0])
+            $('#rob2').val(non.time)
             $('#teenung2').val(non.seatNumber)
             $('#rong2').val(rooms.roomId)
             $('#mony2').val(sumprice)
@@ -105,7 +105,7 @@ class PriceComposer extends GrailsComposer {
                 price:sumprice,
                 name:session.user.firstName + " " + session.user.lastName,
                 movie1:rooms.movie.movName,
-                rop:rooms.cycle.cycTime[0],
+                rop:non.time,
                 rong:rooms.roomId,
                 sit:non.seatNumber,
                 seats:non,
