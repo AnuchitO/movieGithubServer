@@ -236,14 +236,15 @@
                                                         <label id="txtTime"/>
                                                     </row>
                                                     <row>
-                                                        <label value="Room"/>
-                                                        <combobox id="room">
-                                                            <comboitem label="Room1"/>
-                                                            <comboitem label="Room2"/>
-                                                            <comboitem label="Room3"/>
+                                                        <label value="Theater"/>
+                                                        <combobox id="theater">
+                                                            <comboitem label="theater1"/>
+                                                            <comboitem label="theater2"/>
+                                                            <comboitem label="theater3"/>
                                                         </combobox>
-                                                        <label/>
-                                                        <label/>
+                                                        <label value="Show"/>
+                                                        <combobox id="show">
+                                                        </combobox>
                                                     </row>
                                                     <row>
                                                         <button label="submit" id="btnSubmit"/>

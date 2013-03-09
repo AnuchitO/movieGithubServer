@@ -14,6 +14,7 @@ class Movie {
 	String 	movPicture140
 	Integer	longTime
 	static hasOne = [rooms: Rooms]
+	static hasMany = [theaters: Theater]
 	
     static constraints = {
 

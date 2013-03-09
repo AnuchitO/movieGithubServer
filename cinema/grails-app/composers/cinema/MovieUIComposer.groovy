@@ -2,9 +2,7 @@ package cinema
 
 import org.zkoss.zk.grails.composer.*
 
-import cinema.Movie
-import cinema.Rooms
-import cinema.Cycle
+import cinema.*
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 
@@ -71,97 +69,20 @@ class MovieUIComposer extends GrailsComposer {
         def a
         def d
         def c
-        def r
+        def t
 
         $('#btnSubmit').on('click',{
 
-            a = $('#room').text()
+            a = $('#theater').text()
 
             if(a=="")
-                alert("Please Selected Room")
+                alert("Please Selected Theater")
             else {
-                d = Rooms.findByRoomId(a)
-                d.delete()
-
-                r = new Rooms(
-                    roomId:a,
+                t = new Theater(
+                    theaterId:a,
                     movie:s
                 ).save()
-
-                if(s.longTime>=100&&s.longTime<=120){
-                    c = new Cycle(
-                        cycTime:"09.00-11.00",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"11.30-13.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"14.00-16.00",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"16.30-18.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"19.00-21.00",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"21.30-23.30",
-                        rooms:r
-                    ).save()
-                }else if(s.longTime>120&&s.longTime<=180){
-                    c = new Cycle(
-                        cycTime:"09.00-12.00",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"12.30-15.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"16.00-19.00",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"19.30-22.30",
-                        rooms:r
-                    ).save()
-
-                }else(s.longTime>180){
-                    c = new Cycle(
-                        cycTime:"09.00-12.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"13.00-16.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"17.00-20.30",
-                        rooms:r
-                    ).save()
-
-                    c = new Cycle(
-                        cycTime:"21.00-00.30",
-                        rooms:r
-                    ).save()
-                }
             }
-
         })
     }
 }
