@@ -59,7 +59,6 @@
 
         .theater-name{
             display: block;
-            <!-- font-size: 40px; -->
             line-height: 40px;
             font-weight: bolder;
             text-align: right;
@@ -91,9 +90,9 @@
             float: left;
         }
     </style>
-    <window apply="cinema.ShowTimesTicketComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
+   <window apply="cinema.ShowTimesTicketComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
         
-    <div id="testid"  style=";"  width="1366px"  height="80em" >
+    <div id="testid"  style=";"  width="1366px"  height="2000px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >

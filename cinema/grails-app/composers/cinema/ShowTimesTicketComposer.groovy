@@ -31,7 +31,6 @@ class ShowTimesTicketComposer extends GrailsComposer {
 		
 		//def cycles = Cycle.findAllByRooms("1")
 		//alert(cycles)
-
 		def rooms2 	= Rooms.findByRoomId("Room2")
         def cycles2
         if (rooms2) {   
@@ -57,13 +56,96 @@ class ShowTimesTicketComposer extends GrailsComposer {
         	$('#labNameMovie3').val(rooms3.movie.movName)
         	 cycles3=Cycle.findAllWhere(rooms:room)
         	//alert(cycles)
-
         	addToGrid3(cycles3,rooms3)
 		}
 		}else{
 			//alert("AAA")
 		}
+//append listbox  OK
+/*int g=1;
+	for(g=1;g<=10;g++){
+		$('#box' ).append {           		
+                listitem() {
+                listcell(style:"background-color:white;background-image:url(./ext/showTimeTicketPicture/Bgresult.png)"){
+                	groupbox(height:"224px"){
+                	hbox (height:"100px"){
+                		box(height:"210px",width:"110px",style:"background-color:#777",align:"right" ){
+                			hbox (){
+                			vbox (){
+                				label(value:"Theatre",style:"color:black ;font-size:16pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+                				label(value:"${g}",style:"color:black ;font-size:30pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+                			}                            
+                            separator (width:"5px")
+                            }
+                		}
+                		separator(width:"10px")
+                		image(src:"./ext/showTimeTicketPicture/movie_picture_beautiful-creatures-big-140x210.jpg",height:"210px",width:"140px");
+	                	separator(width:"10px")
+	                	vbox(){
+	                		separator(width:"5px")
+	                		label(value:"CO",style:"color:gray ;font-size:20pt; display:block;line-height: 40px;font-weight: bolder;text-align: left;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                		separator(width:"25px")
+
+	                		hbox() {
+	                			//for(;g<=10;g++){
+	                		button(label:"A",width:"50px",height:"50px",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                		separator(width:"5px")
+	                			//}
+	                		}
+                		}
+                	}
+
+                	}
+            	}
+                   
+             }
+        }
+    }
+*/
+
 	}
+
+def addToListbox(){
+ 	$('#box' ).append {           		
+                listitem() {
+                listcell(style:"background-color:white;background-image:url(./ext/showTimeTicketPicture/Bgresult.png)"){
+                	groupbox(height:"224px"){
+                	hbox (height:"100px"){
+                		box(height:"210px",width:"110px",style:"background-color:#777",align:"right" ){
+                			hbox (){
+                			vbox (){
+                				label(value:"Theatre",style:"color:black ;font-size:16pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+                				label(value:"${g}",style:"color:black ;font-size:30pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+                			}                            
+                            separator (width:"5px")
+                            }
+                		}
+                		separator(width:"10px")
+                		image(src:"./ext/showTimeTicketPicture/movie_picture_beautiful-creatures-big-140x210.jpg",height:"210px",width:"140px");
+	                	separator(width:"10px")
+	                	vbox(){
+	                		separator(width:"5px")
+	                		label(value:"CO",style:"color:gray ;font-size:20pt; display:block;line-height: 40px;font-weight: bolder;text-align: left;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                		separator(width:"25px")
+
+	                		hbox() {
+	                			//for(;g<=10;g++){
+	                		button(label:"A",width:"50px",height:"50px",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                		separator(width:"5px")
+	                			//}
+	                		}
+                		}
+                	}
+
+                	}
+            	}
+                   
+             }
+        }
+
+}
+
+
 
 
  def addToGrid(dataCycle,dataRooms) {
@@ -89,7 +171,6 @@ class ShowTimesTicketComposer extends GrailsComposer {
 				session.roomFromShowTimes = dataRooms
 				session.cycleTimedFromShowTimes = cycle.cycTime
 				session.cycleRoundFromShowTimes = cycle.cycDay
-				
 				redirect(uri:'/seatsTicket.zul')
 			})
 		
