@@ -87,13 +87,7 @@ def addToListbox(dataTheater,dataShowTime){
              }
         }
 
-
-
-
 }
-
-
-
 
  def addToGrid(dataCycle,dataRooms) {
     	def selectCycleInfoBtn
