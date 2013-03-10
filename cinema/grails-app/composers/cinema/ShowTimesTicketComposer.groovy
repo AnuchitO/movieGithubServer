@@ -8,21 +8,22 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+
         // initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
-        def rooms	= Rooms.findAll([sort:'id', order:'asc'])
-        def cycles
-        if (rooms) {     
-        rooms.each{theater -> 
+        def theaters	= Rooms.findAll([sort:'id', order:'asc'])
+        def showTimes
+        if (theaters) {     
+        theaters.each{theater -> 
         	//def movieTheater=Rooms.findByMovie('1')
         	//def symptom	= Symptom.findByPatient(patient, [sort:'id', order:'desc'])
         //def nameMovie = "${room.movie.movName}"	
         	//$('#labNameMovie').val(rooms.movie.movName)
-        	 //cycles=Cycle.findAllWhere(rooms:room,[sort:"${room.cycle.cycTime}", order: "asc"])
-        	alert(theater.roomId)
-        	//addToGrid(cycles,rooms)
-        		addToListbox(theater)
+        	 showTimes=Cycle.findAllWhere(rooms:theater,[sort:'cycTime', order: "asc"])
+        	// def results = showTimes.listOrderByCycTime(max: 10, offset: 100, order: "desc")
+	        	//alert(showTimes)        	
+	        	addToListbox(theater,showTimes)
 			}
 		}else{
 			//alert("AAA")
@@ -30,7 +31,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
 		
 		}
 
-def addToListbox(dataTheater){
+def addToListbox(dataTheater,dataShowTime){
  	$('#box' ).append {           		
                 listitem() {
                 listcell(style:"background-color:white;background-image:url(./ext/showTimeTicketPicture/Bgresult.png)"){
@@ -54,12 +55,29 @@ def addToListbox(dataTheater){
 	                		separator(width:"25px")
 
 	                		hbox() {
+	                		def selectShowTimeBtn
+	                		dataShowTime.each{showTime ->
+	                			
+	                			button(label:"${showTime.cycTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                			separator(width:"5px")	
+	                			
+	                			selectShowTimeBtn = $("button[label='${showTime.cycTime}']")               			
+								
+								//selectShowTimeBtn.on('click',{
+									//alert("AAAAA")
+									//def roomFromShowTimes
+									//def cycleTimedFromShowTimes
+									//alert("AAAAAAA")
+									//session.roomFromShowTimes = dataTheater
+									//session.cycleTimedFromShowTimes = cycle.cycTime
+									//session.cycleRoundFromShowTimes = cycle.cycDay
+									//redirect(uri:'/seatsTicket.zul')
+								//})
+
+								}
+	                		}               		               		
+	                			
 	                		
-	                			//for(;g<=10;g++){
-	                		button(label:"A",width:"50px",height:"50px",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
-	                		separator(width:"5px")
-	                			//}
-	                		}
                 		}
                 	}
 
@@ -68,6 +86,9 @@ def addToListbox(dataTheater){
                    
              }
         }
+
+
+
 
 }
 
