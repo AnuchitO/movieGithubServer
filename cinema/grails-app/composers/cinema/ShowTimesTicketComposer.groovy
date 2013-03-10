@@ -12,7 +12,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
         // initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
-        def theaters	= Rooms.findAll([sort:'id', order:'asc'])
+        def theaters	= Theater.findAll([sort:'id', order:'asc'])
         def showTimes
         if (theaters) {     
         theaters.each{theater -> 
@@ -20,7 +20,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
         	//def symptom	= Symptom.findByPatient(patient, [sort:'id', order:'desc'])
         //def nameMovie = "${room.movie.movName}"	
         	//$('#labNameMovie').val(rooms.movie.movName)
-        	 showTimes=Cycle.findAllWhere(rooms:theater,[sort:'cycTime', order: "asc"])
+        	 showTimes=Show.findAllWhere(theaters:theater,[sort:'showTime', order: "asc"])
         	// def results = showTimes.listOrderByCycTime(max: 10, offset: 100, order: "desc")
 	        	//alert(showTimes)        	
 	        	addToListbox(theater,showTimes)
@@ -41,7 +41,7 @@ def addToListbox(dataTheater,dataShowTime){
                 			hbox (){
                 			vbox (){
                 				label(value:"Theatre",style:"color:black ;font-size:16pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
-                				label(value:"${dataTheater.roomId}",style:"color:black ;font-size:30pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+                				label(value:"${dataTheater.theaterId}",style:"color:black ;font-size:30pt; display:block;line-height: 40px;font-weight: bolder;text-align: right;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
                 			}                            
                             separator (width:"5px")
                             }
@@ -51,17 +51,17 @@ def addToListbox(dataTheater,dataShowTime){
 	                	separator(width:"10px")
 	                	vbox(){
 	                		separator(width:"5px")
-	                		label(value:"${dataTheater.movie.movName}",style:"color:gray ;font-size:20pt; display:block;line-height: 40px;font-weight: bolder;text-align: left;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                		label(value:"${dataTheater.movies.movName}",style:"color:gray ;font-size:20pt; display:block;line-height: 40px;font-weight: bolder;text-align: left;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
 	                		separator(width:"25px")
 
 	                		hbox() {
 	                		def selectShowTimeBtn
 	                		dataShowTime.each{showTime ->
 	                			
-	                			button(label:"${showTime.cycTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                			button(label:"${showTime.showTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
 	                			separator(width:"5px")	
 	                			
-	                			selectShowTimeBtn = $("button[label='${showTime.cycTime}']")               			
+	                			selectShowTimeBtn = $("button[label='${showTime.showTime}']")               			
 								
 								//selectShowTimeBtn.on('click',{
 									//alert("AAAAA")
