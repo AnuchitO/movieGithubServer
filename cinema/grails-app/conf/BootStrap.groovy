@@ -138,35 +138,37 @@ class BootStrap {
             longTime:180   
         ).save()
 
-        room = new Rooms(
-            roomId:"Room1",
-            movie:movie
+        def t1 = new Theater(
+            theaterId:"1",
+            movies:movie
         ).save()
 
-        def room2 = new Rooms(
-            roomId:"Room2",
-            movie:movie2
+        def t2 = new Theater(
+            theaterId:"2",
+            movies:movie2
         ).save()
 
-        def room3 = new Rooms(
-            roomId:"Room3",
-            movie:movie3
+        def t3 = new Theater(
+            theaterId:"3",
+            movies:movie3
         ).save()
 
-        def c = new Cycle(
-            cycTime:"09.00",
-            rooms:room
+        def s = new Show(
+            showTime:"09.00",
+            theaters:t1
         ).save()
 
-        def c2 = new Cycle(
-            cycTime:"09.00",
-            rooms:room2
+        def s2 = new Show(
+            showTime:"09.00",
+            theaters:t2
         ).save()
 
-        def c3 = new Cycle(
-            cycTime:"09.00",
-            rooms:room3
+        def s3 = new Show(
+            showTime:"09.00",
+            theaters:t3
         ).save()
+
+        
 
 
 
