@@ -106,8 +106,8 @@ class IndexDepositComposer extends GrailsComposer {
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
 
-							//def button = e.target
-							//button.parent.detach()
+							def button = e.target
+							button.parent.detach()
 							
 							def r = DataDeposit.findById(c)
 							
@@ -147,8 +147,8 @@ class IndexDepositComposer extends GrailsComposer {
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
 
-							//def button = e.target
-							//button.parent.detach()
+							def button = e.target
+							button.parent.detach()
 							
 							def r = DataDeposit.findById(c)
 							
