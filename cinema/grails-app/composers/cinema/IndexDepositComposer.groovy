@@ -58,11 +58,12 @@ class IndexDepositComposer extends GrailsComposer {
 					s.timeDep = ($('#time').getText())
 					s.nameDep = ($('#name').getText())
 					s.lnameDep = ($('#lname').getText())
-					s.sexDep = ( $('#gender > radio[checked=true]').getLabel())
+					s.genderDep = ( $('#gender > radio[checked=true]').getLabel())
 					s.inDep = ($('#indep').getText())
 					s.phoneDep = ($('#phone').getText())
 					s.addressDep = ($('#address').getText())
 					s.emailDep = ($('#email').getText())
+					s.statusDep = ("no")
 
 
 				s.save()
@@ -80,7 +81,7 @@ class IndexDepositComposer extends GrailsComposer {
 			    $('#email').val(null)
 			    $('#address').val(null)
 				
-				def X = DataDeposit.findAll()
+				def X = DataDeposit.findAllByStatusDep("no")
 
 				
 
@@ -98,19 +99,20 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.numDep)
 							label( value: f.nameDep)
 							label( value: f.lnameDep)
-							label( value: f.sexDep)
+							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
 							label( value: f.emailDep)
 							
-							button(label: "ลบ" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
+							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
 
 							def button = e.target
 							button.parent.detach()
 							
 							def r = DataDeposit.findById(c)
 							
-							r.delete()
+							r.statusDep = "yes"
+							r.save()
 							
 							})
 						}
@@ -121,9 +123,8 @@ class IndexDepositComposer extends GrailsComposer {
 		})
         $('#check').on('click',{
 
-        		def X = DataDeposit.findAll()
+        		def X = DataDeposit.findAllByStatusDep("no")
 
-				
 
 				$('#grow > row').detach()
 				for(f in X){
@@ -138,20 +139,21 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.numDep)
 							label( value: f.nameDep)
 							label( value: f.lnameDep)
-							label( value: f.sexDep)
+							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
 							label( value: f.emailDep)
 							
 							
-							button(label: "ลบ" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
+							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
 
 							def button = e.target
 							button.parent.detach()
 							
 							def r = DataDeposit.findById(c)
 							
-							r.delete()
+							r.statusDep = "yes"
+							r.save()
 							
 							})
 							

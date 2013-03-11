@@ -7,11 +7,12 @@ class DataDeposit {
 	String timeDep
 	String nameDep
 	String lnameDep
-	String sexDep
+	String genderDep
 	String inDep
 	String phoneDep
 	String addressDep
 	String emailDep
+	String statusDep
 
 	static 	belongsTo  = [individual:Individual]
 
