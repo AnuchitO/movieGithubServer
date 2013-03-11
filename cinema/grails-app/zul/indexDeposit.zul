@@ -238,7 +238,7 @@
                                                         <column label="ที่อยู่"  width ="245px"/>
                                                         <column label="เบอร์โทร"  width ="120px"/>
                                                         <column label="E-mail"  width ="125px"/>
-                                                        <column label="ลบข้อมูล"  width ="70px"/>
+                                                        <column label="คืนลูกค้า"  width ="70px"/>
                                                         </columns>
 
                                                         <rows id = "grow">
