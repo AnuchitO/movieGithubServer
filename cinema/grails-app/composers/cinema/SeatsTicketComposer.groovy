@@ -66,23 +66,6 @@ class SeatsTicketComposer extends GrailsComposer {
 // Seats Selected
 
 
-
-
-
-        for (i=65;i<=75;i++){
-          for(j=0;j<=18;j++) {
-            String Y="#"+(char)i+j
-            String Z=(char)i+j 
-            
-
-              
-
-            
-            }
-        }
-
-Boolean a=true
-def seats
         int k00=0;
         $("#K0").on("click", {
             String sn="K0";
@@ -3359,7 +3342,7 @@ int a00=0;
 
 
         $("#btnBuyTicket").on("click", {
-          
+            
             def namepp
             session.namepp = seats
             def namepp2 
