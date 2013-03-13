@@ -28,7 +28,6 @@ class IndexmarketComposer extends GrailsComposer {
         //===========================================
 
         def x = Sales.findAll([sort:'buyCount', order:'desc'])
-//println(x.buyCount)
         def i
         if(x){
         i = x.buyCount[0]+1
