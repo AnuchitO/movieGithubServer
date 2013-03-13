@@ -27,9 +27,14 @@ class IndexmarketComposer extends GrailsComposer {
         }
         //===========================================
 
-        def x = new Sales(buyCount:1)
-        println(x.buyCount)
-        def i = x.buyCount
+        def x = Sales.findAll([sort:'buyCount', order:'desc'])
+//println(x.buyCount)
+        def i
+        if(x){
+        i = x.buyCount[0]+1
+        }else{
+        i=1;
+        }
         def branch
         $("#nextbtn").on("click", {
                 redirect(uri:'totalmarket.zul')
