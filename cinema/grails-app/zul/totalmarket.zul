@@ -143,12 +143,29 @@
                                         <separator/>
                                         <vbox>   
                                         <hbox>
-                                                                              
+                                                                             
+                                         <space/><space/>  <space/><space/> 
+                                            <label value="รายการสินค้า" width="150px" />
+                                            <combobox id="work" width="150px">
+                                                <comboitem label="Hanami"/>
+                                                <comboitem label="LAYS"/>
+                                                <comboitem label="SNAKJACK"/>
+                                                <comboitem label="TARO"/>
+                                                <comboitem label="JUBJUB"/>
+                                                <comboitem label="POPCORN"/>
+                                                <comboitem label="COKE"/>
+                                                <comboitem label="WATER"/>
+                                            </combobox>
+                                    
+                                            <button id="Stotalbtn"  src="${z.resource(dir:'images',file:'search.png')}" label="ดูยอดรายการ" width="120px" height="40px" /> 
+                                            <button id="totalbtn"  src="${z.resource(dir:'images',file:'search.png')}" label="ดูยอดการขายรวม" width="150px" height="40px" /> 
+                                             <button id="printbtn"  src="${z.resource(dir:'images',file:'printer.png')}" label="พิมพ์" width="80px" height="40px" />
                                         <space/><space/>                                        
-                                        </hbox> 
+                                        </hbox>
+                                         <separator/> 
                                         <grid height="250px" width="650px">  
                                             <columns>                
-                                                <column label="วันที่" align="center" width="80px" />
+                                                <column label="วันที่" align="center" width="120px" />
                                                 <column label="รายการขาย" align="center"/>
                                                 <column label="จำนวน" align="center" width="80px" />
                                                  <column label="ราคา(บาท)" align="center" width="80px" />
