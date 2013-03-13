@@ -15,10 +15,10 @@ class SeatsTicketComposer extends GrailsComposer {
         //def cycleDay=session.cycleRoundFromShowTimes
 //test CycleDay*/
         Date cycleDay =new Date()
-
-        //alert(cycleTimed.[0])
+        def theater = session.theaterShow
+       // alert("${theater.theaterId}")
         $('#labNameMovieEng').val("rooms.movie.movName")
-        $('#labRoom').val("rooms.roomId")             
+        $('#labRoom').val("${theater.theaterId}")             
         //$('#labRound').val("cycleDay.format("dd MMMM yyyy")")
         $('#labTime').val("cycleTimed")
         $('#labType').val("rooms.movie.movType")
