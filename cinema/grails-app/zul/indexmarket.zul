@@ -242,7 +242,7 @@
                                         <hbox>
                                             <separator width="450px"/>            
                                              <button id="savebtn"  src="${z.resource(dir:'images',file:'save.png')}" label="ชำระเงินเรียบร้อย" width="140px" height="40px" />
-                                             <button id="nextbtn"  src="${z.resource(dir:'images',file:'search.png')}" label="ดูยอดการขาย" width="120px" height="40px" />
+                                             <button id="nextbtn"  src="${z.resource(dir:'images',file:'search.png')}" label="สรุปยอดการขาย" width="140px" height="40px" />
                                         </hbox>
                                         </vbox>
 
