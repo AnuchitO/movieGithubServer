@@ -8,6 +8,24 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class TotalmarketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+              if (!session['user'])
+            redirect(uri:'/login.zul')
+        else {
+            window.visible = true
+
+            $("#logonName").val(session.user.firstName + " " + session.user.lastName)
+           
+
+            $("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
+
+           
+        }
+        //===========================================
+
         $("#backbtn").on("click", {
 				redirect(uri:'indexmarket.zul')
 			})
