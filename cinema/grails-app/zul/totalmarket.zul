@@ -146,7 +146,7 @@
                                                                              
                                          <space/><space/>  <space/><space/> 
                                             <label value="รายการสินค้า" width="150px" />
-                                            <combobox id="work" width="150px">
+                                            <combobox id="Sproduct" width="150px">
                                                 <comboitem label="Hanami"/>
                                                 <comboitem label="LAYS"/>
                                                 <comboitem label="SNAKJACK"/>
@@ -176,9 +176,10 @@
                                         </grid>
                                         <separator/>
                                         <hbox>
-                                            <separator width="470px"/>
-                                            <label value="  ยอดขายรวม:" width="150px" style="font-size:18px" />
-                                            <textbox id="total" width="70px" height="20px" style="font-size:18px" />
+                                            <separator width="455px"/>
+                                            <label value=" รวม:  " width="150px" style="font-size:18px" />
+                                            <textbox id="total2" width="70px" height="20px" style="font-size:18px" />
+                                            <textbox id="total"  width="70px" height="20px" style="font-size:18px" />
                                         </hbox>   
                                         </vbox>  
                                         <vbox>

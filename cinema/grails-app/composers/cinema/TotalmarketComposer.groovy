@@ -29,12 +29,18 @@ class TotalmarketComposer extends GrailsComposer {
         $("#backbtn").on("click", {
 				redirect(uri:'indexmarket.zul')
 			})
+         $("#printbtn").on("click", {
+                redirect(uri:'printmarget.zul')
+            })
 
-            def X = Sales.findAll()
+             $("#totalbtn").on("click", {
+                def X = Sales.findAll()
                      def price = 0
+                     def amount = 0
                      $('#row2 > row').detach()
                     for(f in X){
                         price = price + f.salesprice
+                        amount = amount + f.salesAmount
                     $('#row2').append{
                                     row (){  
                                         label( value: f.date.format("dd MMMM yyyy"))                  
@@ -47,5 +53,37 @@ class TotalmarketComposer extends GrailsComposer {
                    }
                    def priceTotal = price
                    $("#total").val(priceTotal)
+                   def amountTotal = amount
+                   $("#total2").val(amountTotal)
+            })
+        
+        def a
+        def g
+         $("#Stotalbtn").on("click", {
+              g = $('#Sproduct').text()
+              a = Sales.findBySalesProduct(g) 
+              //alert(a.salesProduct)
+                     def price = 0
+                     def amount = 0
+                     $('#row2 > row').detach()
+                    for(f in a){
+                        price = price + f.salesprice
+                        amount = amount + f.salesAmount
+                    $('#row2').append{
+                                    row (){  
+                                        label( value: a.date.format("dd MMMM yyyy"))                  
+                                        label( value: a.salesProduct) 
+                                        label( value: a.salesAmount)
+                                        label( value: a.salesprice)
+                                                            
+                                        }
+                                    }
+                   }
+                   def priceTotal = price
+                   $("#total").val(priceTotal)
+                   def amountTotal = amount
+                   $("#total2").val(amountTotal)
+
+            })
     }
 }

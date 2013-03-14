@@ -5,7 +5,7 @@ import org.zkoss.zk.grails.composer.*
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 
-class PrintmargetComposer extends GrailsComposer {
+class PrintmarketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
         // initialize components here

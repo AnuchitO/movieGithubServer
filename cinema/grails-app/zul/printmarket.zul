@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="cinema.PrintmarketComposer">
+        <separator/> 
+        <separator/> 
+        <separator/> 
+        <hbox>
+       
+            <vbox>
+                <label value="สรุปยอดการขายทั้งหมด" width="150px" style="font-size:24px" />   
+                <label>___________________________________________________________________________________________</label> 
+            </vbox> 
+
+        </hbox>
+
+    </window>
+
+</zk>
