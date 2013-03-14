@@ -30,7 +30,7 @@ class TotalmarketComposer extends GrailsComposer {
 				redirect(uri:'indexmarket.zul')
 			})
          $("#printbtn").on("click", {
-                redirect(uri:'printmarket.zul')
+                redirect(uri:'printmarget.zul')
             })
 
              $("#totalbtn").on("click", {
