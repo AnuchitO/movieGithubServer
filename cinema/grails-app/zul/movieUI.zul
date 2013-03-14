@@ -178,8 +178,12 @@
                                                     <row>
                                                         <label value="MovieLongtime"/>
                                                         <intbox id="longTime"/>
-                                                        <label value=""/>
-                                                        <label value=""/>
+                                                        <label value="Promotion"/>
+                                                        <combobox id="promotion">
+                                                            <comboitem label="Empty"/>
+                                                            <comboitem label="Sale_50%"/>
+                                                            <comboitem label="Free_Coke_and_Hanami"/>
+                                                        </combobox>
                                                     </row>
                                                     <row>
                                                         <button id="btnSave" label="Save"/>
@@ -238,9 +242,9 @@
                                                     <row>
                                                         <label value="Theater"/>
                                                         <combobox id="theater">
-                                                            <comboitem label="theater1"/>
-                                                            <comboitem label="theater2"/>
-                                                            <comboitem label="theater3"/>
+                                                            <comboitem label="1"/>
+                                                            <comboitem label="2"/>
+                                                            <comboitem label="3"/>
                                                         </combobox>
                                                         <label value="Show"/>
                                                         <combobox id="show">

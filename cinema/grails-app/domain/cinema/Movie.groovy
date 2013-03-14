@@ -12,6 +12,7 @@ class Movie {
 	String	movDateEnd
 	String 	movPicture640
 	String 	movPicture140
+	String	promotion
 	Integer	longTime
 	static hasOne = [rooms: Rooms]
 	static hasMany = [theaters: Theater]
@@ -28,6 +29,7 @@ class Movie {
 	movDateEnd 				nullable:true
  	movPicture640 			nullable:true
  	movPicture140 			nullable:true
+ 	promotion				nullable:true
 	longTime	 			nullable:true
 	rooms 					nullable:true
     }

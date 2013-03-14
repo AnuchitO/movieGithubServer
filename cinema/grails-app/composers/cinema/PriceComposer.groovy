@@ -67,16 +67,16 @@ class PriceComposer extends GrailsComposer {
         def non = session.namepp
         def rooms = session.namepp2
         // initialize components here
-        $('#moviename1').val(rooms.movie.movName)
-        $('#moviename2').val(rooms.movie.movType)
+        $('#moviename1').val()
+        $('#moviename2').val()
         $('#blanch').val("Team13")
-        $('#runt').val(non.time)
-        $('#seat').val(non.seatNumber)
-        $('#plant').val(rooms.roomId)
+        $('#runt').val()
+        $('#seat').val()
+        $('#plant').val()
         $('#promotion').val("ไม่มีโปรโมชั่น")
         int sumprice = 120;
-        $('#sum').val(sumprice)
-        $('#IDPnuknanSearch').val(sumpri)
+        $('#sum').val()
+        $('#IDPnuknanSearch').val()
         $('#namePanukngan').val(session.user.firstName + " " + session.user.lastName)
         $('#livePanukngan').val(session.user.address + " " + session.user.moo + " "+session.user.county)
         $('#telePhPanukngan').val(session.user.phone)
@@ -89,30 +89,31 @@ class PriceComposer extends GrailsComposer {
 
 
         $('#send').on('click',{
-            $('#mov').val(rooms.movie.movName)
-            $('#rob').val(non.time)
-            $('#teenung').val(non.seatNumber)
-            $('#rong').val(rooms.roomId)
-            $('#mony').val(sumprice)
+            $('#mov').val()
+            $('#rob').val()
+            $('#teenung').val()
+            $('#rong').val()
+            $('#mony').val()
 
-            $('#mov2').val(rooms.movie.movName)
-            $('#rob2').val(non.time)
-            $('#teenung2').val(non.seatNumber)
-            $('#rong2').val(rooms.roomId)
-            $('#mony2').val(sumprice)
+            $('#mov2').val()
+            $('#rob2').val()
+            $('#teenung2').val()
+            $('#rong2').val()
+            $('#mony2').val()
         	$('#C').setSelected(true)
-            def amount = new Amount(
-                price:sumprice,
-                name:session.user.firstName + " " + session.user.lastName,
-                movie1:rooms.movie.movName,
-                rop:non.time,
-                rong:rooms.roomId,
-                sit:non.seatNumber,
-                seats:non,
-                individual:session.user
-                )
-            amount.save()
-
+         //====================================================================================================   
+            //def amount = new Amount(
+            //    price:sumprice,
+            //    name:session.user.firstName + " " + session.user.lastName,
+            //    movie1:rooms.movie.movName,
+            //    rop:non.time,
+            //    rong:rooms.roomId,
+            //    sit:non.seatNumber,
+            //    seats:non,
+            //    individual:session.user
+            //    )
+            //amount.save()
+        //===================================================================================================
 		})
 
 		$('#clear').on('click',{

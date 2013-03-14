@@ -111,6 +111,7 @@ class BootStrap {
 			movDateEnd:"1/2/1111",
 		 	movPicture640:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
 		 	movPicture140:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
+            promotion:"Empty",
 			longTime:120	
     	).save()
 
@@ -123,6 +124,7 @@ class BootStrap {
             movCost:"3M",
             movDate:"1/2/1111",
             movDateEnd:"1/3/1111", 
+            promotion:"Empty",
             longTime:160   
         ).save()
 
@@ -135,6 +137,7 @@ class BootStrap {
             movCost:"2.5M",
             movDate:"1/3/1111",
             movDateEnd:"1/4/1111", 
+            promotion:"Empty",
             longTime:180   
         ).save()
 
