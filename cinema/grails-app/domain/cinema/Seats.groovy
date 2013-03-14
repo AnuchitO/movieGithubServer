@@ -12,5 +12,6 @@ class Seats {
     	time 	nullable:true
     	amount 	nullable:true
     	rooms 	nullable:true 
+    	theaters nullable:true
     }
 }
