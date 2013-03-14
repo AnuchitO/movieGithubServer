@@ -8,35 +8,43 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class SeatsTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
-        // initialize components here
 
-       // def patient = session.room
-        //$("#labRound").val(new Date())
+      $("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
+        // initialize components here      
+   /*     //$("#labRound").val(new Date())
         def rooms=session.roomFromShowTimes
         def cycleTimed=session.cycleTimedFromShowTimes
-        //def cycleDay=session.cycleRoundFromShowTimes
-//test CycleDay
+      
+//test CycleDay*/
+        def showDay=session.showDayFromShowTimes
         Date cycleDay =new Date()
-
-        //alert(cycleTimed.[0])
-        $('#labNameMovieEng').val(rooms.movie.movName)
-        $('#labRoom').val(rooms.roomId)             
-        $('#labRound').val(cycleDay.format("dd MMMM yyyy"))
-        $('#labTime').val(cycleTimed)
-        $('#labType').val(rooms.movie.movType)
-        
-       	int j=0;
-       	int i=65;
+        def theater = session.theaterShow
+        def showTime = session.theaterShowTime
+       alert("${showTime}")
+        $('#labNameMovieEng').val("rooms.movie.movName")
+        $('#labTheater').val("${theater.theaterId}")             
+       // $('#labShow').val("${showTime.format(dd MMMM yyyy)}")
+        $('#labTime').val("${showTime}")
+        $('#labType').val("${theater.movies.movType}")
+        String cycleTimed="15.00"
+        def rooms   = Rooms.findByRoomId("Room1")
+        int j=0;
+        int i=65;
     //Fill  background Empty
-       	for (i=65;i<=75;i++){
-        	for(j=0;j<=18;j++) {
-	        	String Z="#"+(char)i+j
-	        	$(Z).setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;");
+        for (i=65;i<=75;i++){
+          for(j=0;j<=18;j++) {
+            String Z="#"+(char)i+j
+            $(Z).setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;");
             }
         }
     
     //Fill  Seats selected  from dataBase
         def allSeats=Seats.findAllWhere(rooms:rooms,time:"${cycleTimed}")
+
             if (allSeats) {
                 int l=65;
                 int k=0;
@@ -44,25 +52,28 @@ class SeatsTicketComposer extends GrailsComposer {
                 //find Seat == seatsFromDatabase for Fill
                 for (l=65;l<=75;l++){
                     for(k=0;k<=18;k++) {
-                        String X=(char)l+k
-                        if(${seats.seatNumber}==${X}){
+                        String X=(char)l+k 
+                        String  seatsEmpty="#"+(char)l+k                     
+                        if((${seats.seatNumber}==${X})){
                             String B="#"+seats.seatNumber
                             $(B).setStyle("background-image:url(./ext/seatsTicket/seatsSeleted.png); position: relative;");
                             $(B).setDisabled(true)
-                        }                        
+                        }
+
                     }
                 } 
                }
                 //alert("AAAA")
             }else {
                    
-                //alert("BBB")
+               //OK redirect(uri:'/showTimesTicket.zul')
+                 alert("AAAA")
             }
 
 
 // Seats Selected
 
-def seats
+
         int k00=0;
         $("#K0").on("click", {
             String sn="K0";
@@ -3339,7 +3350,7 @@ int a00=0;
 
 
         $("#btnBuyTicket").on("click", {
-          
+            
             def namepp
             session.namepp = seats
             def namepp2 

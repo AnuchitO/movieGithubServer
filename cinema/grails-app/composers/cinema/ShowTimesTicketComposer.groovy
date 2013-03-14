@@ -9,10 +9,16 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
 
+
+    	$("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
         // initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
-        def theaters	= Theater.findAll([sort:'id', order:'asc'])
+        def theaters	= Theater.findAll([sort:'theaterId', order:'asc'])
         def showTimes
         if (theaters) {     
         theaters.each{theater -> 
@@ -21,6 +27,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
         //def nameMovie = "${room.movie.movName}"	
         	//$('#labNameMovie').val(rooms.movie.movName)
         	 showTimes=Show.findAllWhere(theaters:theater,[sort:'showTime', order: "asc"])
+
         	// def results = showTimes.listOrderByCycTime(max: 10, offset: 100, order: "desc")
 	        	//alert(showTimes)        	
 	        	addToListbox(theater,showTimes)
@@ -32,6 +39,8 @@ class ShowTimesTicketComposer extends GrailsComposer {
 		}
 
 def addToListbox(dataTheater,dataShowTime){
+	String btnName
+	
  	$('#box' ).append {           		
                 listitem() {
                 listcell(style:"background-color:white;background-image:url(./ext/showTimeTicketPicture/Bgresult.png)"){
@@ -55,25 +64,12 @@ def addToListbox(dataTheater,dataShowTime){
 	                		separator(width:"25px")
 
 	                		hbox() {
-	                		def selectShowTimeBtn
+	                		
 	                		dataShowTime.each{showTime ->
-	                			
-	                			button(label:"${showTime.showTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
-	                			separator(width:"5px")	
-	                			
-	                			selectShowTimeBtn = $("button[label='${showTime.showTime}']")               			
-								
-								//selectShowTimeBtn.on('click',{
-									//alert("AAAAA")
-									//def roomFromShowTimes
-									//def cycleTimedFromShowTimes
-									//alert("AAAAAAA")
-									//session.roomFromShowTimes = dataTheater
-									//session.cycleTimedFromShowTimes = cycle.cycTime
-									//session.cycleRoundFromShowTimes = cycle.cycDay
-									//redirect(uri:'/seatsTicket.zul')
-								//})
-
+	                			btnName = dataTheater.movies.movName+showTime.showTime
+	                			button(id:btnName,label:"${showTime.showTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
+	                			separator(width:"5px")               			
+					
 								}
 	                		}               		               		
 	                			
@@ -86,6 +82,24 @@ def addToListbox(dataTheater,dataShowTime){
                    
              }
         }
+ //Add event button Time
+dataShowTime.each{showTime ->
+String idtest="#"+"${dataTheater.movies.movName+showTime.showTime}"
+$("#box listitem listcell button[id='${dataTheater.movies.movName+showTime.showTime}']").on('click',{
+ //alert("${dataTheater.movies.movName+showTime.showTime}")
+ 	def theaterShow
+ 	def theaterShowTime
+ 	def showDayFromShowTimes
+
+ 		session.theaterShow = dataTheater
+ 		session.theaterShowTime = showTime.showTime
+ 		session.showDayFromShowTimes = showTime.showDay
+ 		
+ 		redirect(uri:'/seatsTicket.zul')
+
+	})
+}
+       
 
 }
 
