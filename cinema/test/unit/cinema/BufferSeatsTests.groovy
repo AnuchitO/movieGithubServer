@@ -14,4 +14,6 @@ class BufferSeatsTests {
     void testSomething() {
        fail "Implement me"
     }
+    
+    
 }

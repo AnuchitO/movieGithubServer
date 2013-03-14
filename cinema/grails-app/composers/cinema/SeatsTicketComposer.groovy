@@ -8,20 +8,28 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class SeatsTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
+
+      $("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
         // initialize components here      
    /*     //$("#labRound").val(new Date())
         def rooms=session.roomFromShowTimes
         def cycleTimed=session.cycleTimedFromShowTimes
-        //def cycleDay=session.cycleRoundFromShowTimes
+      
 //test CycleDay*/
+        def showDay=session.showDayFromShowTimes
         Date cycleDay =new Date()
         def theater = session.theaterShow
-       // alert("${theater.theaterId}")
+        def showTime = session.theaterShowTime
+       alert("${showTime}")
         $('#labNameMovieEng').val("rooms.movie.movName")
-        $('#labRoom').val("${theater.theaterId}")             
-        //$('#labRound').val("cycleDay.format("dd MMMM yyyy")")
-        $('#labTime').val("cycleTimed")
-        $('#labType').val("rooms.movie.movType")
+        $('#labTheater').val("${theater.theaterId}")             
+       // $('#labShow').val("${showTime.format(dd MMMM yyyy)}")
+        $('#labTime').val("${showTime}")
+        $('#labType').val("${theater.movies.movType}")
         String cycleTimed="15.00"
         def rooms   = Rooms.findByRoomId("Room1")
         int j=0;

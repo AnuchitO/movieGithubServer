@@ -8,7 +8,13 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
-    	
+
+
+    	$("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
         // initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
@@ -62,21 +68,7 @@ def addToListbox(dataTheater,dataShowTime){
 	                		dataShowTime.each{showTime ->
 	                			btnName = dataTheater.movies.movName+showTime.showTime
 	                			button(id:btnName,label:"${showTime.showTime}",style:"color:black ;font-size:12pt; display:block;line-height: 40px;font-weight: bolder;text-align:center;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
-	                			separator(width:"5px")	
-
-	                			//b++;
-	                			//selectShowTimeBtn = $("button[label='${showTime.showTime}']")               			
-								
-								//selectShowTimeBtn.on('click',{
-									//alert("AAAAA")
-									//def roomFromShowTimes
-									//def cycleTimedFromShowTimes
-									//alert("AAAAAAA")
-									//session.roomFromShowTimes = dataTheater
-									//session.cycleTimedFromShowTimes = cycle.cycTime
-									//session.cycleRoundFromShowTimes = cycle.cycDay
-									//redirect(uri:'/seatsTicket.zul')
-								//})
+	                			separator(width:"5px")               			
 					
 								}
 	                		}               		               		
@@ -94,9 +86,15 @@ def addToListbox(dataTheater,dataShowTime){
 dataShowTime.each{showTime ->
 String idtest="#"+"${dataTheater.movies.movName+showTime.showTime}"
 $("#box listitem listcell button[id='${dataTheater.movies.movName+showTime.showTime}']").on('click',{
- alert("${dataTheater.movies.movName+showTime.showTime}")
+ //alert("${dataTheater.movies.movName+showTime.showTime}")
  	def theaterShow
+ 	def theaterShowTime
+ 	def showDayFromShowTimes
+
  		session.theaterShow = dataTheater
+ 		session.theaterShowTime = showTime.showTime
+ 		session.showDayFromShowTimes = showTime.showDay
+ 		
  		redirect(uri:'/seatsTicket.zul')
 
 	})

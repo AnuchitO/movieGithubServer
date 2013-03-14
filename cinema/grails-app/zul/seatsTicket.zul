@@ -190,7 +190,8 @@
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
-                                    <separator width="100px"/>                                    
+                                     <separator width="630px"/>
+                                    <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>                                    
                                 </hbox>
                             </div>
                             <div id="underHeadBody"  class="underHead" style="background-color:black;">
@@ -227,7 +228,7 @@
                                                     <label class="Info" value="โรงฉาย:" width="50px" />
                                                 </listcell>
                                                 <listcell style="background-color:white;text-align:left">
-                                                    <label  id="labRoom" class="Info" value="1" />
+                                                    <label  id="labTheater" class="Info" value="1" />
                                                 </listcell>
                                                 <listcell >
                                                     <label class="Info" value="ประเภท: " width="50px" />
@@ -241,7 +242,7 @@
                                                     <label class="Info" value="รอบฉายวันที่:" width="50px"/>
                                                 </listcell>
                                                 <listcell style="background-color:white;text-align:left">
-                                                    <label id="labRound" class="Info" value="02/03/2556" />
+                                                    <label id="labShow" class="Info" value="02/03/2556" />
                                                 </listcell>                        
                                             </listitem>
                                             <listitem style="background-color:white;text-align:right" width="50px">
