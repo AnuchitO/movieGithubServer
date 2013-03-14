@@ -24,8 +24,8 @@ class SeatsTicketComposer extends GrailsComposer {
         Date cycleDay =new Date()
         def theater = session.theaterShow
         def showTime = session.theaterShowTime
-       alert("${showTime}")
-        $('#labNameMovieEng').val("rooms.movie.movName")
+// alert("${showTime}")
+        $('#labNameMovieEng').val("${theater.movies.movName}")
         $('#labTheater').val("${theater.theaterId}")             
        // $('#labShow').val("${showTime.format(dd MMMM yyyy)}")
         $('#labTime').val("${showTime}")
@@ -43,7 +43,7 @@ class SeatsTicketComposer extends GrailsComposer {
         }
     
     //Fill  Seats selected  from dataBase
-        def allSeats=Seats.findAllWhere(rooms:rooms,time:"${cycleTimed}")
+        def allSeats=Seats.findAllWhere(theaters:theater,time:"${showTime}")
 
             if (allSeats) {
                 int l=65;
@@ -67,17 +67,17 @@ class SeatsTicketComposer extends GrailsComposer {
             }else {
                    
                //OK redirect(uri:'/showTimesTicket.zul')
-                 alert("AAAA")
+                // alert("AAAA")
             }
 
 
 // Seats Selected
-
+def  seats
 
         int k00=0;
         $("#K0").on("click", {
             String sn="K0";
-            seats= new Seats(seatNumber:sn,time:"${cycleTimed}",rooms:rooms)
+            seats= new BufferSeats(bSeatNumber:sn,bTime:"${showTime}",bMovName:"${theater.movies.movName}",theaters:theater)
             if(k00==0) {
                 $("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsReady.png); position: relative;");
                 k00=1;                          
@@ -85,7 +85,7 @@ class SeatsTicketComposer extends GrailsComposer {
             } else {
                k00=0;                           
                $("#K0").setStyle("background-image:url(./ext/seatsTicket/seatsEmpty.png); position: relative;color:gold");
-               seats = Seats.findBySeatNumber(sn)
+               seats = BufferSeats.findByBSeatNumber(sn)
                seats.delete()
             }
             //$("#K0").setStyle("background-color: black; position: relative;");  //ok
