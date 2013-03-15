@@ -9,9 +9,9 @@ class BufferSeats {
 	static belongsTo = [theaters:Theater]
     static constraints = {
 
-    	bSeatNumber nullable:true
-		bTime		nullable:true
-		theaters		nullable:true
+    	bSeatNumber matches: /[ABCDEFGHIJK]\d{2}/
+		bTime		nullable:false
+		theaters		nullable:false
 		bMovName		nullable:true
     }
 
