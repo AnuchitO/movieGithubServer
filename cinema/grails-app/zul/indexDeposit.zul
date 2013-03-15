@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:h="http://www.w3.org/1999/xhtml"
@@ -72,12 +73,18 @@
         text-align: center;
     } 
     </style>
- 
-   
+    
+    <style>.count { font-weight: bold; font-size: 16px; } .time { font-size: 16px; }</style>
+    <zscript>
+        
+        void restart() {
+            
+        }
+    </zscript>
 
     <window apply="cinema.IndexDepositComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
 
-       <div id="testid"  style=";"  width="1366px"  height="1280px" >
+       <div id="testid"  style=";"  width="1366px"  height="1500px" >
     <borderlayout width="1366px"  height="100%" style="background-color:transparent;" >
 
         <west maxsize="600" size="12%" flex="true" border="none" splittable="false" style="background-color:transparent;" >
@@ -142,7 +149,7 @@
                         <div id="centerContent"  >
                             
                                 
-                                    <div width="1000px" height="970px" class="form">
+                                    <div width="1000px" height="1200px" class="form">
 
                                                 <vlayout spacing="7px">
 
@@ -228,6 +235,8 @@
                                                 <vbox  width="600px"><button id="check" label="ตรวจสอบ" width="125px" height="45px"/></vbox>
                                                 <separator spacing="25px" />
 
+                                                <label id="now" sclass="time" style="font-size:30px;color:green;"/>
+
                                                     <grid width="750x" height="315px" id ="gridbox">
                                                         <columns>
                                                         <column label="วันที่"  width ="90px" />
@@ -235,18 +244,26 @@
                                                         <column label="ชื่อ"  width ="100px"/>
                                                         <column label="นามสกุล"  width ="100px"/>
                                                         <column label="เพศ"  width ="50px"/>
-                                                        <column label="ที่อยู่"  width ="245px"/>
+                                                        <column label="ที่อยู่"  width ="150px"/>
                                                         <column label="เบอร์โทร"  width ="120px"/>
-                                                        <column label="E-mail"  width ="125px"/>
+                                                       
                                                         <column label="คืนลูกค้า"  width ="70px"/>
+                                                        <column label="ก่อนหน้า"  width ="65px"/>
+                                                        <column label="แจ้งเตือน"  width ="65px"/>
+                                                        <column label="เวลา"  width ="65px"/>
                                                         </columns>
 
                                                         <rows id = "grow">
                                                         
                                                         </rows>
                                                     </grid>
-                                            
-
+                                               
+                                                <timer id="timer" delay="1000" repeats="true">
+                                                    <attribute name="onTimer">
+                                                        now.setValue("Time ：" + new Date().toString());
+                                                         
+                                                    </attribute>
+                                                </timer>
                                             </div>
                                 
                             

@@ -8,6 +8,12 @@ import org.zkoss.zk.ui.Executions
 
 class IndexDepositComposer extends GrailsComposer {
 
+	def depositComet  // inject the IssueCommet 
+    
+    def lblTest
+    def lblBefore
+    def lblAfter
+
     def afterCompose = { window ->
         // initialize components here
 
@@ -30,7 +36,9 @@ class IndexDepositComposer extends GrailsComposer {
 	            })
 
 	        }
-		    
+
+
+		    depositComet.start()
 
 		$('#submit').on('click',{
 
@@ -102,7 +110,8 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
-							label( value: f.emailDep)
+							//label( value: f.emailDep)
+
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
 
@@ -142,7 +151,7 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
-							label( value: f.emailDep)
+							//label( value: f.emailDep)
 							
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
