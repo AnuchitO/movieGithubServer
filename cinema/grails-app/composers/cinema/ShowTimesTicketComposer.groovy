@@ -73,8 +73,7 @@ def addToListbox(dataTheater,dataShowTime){
 								}
 	                		}               		               		
 	                			
-	                		
-                		}
+	                	}
                 	}
 
                 	}
