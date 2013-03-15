@@ -14,23 +14,14 @@ class Movie {
 	String 	movPicture140
 	String	promotion
 	Integer	longTime
-	static hasOne = [rooms: Rooms]
+	//static hasOne = [rooms: Rooms]
 	static hasMany = [theaters: Theater]
 	
     static constraints = {
 
-	movId 		 			nullable:true
- 	movType 				nullable:true
- 	movName 				nullable:true
- 	movSuperintendent 		nullable:true
- 	movDetail 				nullable:true
- 	movCost 				nullable:true
- 	movDate 				nullable:true
-	movDateEnd 				nullable:true
- 	movPicture640 			nullable:true
- 	movPicture140 			nullable:true
- 	promotion				nullable:true
-	longTime	 			nullable:true
-	rooms 					nullable:true
+    	movId 		blank:false,matches:/\d{4}/
+    	movName		blank:false
+    	longTime	null:false
+
     }
 }
