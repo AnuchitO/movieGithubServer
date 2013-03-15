@@ -4,7 +4,7 @@ import org.zkoss.zk.grails.*
 
 class DepositComet extends GrailsComet {
 
-    int i = 10
+     int i = 10
 
     static trigger = [startDelay: 0L, every: 1000L]
 

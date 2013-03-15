@@ -74,13 +74,8 @@
     } 
     </style>
     
-    <style>.count { font-weight: bold; font-size: 16px; } .time { font-size: 16px; }</style>
-    <zscript>
-        
-        void restart() {
-            
-        }
-    </zscript>
+    
+    
 
     <window apply="cinema.IndexDepositComposer" style="background-image:url(./images/bg.jpg) ;background-repeat:no-repeat;background-attachment:fixed;">
 

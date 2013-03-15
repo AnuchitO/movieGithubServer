@@ -73,7 +73,6 @@ class IndexDepositComposer extends GrailsComposer {
 					s.emailDep = ($('#email').getText())
 					s.statusDep = ("no")
 
-
 				s.save()
 
 				alert('กรอกข้อมูลเรียบร้อย')
