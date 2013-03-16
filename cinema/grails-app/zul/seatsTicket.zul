@@ -206,7 +206,7 @@
                                 <separator width="1px"/>
                                 <!-- Insert Content Center to Here -->
                                 <vbox align="center">
-                                <groupbox mold="3d" width="700px" height="135px" style="margin-left: auto;margin-right: auto ;vertical-align:left;background-image:url(./ext/seatsTicket/result.png) ;background-repeat:repeat;" >
+                                <groupbox mold="3d" width="750px" height="135px" style="margin-left: auto;margin-right: auto ;vertical-align:left;background-image:url(./ext/seatsTicket/result.png) ;background-repeat:repeat;" >
                                     <hbox width="700px" height="135px">
                                         <image id="imgMovieSeats" width="100px" height="123px" src="${z.resource(dir:'showTimeTicketPicture', file:'movie_picture_beautiful-creatures-big-140x210.jpg')}"/>
                                         <separator width="3px"/>
@@ -217,12 +217,12 @@
                                     </vbox>
                                     <separator width="3px"/>
                                     <vbox>
-                                        <listbox id="listboxInfoMovie" width="450px" multiple="false" checkmark="false">
+                                        <listbox id="listboxInfoMovie" width="550px" multiple="false" checkmark="false">
                                             <listhead>
                                                 <listheader width="100px"  />
                                                 <listheader width="150px"/>
                                                 <listheader width="70px" />
-                                                <listheader width="70px" />
+                                                <listheader width="200px" />
                                             </listhead>
                                             <listitem style="background-color:white;text-align:right" width="50px">
                                                 <listcell >
@@ -244,7 +244,13 @@
                                                 </listcell>
                                                 <listcell style="background-color:white;text-align:left">
                                                     <label id="labShow" class="Info" value="02/03/2556" />
-                                                </listcell>                        
+                                                </listcell> 
+                                                <listcell>
+                                                    <label class="Info" value="โปรโมชั่น:" width="50px"/>
+                                                </listcell>
+                                                <listcell style="background-color:white;text-align:left">
+                                                    <label id="labPromotion" class="Info" value="---" />
+                                                </listcell>                       
                                             </listitem>
                                             <listitem style="background-color:white;text-align:right" width="50px">
                                                 <listcell>
