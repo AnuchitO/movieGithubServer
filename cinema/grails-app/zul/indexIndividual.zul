@@ -161,8 +161,8 @@
                         </hbox>
                         <hbox>
                         <label value="  วันเดือนปีเกิด"/>
-                        <textbox id="datebox" />
-                        <label value="dd/mm/yyyy (ค.ศ.)"/>
+                        <datebox id="date" width='155px ' cols="12" format="short " />
+                        <label value="mm/dd/yyyy (ค.ศ.)"/>
                         </hbox>
                         <hbox>
                         <label value=" สถานะ"/>
@@ -195,7 +195,14 @@
                         </hbox>
                         <hbox>
                         <label value=" ระดับการศึกษาที่จบสูงสุด"/>
-                        <textbox id="stbox" />
+                        <combobox id="cmb" width="150px" >
+                            
+                                 <comboitem label="ม.6"/>
+                                 <comboitem label="ปวช."/>
+                                 <comboitem label="ปวส."/>
+                                 <comboitem label="ปริญญาตรี"/>
+                             
+                        </combobox>
                         </hbox> 
                         <hbox>
                         <label value=" หลักสูตรที่จบ"/>
@@ -207,7 +214,14 @@
                         </hbox> 
                         <hbox>
                          <label value=" ตำแหน่งงาน"/>
-                        <textbox id="position" />
+                        <combobox id="cmbSize" width="150px" >
+                            
+                                 <comboitem label="พนักงานขายสินค้า"/>
+                                 <comboitem label="พนักงานขายตั๋ว"/>
+                                 <comboitem label="พนักงานจัดการโรงหนัง"/>
+                                 <comboitem label="พนักงานรับฝากของ"/>
+                             
+                        </combobox>
                         </hbox>     
                         <hbox>        
                         <label value=" Username  "/>
