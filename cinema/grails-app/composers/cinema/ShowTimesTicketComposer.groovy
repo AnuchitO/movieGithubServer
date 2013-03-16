@@ -27,10 +27,11 @@ class ShowTimesTicketComposer extends GrailsComposer {
         //def nameMovie = "${room.movie.movName}"	
         	//$('#labNameMovie').val(rooms.movie.movName)
         	 showTimes=Show.findAllWhere(theaters:theater,[sort:'showTime', order: "asc"])
-
+        	 if(showTimes){
         	// def results = showTimes.listOrderByCycTime(max: 10, offset: 100, order: "desc")
 	        	//alert(showTimes)        	
 	        	addToListbox(theater,showTimes)
+	        	}
 			}
 		}else{
 			//alert("AAA")
