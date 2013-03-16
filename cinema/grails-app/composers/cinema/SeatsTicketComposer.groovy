@@ -50,6 +50,7 @@ class SeatsTicketComposer extends GrailsComposer {
       // label( value: f.date.format("dd MMMM yyyy"))
         $('#labTime').val("${showTime}")
         $('#labType').val("${theater.movies.movType}")
+        $('#labPromotion').val("${theater.movies.promotion}")
         
        
         int j=0;
