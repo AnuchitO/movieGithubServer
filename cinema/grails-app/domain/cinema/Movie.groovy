@@ -18,12 +18,17 @@ class Movie {
 	
     static constraints = {
 
-    	movId 			blank:false,matches:/\d{4}/
-    	movName			blank:false
-    	longTime		null:false
-    	movPicture640	nullable:true
-		movPicture140	nullable:true
-
-
+    	movId 				blank:false,matches:/\d{4}/,unique:true
+    	movType				blank:false
+    	movName				blank:false,unique:true
+    	movSuperintendent	blank:false
+    	movDetail			blank:false
+    	movCost				blank:false,matches:/\d[k]/
+    	movDate 			blank:false
+    	movDateEnd 			blank:false
+    	movPicture640		nullable:true
+		movPicture140		nullable:true
+		promotion 			blank:false
+		longTime			null:false,matches:/\d/
     }
 }

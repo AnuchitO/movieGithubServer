@@ -177,6 +177,7 @@
                                                             <comboitem label="Empty"/>
                                                             <comboitem label="Sale_50%"/>
                                                             <comboitem label="Free_Coke_and_Hanami"/>
+                                                            <comboitem label="Free_PopCorn"/>
                                                         </combobox>
                                                     </row>
                                                     <row>
