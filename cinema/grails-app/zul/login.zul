@@ -132,9 +132,10 @@
                                         <separator/><separator/><separator/><separator/><separator/>
                                         <separator/><separator/><separator/><separator/><separator/>
                                         <button id="login" label="login"/>
-                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <button id="register" label="Register" />
                                         <button id="clear" label="clear"/>
                                     </hbox>
+                                    
                                 </vbox>
                             </div>
 

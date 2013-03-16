@@ -1,7 +1,7 @@
 package cinema
 
 import org.zkoss.zk.grails.composer.*
-
+import org.zkoss.zk.ui.Executions
 import cinema.*
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
@@ -210,5 +210,31 @@ class MovieUIComposer extends GrailsComposer {
                 }else alert("Save False")                 
             }
         })
+        $("#movie").on('click',{
+    
+         Executions.sendRedirect("/movieUI.zul");
+         })
+        
+        $("#ticket").on('click',{
+    
+         Executions.sendRedirect("/showTimesTicket.zul");
+         })
+
+        $("#deposite").on('click',{
+    
+         Executions.sendRedirect("/indexDeposit.zul");
+         })
+
+        $("#maket").on('click',{
+    
+         Executions.sendRedirect("/indexmarket.zul");
+         })
+
+        
+
+        $("#person").on('click',{
+    
+         Executions.sendRedirect("/indexShowIndividual.zul");
+         })
     }
 }
