@@ -13,8 +13,7 @@ class Movie {
 	String 	movPicture640
 	String 	movPicture140
 	String	promotion
-	Integer	longTime
-	//static hasOne = [rooms: Rooms]
+	Integer	longTime	
 	static hasMany = [theaters: Theater,shows:Show]
 	
     static constraints = {
