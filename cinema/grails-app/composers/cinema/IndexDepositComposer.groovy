@@ -38,7 +38,7 @@ class IndexDepositComposer extends GrailsComposer {
 	        }
 
 
-		    depositComet.start()
+		    //depositComet.start()
 
 		$('#submit').on('click',{
 

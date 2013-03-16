@@ -143,7 +143,7 @@
                             
                                 
                                     <div width="1000px" height="1200px" class="form">
-
+                                            <hlayout spacing="20px">
                                                 <vlayout spacing="7px">
 
                                                     
@@ -162,6 +162,7 @@
 
                                                     </vbox>
                                                     <separator spacing="25px" />
+
                                                     <hlayout spacing="20px">
                                                         <label class="name" value="รหัสตั๋ว :" style="font-size:15px;" />
                                                         <textbox id="idep" width='150px' />
@@ -217,6 +218,29 @@
                                                     </hlayout>
                                                     
                                                 </vlayout>
+                                                 <separator spacing="20px" />
+                                                <vlayout spacing="7px">
+                                                    <separator spacing="50px" />
+
+                                                    <panel id="clock" height="250px" title="เวลาปัจจุบัน" border="normal" style="margin-bottom:10px">
+                                                        <panelchildren>
+                                                            <iframe width="100%" height="100%"
+                                                                src="http://ig.gmodules.com/gadgets/ifr?url=http://www.labpixies.com/campaigns/clock/mini_clock.xml&amp;nocache=0&amp;up_skin_id=&amp;upt_skin_id=hidden&amp;lang=en&amp;country=us&amp;.lang=en&amp;.country=us&amp;synd=ig&amp;mid=34&amp;ifpctok=-3234052241260630457&amp;parent=http://www.google.com&amp;extern_js=/extern_js/f/CgJlbhICdXMrMBI4ACwrMBM4ACw/v3vgcgA0x8g.js" />
+                                                        </panelchildren>
+                                                    </panel>
+
+                                                     <panel id="calender" height="222px" title="ปฏิทิน" border="normal" style="margin-bottom:10px">
+                                                        <panelchildren>
+                                                        
+                                                        <calendar width="350px" height="180px">
+                                                        </calendar>
+                                                        </panelchildren>
+                                                    </panel>
+
+                                                </vlayout>
+
+                                             </hlayout>
+
                                                  <separator spacing="25px" />
 
                                                 <vbox align="Center" width="600px"><button id="submit" label="ยืนยัน" width="125px" height="45px"/></vbox>
@@ -225,8 +249,7 @@
                                                 <image src="${z.resource(dir:'images', file:'dataCustumer1.png')}" width="240px"/>
                                                 <separator spacing="25px" />
 
-                                                <vbox  width="600px"><button id="check" label="ตรวจสอบ" width="125px" height="45px"/></vbox>
-                                                <separator spacing="25px" />
+                                                
 
                                                 <label id="now" sclass="time" style="font-size:30px;color:green;"/>
 
@@ -237,7 +260,7 @@
                                                         <column label="ชื่อ"  width ="100px"/>
                                                         <column label="นามสกุล"  width ="100px"/>
                                                         <column label="เพศ"  width ="50px"/>
-                                                        <column label="ที่อยู่"  width ="150px"/>
+                                                        <column label="ที่อยู่"  width ="180px"/>
                                                         <column label="เบอร์โทร"  width ="120px"/>
                                                        
                                                         <column label="คืนลูกค้า"  width ="70px"/>
@@ -250,6 +273,10 @@
                                                         
                                                         </rows>
                                                     </grid>
+                                                <separator spacing="25px" />
+
+                                                <vbox  align="Center" width="960px"><button id="check" label="ตรวจสอบ" width="125px" height="45px"/></vbox>
+                                                <separator spacing="25px" />
                                                
                                                 <timer id="timer" delay="1000" repeats="true">
                                                     <attribute name="onTimer">
