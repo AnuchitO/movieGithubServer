@@ -190,11 +190,12 @@
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
-                                     <separator width="630px"/>
+                                     <separator width="500px"/>
+                                     <button id="btnBack" height="40px" src="${z.resource(dir:'images',file:'back.png')}">กลับไปเลือกหนัง</button>
                                     <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>                                    
                                 </hbox>
                             </div>
-                            <div id="underHeadBody"  class="underHead" style="background-color:black;">
+                            <div id="underHeadBody"  height="40px" class="underHead" style="background-color:black;">
                                 <image src="${z.resource(dir:'images', file:'BodyBg.png')}"/>
                             </div> 
                         </div>                    
