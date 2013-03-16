@@ -206,8 +206,36 @@
                                                         </vbox>
                                                 </west>
                                                         
-                                                <east width="40%" title="หนังใหม่วันนี้" style="background-image:url(./images/ironman.jpg)">
-                                                                                                                                                                                                                          
+                                                <east width="40%" title="โปรโมชั่นที่มีในเดือนนี้" style="background-color:#66FF99;">
+                                                  <vbox>
+                                                   
+                                                    <separator/><separator/>
+                                                    <hbox>
+                                                              <button id="coke"  src="${z.resource(dir:'images',file:'coke.png')}" label="" width="90px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
+                                                    <separator/><separator/>
+                                                    <hbox>
+                                                              <button id="hanami"  src="${z.resource(dir:'images',file:'Hanami.png')}" label="" width="90px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
+                                                    <separator/><separator/>
+                                                    <hbox>
+                                                              <button id="popcon"  src="${z.resource(dir:'images',file:'popcorn.png')}" label="" width="90px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
+                                                    <separator/><separator/>
+                                                    <hbox>
+                                                              <button id="seal"   label="ลด50%จากราคาเต็ม" style="font-size:20px" width="200px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
+
+
+                                                  </vbox>               
                                                 </east>
 
                                             </borderlayout>    
@@ -357,12 +385,19 @@
                                                     <vbox>
                                                       <image src="${z.resource(dir:'images', file:'logo.png')}"/>
                                                       <separator/><separator/>
-                                                      <label style="font-size:15px">sponsor</label>
+                                                      <label style="font-size:15px">โปรโมชั่นที่ได้รับ</label>
                                                       <separator/><separator/>
                                                       <hbox>
-                                                        <image src="${z.resource(dir:'images', file:'coke.png')}"/>
-                                                        <image src="${z.resource(dir:'images', file:'Hanami.png')}"/>
+                                                        <image id ="pro1" src="${z.resource(dir:'images', file:'coke.png')}"/>
+                                                        <image id = "pro2" src="${z.resource(dir:'images', file:'Hanami.png')}"/>
+                                                        <image id ="pro3" src="${z.resource(dir:'images', file:'popcorn.png')}"/>
                                                       </hbox>
+                                                      <separator/><separator/>
+                                                      <hbox>
+                                                              <button id="pro4"   label="ลด50%จากราคาเต็ม" style="font-size:20px" width="200px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
                                                     </vbox>
                                                   </hbox>     
                                                 </west>
@@ -402,13 +437,20 @@
                                                     <vbox>
                                                       <image src="${z.resource(dir:'images', file:'logo.png')}"/>
                                                       <separator/><separator/>
-                                                      <label style="font-size:15px">sponsor</label>
+                                                      <label style="font-size:15px">โปรโมชั่นที่ได้รับ</label>
                                                       <separator/><separator/>
                                                       <hbox>
-                                                        <image src="${z.resource(dir:'images', file:'coke.png')}"/>
-                                                        <image src="${z.resource(dir:'images', file:'Hanami.png')}"/>
+                                                        <image id ="pro5" src="${z.resource(dir:'images', file:'coke.png')}"/>
+                                                        <image id = "pro6" src="${z.resource(dir:'images', file:'Hanami.png')}"/>
+                                                        <image id ="pro7" src="${z.resource(dir:'images', file:'popcorn.png')}"/>
                                                       </hbox>
-                                                      <separator/><separator/><separator/><separator/><separator/><separator/><separator/><separator/>
+                                                      <separator/><separator/>
+                                                      <hbox>
+                                                              <button id="pro8"   label="ลด50%จากราคาเต็ม" style="font-size:20px" width="200px" height="100px" />
+                                                             
+                                                              
+                                                    </hbox>
+                                                      <separator/><separator/><separator/><separator/>
                                                       <button id="bak" label="กลับหน้าจองต๋ว"/>
                                                       <button id="bak2" label="ดูบันทึกการเงิน"/>
                                                     </vbox>

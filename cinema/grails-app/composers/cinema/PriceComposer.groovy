@@ -37,8 +37,7 @@ class PriceComposer extends GrailsComposer {
 
             })
 
-        }
-        //==============================================================
+            //==============================================================
         def results = Amount.findAll()
         
         int sumpri = 0;
@@ -89,18 +88,18 @@ class PriceComposer extends GrailsComposer {
 
 
         $('#send').on('click',{
-            $('#mov').val()
-            $('#rob').val()
-            $('#teenung').val()
-            $('#rong').val()
-            $('#mony').val()
+            $('#mov').val('')
+            $('#rob').val('')
+            $('#teenung').val('')
+            $('#rong').val('')
+            $('#mony').val('')
 
-            $('#mov2').val()
-            $('#rob2').val()
-            $('#teenung2').val()
-            $('#rong2').val()
-            $('#mony2').val()
-        	$('#C').setSelected(true)
+            $('#mov2').val('')
+            $('#rob2').val('')
+            $('#teenung2').val('')
+            $('#rong2').val('')
+            $('#mony2').val('')
+            $('#C').setSelected(true)
          //====================================================================================================   
             //def amount = new Amount(
             //    price:sumprice,
@@ -114,20 +113,24 @@ class PriceComposer extends GrailsComposer {
             //    )
             //amount.save()
         //===================================================================================================
-		})
+        })
 
-		$('#clear').on('click',{
-        	redirect(uri:'showTimesTicket.zul')
-		})
+        $('#clear').on('click',{
+            redirect(uri:'showTimesTicket.zul')
+        })
 
-		$('#bak').on('click',{
-        	redirect(uri:'showTimesTicket.zul')
-		})
+        $('#bak').on('click',{
+            redirect(uri:'showTimesTicket.zul')
+        })
         $('#bak2').on('click',{
             $('#B').setSelected(true)
         })
         $('#bun').on('click',{
             redirect(uri:'showTimesTicket.zul')
         })
+        
+
+        }
+        
     }
 }
