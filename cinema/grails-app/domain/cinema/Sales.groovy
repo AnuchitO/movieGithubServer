@@ -10,13 +10,13 @@ class Sales {
 	static 	belongsTo  = [individual:Individual]
 
     static constraints = {
-
+        buyCount blank:false
+        salesProduct blank:false
+        salesprice  blank:false ,matches:/\d{2}/
     	individual nullable:true
     	date nullable:true
-    	salesprice  nullable:true
-    	buyCount nullable:true
-    	salesProduct nullable:true
     	salesAmount nullable:true
+
     	
     }
 }
