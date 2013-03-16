@@ -10,8 +10,7 @@ class Seats {
     static constraints = {
     	seatNumber nullable:true
     	time 	nullable:true
-    	amount 	nullable:true
-    	rooms 	nullable:true 
+    	amount 	nullable:true    	 
     	theaters nullable:true
     }
 }
