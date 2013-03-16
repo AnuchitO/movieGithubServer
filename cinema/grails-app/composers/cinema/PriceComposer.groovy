@@ -21,21 +21,46 @@ class PriceComposer extends GrailsComposer {
 
             $("#logOut").on("click", {
                 session.user = null
+                def buffer=BufferSeats.findAll()
+                if(buffer){
+                    buffer.each{buff ->
+                    def buf = BufferSeats.get(buff.id)
+                    buf.delete()
+                }
                 redirect(uri:'/login.zul')
+            }
 
             })
 
             $("#logOut2").on("click", {
                 session.user = null
+                def buffer=BufferSeats.findAll()
+                if(buffer){
+                    buffer.each{buff ->
+                    def buf = BufferSeats.get(buff.id)
+                    buf.delete()
+                }
                 redirect(uri:'/login.zul')
+            }
+
 
             })
 
             $("#logOut3").on("click", {
                 session.user = null
+                def buffer=BufferSeats.findAll()
+                if(buffer){
+                    buffer.each{buff ->
+                    def buf = BufferSeats.get(buff.id)
+                    buf.delete()
+                }
                 redirect(uri:'/login.zul')
+            }
+
 
             })
+
+
 
             //==============================================================
         def results = Amount.findAll()
@@ -47,35 +72,60 @@ class PriceComposer extends GrailsComposer {
                 for(c in results)
                     $("grid > rows").append{
                                 row{
-                                    label(value:c.movie1)
-                                    label(value:c.rop)
-                                    label(value:c.rong)
-                                    label(value:c.sit)
+                                    label(value:c.movieName)
+                                    label(value:c.showtime)
+                                    label(value:c.theaTer)
+                                    label(value:c.seat)
                                     label(value:c.price)
-                                    i++
+                                    i=i+c.price
                                 }
                     }
         }
-        sumpri = 120*i;
+        sumpri =i
 
         //===============================================================
-        //def movie = new Movie(movType:"Action",movName:"spiderman")
-        //def cycle = new Cycle(cycTime:"12.00-13.00 น.")
-        //def rooms = new Rooms(roomId:"Room3",movie:movie,cycle:cycle)
-        //def non = new Seats(seatNumber:'k1',tel:"123456",rooms:rooms)
-        def non = session.namepp
-        def rooms = session.namepp2
+        //def movie = new Movie(movId:"12",movType:"Action",movName:"spiderman",movSuperintendent:"asn",movDetail:"fdhsfgjsfjg",movCost:"movCost",movDate:"movDate",movDateEnd:"movDateEnd",movPicture640:"movPicture640",movPicture140:"movPicture140",promotion:"Empty",longTime: 234 ,theaters:theaters,shows:shows)
+        //def theaters = new Theater(theaterId:"qqwwee",shows:shows,seats:seats,bufferSeats:bufferSeats,movies:movies)
+        //def shows = new Show(showDay:new Date(),showTime:"showTime",theaters:theaters,movies:movies)
+        //def seats = new Seats(seatNumber:'k1',time:"time",theaters:theaters,amount:amount)
+        
         // initialize components here
-        $('#moviename1').val()
-        $('#moviename2').val()
+
+        def results2 = BufferSeats.findAll()
+
+        $('#moviename1').val(results2[0].theaters.movies.movName)
+
+        
+
+
+        $('#moviename2').val(results2[0].theaters.movies.movType)
         $('#blanch').val("Team13")
-        $('#runt').val()
-        $('#seat').val()
-        $('#plant').val()
-        $('#promotion').val("ไม่มีโปรโมชั่น")
+        $('#runt').val(results2[0].bTime)
         int sumprice = 120;
-        $('#sum').val()
-        $('#IDPnuknanSearch').val()
+        if(results2){
+                //$("grid > rows").detach()
+                String b=""
+                int i1=0;
+                for(c in results2){
+                    def a = c.bSeatNumber
+                    b=b+a+", "
+                    i1++;
+                }
+                sumprice=sumprice*i1;
+                $('#seat').val(b)
+                $('#bi').val(i1)
+        }
+        $('#plant').val(results2[0].theaters.theaterId)
+        $('#promotion').val(results2[0].theaters.movies.promotion)
+
+        if(results2[0].theaters.movies.promotion=="Sale_50%"){
+            sumprice=sumprice/2
+            $('#sum').val(sumprice)
+        }else{
+            $('#sum').val(sumprice)
+        }
+
+        $('#IDPnuknanSearch').val(sumpri)
         $('#namePanukngan').val(session.user.firstName + " " + session.user.lastName)
         $('#livePanukngan').val(session.user.address + " " + session.user.moo + " "+session.user.county)
         $('#telePhPanukngan').val(session.user.phone)
@@ -88,46 +138,114 @@ class PriceComposer extends GrailsComposer {
 
 
         $('#send').on('click',{
-            $('#mov').val('')
-            $('#rob').val('')
-            $('#teenung').val('')
-            $('#rong').val('')
-            $('#mony').val('')
+            $('#mov').val(results2[0].theaters.movies.movName)
+            $('#rob').val(results2[0].bTime)
+            String s1 = $('#seat').getText()
 
-            $('#mov2').val('')
-            $('#rob2').val('')
-            $('#teenung2').val('')
-            $('#rong2').val('')
-            $('#mony2').val('')
+            $('#teenung').val(s1)
+            $('#rong').val(results2[0].theaters.theaterId)
+            $('#mony').val(sumprice)
+
+            $('#mov2').val(results2[0].theaters.movies.movName)
+            $('#rob2').val(results2[0].bTime)
+            $('#teenung2').val(s1)
+            $('#rong2').val(results2[0].theaters.theaterId)
+            $('#mony2').val(sumprice)
+            //==================================================================================
+
+            if(results2[0].theaters.movies.promotion=="Empty"){
+                $('#pro1').setVisible(false)
+                $('#pro2').setVisible(false)
+                $('#pro3').setVisible(false)
+                $('#pro4').setVisible(false)
+                $('#pro5').setVisible(false)
+                $('#pro6').setVisible(false)
+                $('#pro7').setVisible(false)
+                $('#pro8').setVisible(false)
+
+            }
+            if(results2[0].theaters.movies.promotion=="Sale_50%"){
+                $('#pro1').setVisible(false)
+                $('#pro2').setVisible(false)
+                $('#pro3').setVisible(false)
+                //$('#pro4').setVisible(false)
+                $('#pro5').setVisible(false)
+                $('#pro6').setVisible(false)
+                $('#pro7').setVisible(false)
+                //$('#pro8').setVisible(false)
+
+            }
+
+            //=================================================================================
             $('#C').setSelected(true)
          //====================================================================================================   
-            //def amount = new Amount(
-            //    price:sumprice,
-            //    name:session.user.firstName + " " + session.user.lastName,
-            //    movie1:rooms.movie.movName,
-            //    rop:non.time,
-            //    rong:rooms.roomId,
-            //    sit:non.seatNumber,
-            //    seats:non,
-            //    individual:session.user
-            //    )
-            //amount.save()
+            def amount = new Amount(
+                price:sumprice,
+                name:session.user.firstName + " " + session.user.lastName,
+                movieName:results2[0].theaters.movies.movName,
+                showtime:results2[0].bTime,
+                theaTer:results2[0].theaters.theaterId,
+                seat:$('#seat').getText(),
+                individual:session.user
+                )
+            amount.save()
+            $("grid > rows").append{
+                                row{
+                                    label(value:results2[0].theaters.movies.movName)
+                                    label(value:results2[0].bTime)
+                                    label(value:results2[0].theaters.theaterId)
+                                    label(value:s1)
+                                    label(value:sumprice)
+                                }
+                    }
         //===================================================================================================
         })
 
         $('#clear').on('click',{
-            redirect(uri:'showTimesTicket.zul')
+            def buffer=BufferSeats.findAll()
+            if(buffer){
+                buffer.each{buff ->
+                def buf = BufferSeats.get(buff.id)
+                buf.delete()
+}
+                redirect(uri:'/showTimesTicket.zul')
+            }
+
         })
 
         $('#bak').on('click',{
-            redirect(uri:'showTimesTicket.zul')
+            def buffer=BufferSeats.findAll()
+            if(buffer){
+                buffer.each{buff ->
+                def buf = BufferSeats.get(buff.id)
+                buf.delete()
+}
+                redirect(uri:'/showTimesTicket.zul')
+            }
         })
         $('#bak2').on('click',{
-            $('#B').setSelected(true)
+           def buffer=BufferSeats.findAll()
+            if(buffer){
+                buffer.each{buff ->
+                def buf = BufferSeats.get(buff.id)
+                buf.delete()
+}
+               $('#B').setSelected(true) 
+            }
         })
         $('#bun').on('click',{
-            redirect(uri:'showTimesTicket.zul')
+           def buffer=BufferSeats.findAll()
+            if(buffer){
+                buffer.each{buff ->
+                def buf = BufferSeats.get(buff.id)
+                buf.delete()
+}
+                redirect(uri:'/showTimesTicket.zul')
+            }
+            redirect(uri:'/showTimesTicket.zul')
         })
+
+
         
 
         }
