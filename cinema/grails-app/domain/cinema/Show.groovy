@@ -8,8 +8,8 @@ class Show {
 	static  belongsTo = [theaters:Theater,movies:Movie]
 	
     static constraints = {
-    	showTime 	nullable:true
-    	showDay		nullable:true
-    	theaters	nullable:true
+    	showTime 	blank:false
+    	showDay		nullable:false
+    	theaters	nullable:false
     }
 }
