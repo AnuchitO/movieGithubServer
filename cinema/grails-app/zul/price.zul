@@ -170,13 +170,23 @@
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <textbox id="plant" style="color:blue !important;" disabled="true"/>                                                        
                                                             </hbox>
-                                                            <separator/><separator/><separator/><separator/><separator/> 
+                                                            <separator/><separator/><separator/><separator/> 
                                                             <hbox>
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <label style="font-size:20px">รายการโปรโมชั่นที่ได้รับ</label>
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <textbox id="promotion" style="color:blue !important;" disabled="true"/>                                                       
+                                                            </hbox>
+                                                            <separator/><separator/> 
+                                                            <hbox>
+                                                              <separator/><separator/><separator/><separator/><separator/>
+                                                              <separator/><separator/><separator/><separator/><separator/>
+                                                              <label style="font-size:20px">จำนวนตั๋ว</label>
+                                                              <separator/><separator/><separator/><separator/><separator/>
+                                                              <label id = "bi" style="font-size:20px"></label>
+                                                              <separator/><separator/><separator/><separator/><separator/>
+                                                              <label style="font-size:20px">ใบ</label>                                                       
                                                             </hbox>
                                                             <separator/><separator/><separator/>
                                                             <hbox>
@@ -371,7 +381,7 @@
                                                       </hbox>
                                                       <separator/><separator/>
                                                       <hbox>
-                                                          <label style="font-size:20px">ราคา</label>
+                                                          <label style="font-size:20px">รวมราคา</label>
                                                           <separator/><separator/><separator/><separator/>
                                                           <label id = "mony" style="font-size:20px">120</label>
                                                           <separator/><separator/><separator/><separator/>
