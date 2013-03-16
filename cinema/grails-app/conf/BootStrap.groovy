@@ -9,7 +9,7 @@ class BootStrap {
 		def account2
 		def account3
 		def account4
-        def room
+       
 
         account1 = new Individual(
             firstName:"apichat",
