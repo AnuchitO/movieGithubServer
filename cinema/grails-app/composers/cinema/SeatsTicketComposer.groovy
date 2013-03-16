@@ -16,18 +16,19 @@ class SeatsTicketComposer extends GrailsComposer {
       })
 
       
-/*      $("#btnBack").on("click", {
-def buffer=BufferSeats.findAll()
-if(buffer){
-bufferSeats.each{buff ->
-buff.delete()
-}           
-redirect(uri:'/showTimesTicket.zul')
-}else{
-redirect(uri:'/showTimesTicket.zul')
-}
+     $("#btnBack").on("click", {
+      def buffer=BufferSeats.findAll()
+        if(buffer){
+        buffer.each{buff ->
+            def buf = BufferSeats.get(buff.id)
+                buf.delete()
+        }           
+        redirect(uri:'/showTimesTicket.zul')
+        }else{
+        redirect(uri:'/showTimesTicket.zul')
+        }
 
-})*/
+})
         // initialize components here      
    /*     //$("#labRound").val(new Date())
         def rooms=session.roomFromShowTimes
