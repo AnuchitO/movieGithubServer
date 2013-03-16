@@ -3,10 +3,10 @@ package cinema
 class Amount {
 		int		price
 		String	name
-		String  movie1
-		String	rop
-		String	rong
-		String	sit
+		String  movieName
+		String	showtime
+		String	theaTer
+		String	seat
 		
 
 		static hasMany = [seats: Seats]
