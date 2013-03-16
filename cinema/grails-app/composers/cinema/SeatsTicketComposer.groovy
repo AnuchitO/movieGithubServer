@@ -3355,7 +3355,7 @@ int a00=0;
             def namepp
             session.namepp = seats
             def namepp2 
-            session.namepp2 = rooms
+            ///session.namepp2 = rooms
             redirect(uri:'price.zul')
                 
         })
