@@ -394,9 +394,7 @@
                                                       </hbox>
                                                       <separator/><separator/>
                                                       <hbox>
-                                                              <button id="pro4"   label="ลด50%จากราคาเต็ม" style="font-size:20px" width="200px" height="100px" />
-                                                             
-                                                              
+                                                              <button id="pro4"   label="ลด50%จากราคาเต็ม" style="font-size:20px" width="200px" height="100px" />     
                                                     </hbox>
                                                     </vbox>
                                                   </hbox>     
