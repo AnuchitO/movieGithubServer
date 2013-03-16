@@ -12,6 +12,21 @@ import org.junit.*
 class IndividualTests {
 
     void testSomething() {
-       fail "Implement me"
+       def individual = new Individual(firstName:"A",lastName:"B",userId:"user")
+       assert individual.firstName=="A"
+       assert individual.lastName=="B"
+       individual.validate()==true 
+    }
+    void testFirstNameCannotBeBlank(){
+    	def individual = new Individual(firstName:"",lastName:"B")
+    	assert individual.validate()==false
+    }
+    void testLastNameCannotBeBlank(){
+    	def individual = new Individual(firstName:"A",lastName:"")
+    	assert individual.validate()==false
+    }
+    void testUserIdCannotBeBlank(){
+    	def individual = new Individual(firstName:"A",lastName:"B",userId:"")
+    	assert individual.validate()==false
     }
 }

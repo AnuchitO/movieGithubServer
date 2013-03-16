@@ -27,8 +27,8 @@ class Individual {
         
 static constraints = {
     
-    firstName   nullable:true
-    lastName    nullable:true
+    firstName   blank:false
+    lastName    blank:false
     number      nullable:true
     date        nullable:true
     status      nullable:true
@@ -44,7 +44,7 @@ static constraints = {
     major       nullable:true
     university  nullable:true 
     position    nullable:true
-    userId      nullable:true
+    userId      blank:false
     password    nullable:true
     rePassword  nullable:true
     amount      nullable:true
