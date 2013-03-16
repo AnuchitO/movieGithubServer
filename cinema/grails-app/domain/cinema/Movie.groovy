@@ -15,7 +15,7 @@ class Movie {
 	String	promotion
 	Integer	longTime
 	//static hasOne = [rooms: Rooms]
-	static hasMany = [theaters: Theater]
+	static hasMany = [theaters: Theater,shows:Show]
 	
     static constraints = {
 
