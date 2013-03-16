@@ -28,7 +28,7 @@ class SeatsTicketComposer extends GrailsComposer {
         redirect(uri:'/showTimesTicket.zul')
         }
 
-})
+      })
         // initialize components here      
    /*     //$("#labRound").val(new Date())
         def rooms=session.roomFromShowTimes
