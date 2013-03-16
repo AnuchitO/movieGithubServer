@@ -12,6 +12,31 @@ import org.junit.*
 class SeatsTests {
 
     void testSomething() {
-       fail "Implement me"
+      
+    }
+    void testTrue(){
+    	def theater	= new Theater(theaterId:"9")
+    	def seats= new Seats(seatNumber:"K00",time:"09.00",movName:"test",theaters:theater)
+    	assert seats.validate() == true
+    	assert seats.bSeatNumber == "K0" //Assert Check value
+		assert seats.bTime == "09.00"
+		assert seats.bMovName=="test"
+		seats.save()
+    	
+    }
+    void testSave1(){
+    	def theater	= new Theater(theaterId:"9")
+    	def seats= new Seats(seatNumber:"Z00",time:"09.00",movName:"test",theaters:theater)
+    	assert seats.validate() == false
+    }
+    void testSave2(){
+    	def theater	= new Theater(theaterId:"9")
+    	def seats= new Seats(seatNumber:"Z00",time:"",movName:"test",theaters:theater)
+    	assert seats.validate() == false
+    }
+    void testSave3(){
+    	def theater	= new Theater(theaterId:"9")
+    	def seats= new Seats(seatNumber:"Z00",time:"09.00",movName:"test",theaters:null)
+    	assert seats.validate() == false
     }
 }
