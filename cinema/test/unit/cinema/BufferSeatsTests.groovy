@@ -14,6 +14,7 @@ class BufferSeatsTests {
     void testSomething() {
        //fail "Implement me"
     }
+//=====test modify ok====
     void testTrue(){
     	def theater	= new Theater(theaterId:"9")
     	def seats= new BufferSeats(bSeatNumber:"K00",bTime:"09.00",bMovName:"test",theaters:theater)
