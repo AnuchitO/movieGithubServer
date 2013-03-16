@@ -89,10 +89,13 @@
                                     <separator width="40px"/>
                                 <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
                                     <separator width="40px"/>
-                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
-                                    <separator width="40px"/>
+                                
                                 <label id="person" class="text" style="color:write ;">พนักงาน</label>
+
+
+
                             </hbox>
+
                         </vbox>
                         </div>
                     </hbox>
@@ -109,9 +112,7 @@
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
                                     <separator width="100px"/>
-                                    <textbox width="250px" height="20px" style="font-size:14pt;" />
-                                    <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" 
-                                            style="background-color:transparent;"  height="50px"  />
+                                    
                                 </hbox>
                             </div>
                             <div id="underHeadBody"  class="underHead" style="background-color:black;">
@@ -166,7 +167,13 @@
                         </hbox>
                         <hbox>
                         <label value=" สถานะ"/>
-                        <textbox id="bbox" />
+                        <combobox id="bbox" width="150px" >
+                            
+                                 <comboitem label="โสด"/>
+                                 <comboitem label="สมรส"/>
+                                 <comboitem label="อย่าร้าง"/>
+                             
+                        </combobox>
                         </hbox>    
                         <hbox>
                         <label value="   ที่อยู่ บ้านเลขที่"/>
@@ -216,10 +223,10 @@
                          <label value=" ตำแหน่งงาน"/>
                         <combobox id="cmbSize" width="150px" >
                             
-                                 <comboitem label="พนักงานขายสินค้า"/>
-                                 <comboitem label="พนักงานขายตั๋ว"/>
-                                 <comboitem label="พนักงานจัดการโรงหนัง"/>
-                                 <comboitem label="พนักงานรับฝากของ"/>
+                                 <comboitem label="Ticker"/>
+                                 <comboitem label="Market"/>
+                                 <comboitem label="Room"/>
+                                 <comboitem label="Deposit"/>
                              
                         </combobox>
                         </hbox>     

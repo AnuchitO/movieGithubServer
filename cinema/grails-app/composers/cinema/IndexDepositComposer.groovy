@@ -168,6 +168,33 @@ class IndexDepositComposer extends GrailsComposer {
 						}
 					}
 				}			
-        })       
+        })  
+        $("#movie").on('click',{
+    
+     	 Executions.sendRedirect("/movieUI.zul");
+     	 })
+		
+		$("#ticket").on('click',{
+    
+     	 Executions.sendRedirect("/showTimesTicket.zul");
+     	 })
+
+		$("#deposite").on('click',{
+    
+     	 Executions.sendRedirect("/indexDeposit.zul");
+     	 })
+
+		$("#maket").on('click',{
+    
+     	 Executions.sendRedirect("/indexmarket.zul");
+     	 })
+
+		
+
+		$("#person").on('click',{
+    
+     	 Executions.sendRedirect("/indexShowIndividual.zul");
+     	 })
+     
     }
 }

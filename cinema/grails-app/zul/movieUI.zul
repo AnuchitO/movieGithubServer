@@ -88,8 +88,6 @@
                                     <separator width="40px"/>
                                 <label id="maket" class="text" style="color:write ;">ร้านค้า</label>
                                     <separator width="40px"/>
-                                <label id="finance" class="text" style="color:write ;">การเงิน</label>
-                                    <separator width="40px"/>
                                 <label id="person" class="text" style="color:write ;">พนักงาน</label>
                             </hbox>
                         </vbox>
@@ -177,6 +175,7 @@
                                                             <comboitem label="Empty"/>
                                                             <comboitem label="Sale_50%"/>
                                                             <comboitem label="Free_Coke_and_Hanami"/>
+                                                            <comboitem label="Free_PopCorn"/>
                                                         </combobox>
                                                     </row>
                                                     <row>

@@ -1,7 +1,7 @@
 package cinema
 
 import org.zkoss.zk.grails.composer.*
-
+import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.select.annotation.Wire
 import org.zkoss.zk.ui.select.annotation.Listen
 
@@ -39,6 +39,10 @@ class LoginComposer extends GrailsComposer {
 				$("#pass").val(null)
 			}
         })
+       $("#register").on('click',{
+    
+      Executions.sendRedirect("/indexIndividual.zul");
+      })
         
 		
 		$("#clear").on("click", {
