@@ -196,7 +196,7 @@
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <label style="font-size:20px">รวมราคา</label>
                                                               <separator/><separator/><separator/><separator/><separator/>
-                                                              <textbox id="sum" style="color:blue !important;" disabled="true"/>
+                                                              <label id="sum" style="font-size:20px"></label>
                                                               <separator/><separator/><separator/><separator/><separator/>
                                                               <label style="font-size:20px">บาท</label>
                                                             </hbox>
@@ -441,6 +441,13 @@
                                                           <label id = "teenung2" style="font-size:20px">A13</label>
                                                       </hbox>
                                                       <separator/><separator/>
+                                                      <hbox>
+                                                          <label style="font-size:20px">รวมราคา</label>
+                                                          <separator/><separator/><separator/><separator/>
+                                                          <label id = "mony2" style="font-size:20px"></label>
+                                                          <separator/><separator/><separator/><separator/>
+                                                          <label style="font-size:20px">บาท</label>
+                                                      </hbox>
                                                     </vbox>
                                                     <vbox>
                                                       <image src="${z.resource(dir:'images', file:'logo.png')}"/>
