@@ -134,6 +134,7 @@ class MovieUIComposer extends GrailsComposer {
         def c
         def t
         def b
+        def show
 
         $('#btnSubmit').on('click',{
 
@@ -146,12 +147,19 @@ class MovieUIComposer extends GrailsComposer {
                     alert("Please Selected Show")
                 }else {
                     t = new Theater(
-                    theaterId:a,
-                    movie:s
+                        theaterId:a,
+                        movie:s
+                    )
+
+                    show = new Show(
+                        showTime:b,
+                        theaters:t,
+                        movies:s
                     )
 
                     if (t.validate()) {
                        t.save()
+                       show.save()
 
                         alert("Save Complite")
 
@@ -172,12 +180,19 @@ class MovieUIComposer extends GrailsComposer {
                 alert("Please Selected Show") 
             }else {
                 t = new Theater(
-                theaterId:a,
-                movie:s
+                    theaterId:a,
+                    movie:s
+                )
+
+                show = new Show(
+                    showTime:b,
+                    theaters:t,
+                    movies:s
                 )
 
                 if (t.validate()) {
-                   t.save()
+                    t.save()
+                    show.save()
 
                     alert("Save Complite")
 
