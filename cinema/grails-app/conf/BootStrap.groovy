@@ -158,17 +158,20 @@ class BootStrap {
 
         def s = new Show(
             showTime:"09.00",
-            theaters:t1
+            theaters:t1,
+            movies:movie
         ).save()
 
         def s2 = new Show(
             showTime:"09.00",
-            theaters:t2
+            theaters:t2,
+            movies:movie2
         ).save()
 
         def s3 = new Show(
             showTime:"09.00",
-            theaters:t3
+            theaters:t3,
+            movies:movie3
         ).save()
 
         

@@ -19,9 +19,12 @@ class Movie {
 	
     static constraints = {
 
-    	movId 		blank:false,matches:/\d{4}/
-    	movName		blank:false
-    	longTime	null:false
+    	movId 			blank:false,matches:/\d{4}/
+    	movName			blank:false
+    	longTime		null:false
+    	movPicture640	nullable:true
+		movPicture140	nullable:true
+
 
     }
 }

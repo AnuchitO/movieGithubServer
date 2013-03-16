@@ -165,15 +165,9 @@
                                                     </row>
                                                     <row>
                                                         <label value="Picture640"/>
-                                                        <hbox>
-                                                            <textbox id="pic640"/>
-                                                            <button id="btnPic640" label="Browse"/>
-                                                        </hbox>               
+                                                        <textbox id="pic640"/>                                                  
                                                         <label value="Picture140"/>
-                                                        <hbox>
-                                                            <textbox id="pic140"/>
-                                                            <button id="btnPic140" label="Browse"/>
-                                                        </hbox>
+                                                        <textbox id="pic140"/>
                                                     </row>
                                                     <row>
                                                         <label value="MovieLongtime"/>
