@@ -109,8 +109,9 @@
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
-                                    <separator width="100px"/>
                                     
+                                    <separator width="630px"/>
+                                    <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>
                                 </hbox>
                             </div>
                             <div id="underHeadBody"  class="underHead" style="background-color:black;">
@@ -123,10 +124,11 @@
                                 
                                 <grid id="gid">
                                      <columns>
-                                         <column label="ชื่อ"  width="350px"/>
-                                        <column label=" นามสกุล" width="350px"/>
-                                        <column label=" ตำแหน่ง" align="center" width="150px"/>
-                                         
+                                         <column label="ชื่อ"  width="250px"/>
+                                        <column label=" นามสกุล" width="250px"/>
+                                        <column label="เบอร์โทรศัพท์" width="200px"/>
+                                        <column label=" ตำแหน่ง" width="150px"/>
+                                         <column label="หมายเหตุ" align="center" width="100px"/>
                     
                                     </columns>
                                      <rows>

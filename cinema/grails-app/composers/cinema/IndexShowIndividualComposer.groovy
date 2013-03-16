@@ -30,13 +30,31 @@ class IndexShowIndividualComposer extends GrailsComposer {
     
       Executions.sendRedirect("/indexIndividual.zul");
       })
+          $("#logout").on("click", {
+                session.user = null
+                redirect(uri:'/login.zul')
+
+            })
                		def d = Individual.findAllByVersion(0)
                			for(x in d){
 								$('#gid > rows').append{
 									row(){ 
+                                        int c=x.id
 										label(value:x.firstName)
 										label(value:x.lastName) 
+                                        label(value:x.phone)
 										label(value:x.position)
+                                        button(label: "Del" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
+
+                                        def button = e.target
+                                         button.parent.detach()
+                            
+                                         def r = Individual.findById(c)
+                                        
+                                        
+                                        r.delete()
+                            
+                                     })
 										
 									}
 								}
