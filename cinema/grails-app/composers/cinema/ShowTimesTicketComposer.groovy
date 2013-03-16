@@ -31,7 +31,11 @@ class ShowTimesTicketComposer extends GrailsComposer {
         	// def results = showTimes.listOrderByCycTime(max: 10, offset: 100, order: "desc")
 	        	//alert(showTimes)        	
 	        	addToListbox(theater,showTimes)
-	        	}
+	        }else{
+	        	
+	        }
+
+
 			}
 		}else{
 			//alert("AAA")
