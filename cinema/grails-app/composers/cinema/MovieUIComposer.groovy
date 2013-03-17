@@ -176,6 +176,20 @@ class MovieUIComposer extends GrailsComposer {
                             $('#txtTime').val("")
                             $('#theater').setText("")
                             $('#show').setText("")
+
+                            if(s.longTime<=120){
+                                for(int i=0;i<=6;i++){
+                                    $('#show > comboitem').detach()
+                                }
+                            } else if(s.longTime>120&&s.longTime<=180){
+                                for(int i=0;i<=5;i++){
+                                    $('#show > comboitem').detach()
+                                }
+                            }else(s.longTime>180){
+                                for(int i=0;i<=4;i++){
+                                    $('#show > comboitem').detach()
+                                }
+                            }
                         }else alert("Save False")
                     }else alert("Theater Not Validate")                  
                 }
@@ -250,8 +264,6 @@ class MovieUIComposer extends GrailsComposer {
     
          Executions.sendRedirect("/indexmarket.zul");
          })
-
-        
 
         $("#person").on('click',{
     
