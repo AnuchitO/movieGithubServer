@@ -23,12 +23,13 @@ class Movie {
     	movName				blank:false,unique:true
     	movSuperintendent	blank:false
     	movDetail			blank:false
-    	movCost				blank:false,matches:/\d[k]/
+    	movCost				blank:false,matches:/\d{4,7}[k]/
     	movDate 			blank:false
     	movDateEnd 			blank:false
     	movPicture640		nullable:true
 		movPicture140		nullable:true
 		promotion 			blank:false
 		longTime			null:false,matches:/\d/
+		
     }
 }

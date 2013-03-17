@@ -8,7 +8,8 @@ class Theater {
 	static belongsTo = [movies:Movie]
 
     static constraints = {
-    	theaterId 	blank:false,matches:/\d{1}/ 		
+    	theaterId 	blank:false 		
     	movies 		nullable:false
+    	
     }
 }

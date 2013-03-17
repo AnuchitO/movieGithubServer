@@ -18,7 +18,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -31,7 +31,7 @@ class MovieTests {
 	 	assert a.movName=="XXX"
 	 	assert a.movSuperintendent=="OD Chotichai"
 	 	assert a.movDetail=="Mafia"
-	 	assert a.movCost=="2k"
+	 	assert a.movCost=="2000k"
 	 	assert a.movDate=="1/1/1111"
 		assert a.movDateEnd=="1/2/1111"
 		assert a.movPicture640=="???"
@@ -45,7 +45,6 @@ class MovieTests {
    	//=================================================================================================
    	// Blank Test
    	//=================================================================================================
-
    	void testMovIdNull() {
    		def a = new Movie(
    			movId:"",
@@ -53,7 +52,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -72,7 +71,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -91,7 +90,7 @@ class MovieTests {
 		 	movName:"",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -110,7 +109,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -129,7 +128,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -167,7 +166,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -186,7 +185,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"",
 			movPicture640:"???",
@@ -205,7 +204,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -224,7 +223,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -245,7 +244,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -289,7 +288,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -311,7 +310,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -326,7 +325,7 @@ class MovieTests {
 		 	movName:"YYY",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -345,7 +344,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
@@ -360,7 +359,7 @@ class MovieTests {
 		 	movName:"XXX",
 		 	movSuperintendent:"OD Chotichai",
 		 	movDetail:"Mafia",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
 			movPicture640:"???",
