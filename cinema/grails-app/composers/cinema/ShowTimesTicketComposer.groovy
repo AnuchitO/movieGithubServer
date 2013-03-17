@@ -21,7 +21,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
        String	status = "ปกติ"
        $("#btnChangeSeat").on("click", {
        	alert("AA")
-       	/*	String cId	=   $('#txtIdChange').getText()
+       		String cId	=   $('#txtIdChange').val()
        		if(cId!=""){
        			def seastChang = Seats.findById(cId)
        			if(seastChang){
@@ -30,19 +30,24 @@ class ShowTimesTicketComposer extends GrailsComposer {
  				def showDayFromShowTimes
  				def seatIs
 
- 				def movieSeat = Movie.findAllWhere(movName:seastChang.movName)
- 				def theater = Theater.findAllWhere(movies:seastChang)
+ 				def movieSeat = Movie.findWhere(movName:seastChang.movName) 				
+ 				def theater = Theater.findWhere(movies:movieSeat)
+ 				def showDay = Show.findWhere(movies:movieSeat)
  			 	session.theaterShow = seastChang.theaters
 		 		session.theaterShowTime = seastChang.time
-		 		session.showDayFromShowTimes = seastChang.movName
+		 		session.showDayFromShowTimes = showDay.showDay
+		 		//alert("${showDay.showDay}")
 		 		session.seatIs = seastChang.seatNumber
 		 		status="เปลี่ยนที่นั่ง"
 		 		session.status = status
+		 		def seastRemove = Seats.get(seastChang.id)
+		 			seastRemove.delete()
+		 		//alert("${seastRemove}")
 		 		redirect(uri:'/seatsTicket.zul')
-              // alert("${seastChang.theaters}")
-               alert("Time === ${seastChang.time}")
-                alert("Name === ${seastChang.movName}")
-                alert("Number === ${seastChang.seatNumber}")
+             // alert("${seastChang.theaters}")
+              //alert("Time === ${seastChang.time}")
+             // alert("Name === ${seastChang.movName}")
+             // alert("Number === ${seastChang.seatNumber}")
                 
                 $('#txtIdChange').val("")
             	}else{
@@ -52,7 +57,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
 	        }else{
 	        	alert("กรุณากรอกรหัส")
 	        	$('#txtIdChange').val("")
-	        }*/
+	        }
         })
 
        $("#btnChangeMovie").on("click", {
