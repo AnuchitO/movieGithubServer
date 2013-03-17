@@ -9,6 +9,8 @@ class SeatsTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
 
+
+
       $("#logout").on("click", {
                 session.user = null
                 redirect(uri:'/login.zul')
@@ -54,7 +56,12 @@ class SeatsTicketComposer extends GrailsComposer {
         $('#labPromotion').val("${theater.movies.promotion}")
 
       $('#labType').val("${theater.movies.movType}")
-
+        def image = Movie.findWhere(movName:"${theater.movies.movName}")
+      //  alert("${image.movPicture140}")
+      if(image.movPicture140!=null){
+      $('#imgMovieSeats')[0].src="${image.movPicture140}"
+      }
+     
         
        
         int j=0;
