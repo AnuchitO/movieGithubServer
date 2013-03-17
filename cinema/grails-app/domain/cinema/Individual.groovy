@@ -29,16 +29,16 @@ static constraints = {
     
     firstName   blank:false
     lastName    blank:false
-    number      nullable:true
-    date        nullable:true
-    status      nullable:true
-    address     nullable:true
-    moo         nullable:true
-    district    nullable:true
-    canton      nullable:true
-    county      nullable:true
-    post        nullable:true
-    phone       nullable:true
+    number      matches:/\d{13}/
+    date        blank:false
+    status      blank:false
+    address     blank:false
+    moo         blank:false
+    district    blank:false
+    canton      blank:false
+    county      blank:false
+    post        matches:/\d{5}/
+    phone       matches:/\d{10}/
     email       nullable:true
     degree      nullable:true
     major       nullable:true
