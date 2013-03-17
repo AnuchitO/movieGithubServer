@@ -60,10 +60,7 @@ class SeatsTicketComposer extends GrailsComposer {
       //  alert("${image.movPicture140}")
       if(image.movPicture140!=null){
       $('#imgMovieSeats')[0].src="${image.movPicture140}"
-      }
-     
-        
-       
+      }      
         int j=0;
         int i=65;
     //Fill  background Empty
