@@ -20,24 +20,24 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	     assert a.idDep=="ID-1234"
 		 assert a.numDep=="No.0001"
 		 assert a.timeDep=="13:00:00"
 		 assert a.nameDep=="Masker"
 		 assert a.lnameDep=="Watermark"
-		 assert a.genderDep=="ชาย"
+		 assert a.genderDep=="ชาย"||"หญิง"		 
 		 assert a.inDep=="1/1/2556"
 		 assert a.phoneDep=="080-1234567"
 		 assert a.addressDep=="111 ถนนมุกดาอุทิศ"
 		 assert a.emailDep=="aabba@hotmail.com"
-		 assert a.statusDep=="no"
+		 assert a.statusDep=="no"||"yes"
 
 		 assert a.validate()==true
 	}
@@ -50,12 +50,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -68,12 +68,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -86,12 +86,12 @@ class DataDepositTests {
 		 timeDep:"",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -104,12 +104,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -122,12 +122,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -145,7 +145,7 @@ class DataDepositTests {
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -158,12 +158,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -176,12 +176,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -194,12 +194,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -212,12 +212,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -230,7 +230,7 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
@@ -248,27 +248,20 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    a.save()
 
 	    def b = new DataDeposit(
 	     idDep:"ID-1234",
 		 numDep:"No.0001",
-		 timeDep:"13:00:00",
-		 nameDep:"Masker",
-		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
-		 inDep:"1/1/2556",
-		 phoneDep:"080-1234567",
-		 addressDep:"111 ถนนมุกดาอุทิศ",
-		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 
+		 
 	    )
 	    b.save()
 
@@ -283,12 +276,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -301,12 +294,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -319,12 +312,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-123456789",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
@@ -337,12 +330,12 @@ class DataDepositTests {
 		 timeDep:"13:00:00",
 		 nameDep:"Masker",
 		 lnameDep:"Watermark",
-		 genderDep:"ชาย",
+		 genderDep:"ชาย"||"หญิง",
 		 inDep:"1/1/2556",
 		 phoneDep:"080-123456789",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"a@mail.com",
-		 statusDep:"no"
+		 statusDep:"no"||"yes"
 	    )
 	    assert a.validate()==false	
 	}
