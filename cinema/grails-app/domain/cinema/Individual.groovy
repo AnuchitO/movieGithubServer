@@ -40,13 +40,13 @@ static constraints = {
     post        matches:/\d{5}/
     phone       matches:/\d{10}/
     email       nullable:true
-    degree      nullable:true
-    major       nullable:true
-    university  nullable:true 
-    position    nullable:true
-    userId      blank:false
-    password    nullable:true
-    rePassword  nullable:true
+    degree      blank:false
+    major       blank:false
+    university  blank:false 
+    position    blank:false
+    userId      unique:true
+    password    blank:false
+    rePassword  blank:false
     amount      nullable:true
     datadeposit    nullable:true
     sales       nullable:true

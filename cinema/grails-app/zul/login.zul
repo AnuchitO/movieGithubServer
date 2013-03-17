@@ -108,10 +108,15 @@
                         <div id="centerContent" align="center" >
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
+                                <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                               <groupbox width="650px" height="100px" style="margin-left: auto;margin-right: auto ;vertical-align:left;background-image:url(./ext/seatsTicket/result.png) ;background-repeat:repeat;">
                                 <vbox>
+                                    <separator width="1px"/>
                                     <hbox>
                                         <separator/><separator/><separator/><separator/><separator/>
                                         <separator/><separator/><separator/><separator/><separator/>
+
                                          <label style="font-size:20px">USER</label>
                                         <separator/><separator/><separator/><separator/><separator/>
                                         <textbox id="user" value="" width="150px" tabindex="1" />                                      
@@ -137,6 +142,7 @@
                                     </hbox>
                                     
                                 </vbox>
+                            </groupbox>
                             </div>
 
                         </div>
