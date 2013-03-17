@@ -10,5 +10,6 @@ class Theater {
     static constraints = {
     	theaterId 	blank:false 		
     	movies 		nullable:false
+    	
     }
 }
