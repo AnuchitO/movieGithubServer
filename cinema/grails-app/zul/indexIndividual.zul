@@ -122,7 +122,7 @@
                         <div id="centerContent" align="center" >
                             <div id="divShowTimes" width="1000px" height="90%" style="background-color:transparent;">
                                 <separator width="1px"/>
-                                <groupbox width="1000px" height="50px" style="margin-left:25px;margin-top:15px">
+                                <groupbox width="800px" height="50px" style="margin-left:25px;margin-top:15px">
                 <caption  label="เข้าสู่ระบบ" />
                 
                                 <vbox>
@@ -145,7 +145,7 @@
                                 </vbox>
                 </groupbox>
 
-                <groupbox width="1000px" height="600px" style="margin-left:25px;margin-top:15px">
+                <groupbox width="800px" height="435px" style="margin-left:25px;margin-top:15px">
                     <caption  label="กรอกข้อมูล" />
                     <vbox>
                         <hbox>
@@ -159,6 +159,7 @@
                         <hbox>
                         <label value="  รหัสบัตรประชาชน"/>
                         <textbox id="sebox" />
+                        <label value="(เช่น 1234567890123)"/>
                         </hbox>
                         <hbox>
                         <label value="  วันเดือนปีเกิด"/>
@@ -191,14 +192,17 @@
                         <textbox id="jnamebox" />
                         <label value="  รหัสไปรษณีย์"/>
                         <textbox id="postbox" />
+                        <label value="(เช่น 12345)"/>
                         </hbox>
                         <hbox>
                         <label value="  เบอร์โทร "/>
                         <textbox id="berbox" />
+                        <label value="(เช่น 08XXXXXXXX)"/>
                         </hbox>    
                         <hbox>
                         <label value="  E-mail "/>
                         <textbox id="maibox" />
+                        <label value="(เช่น xxx@hotmail.com)"/>
                         </hbox>
                         <hbox>
                         <label value=" ระดับการศึกษาที่จบสูงสุด"/>
