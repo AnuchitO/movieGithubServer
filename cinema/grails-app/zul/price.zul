@@ -391,6 +391,8 @@
                                                       <hbox>
                                                           <label style="font-size:15px">โปรดปิดโทรศัพท์มือถือก่อนเข้าโรงหนัง</label>
                                                       </hbox>
+                                                      <label style="font-size:15px">IDที่นั่ง </label>
+                                                      <label id ="idsit" style="font-size:15px"></label>
                                                     </vbox>
                                                     <vbox>
                                                       <image src="${z.resource(dir:'images', file:'logo.png')}"/>

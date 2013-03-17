@@ -102,6 +102,7 @@ class PriceComposer extends GrailsComposer {
         $('#blanch').val("Team13")
         $('#runt').val(results2[0].bTime)
         int sumprice = 120;
+
         if(results2){
                 //$("grid > rows").detach()
                 String b=""
@@ -118,11 +119,15 @@ class PriceComposer extends GrailsComposer {
         $('#plant').val(results2[0].theaters.theaterId)
         $('#promotion').val(results2[0].theaters.movies.promotion)
 
-        if(results2[0].theaters.movies.promotion=="Sale_50%"){
-            sumprice=sumprice/2
-            $('#sum').val(sumprice)
+        if(session.statusSeats=="ปกติ"){
+                if(results2[0].theaters.movies.promotion=="Sale_50%"){
+                    sumprice=sumprice/2
+                    $('#sum').val(sumprice)
+                }else{
+                    $('#sum').val(sumprice)
+                }
         }else{
-            $('#sum').val(sumprice)
+            $('#sum').val("0")
         }
 
         $('#IDPnuknanSearch').val(sumpri)
@@ -144,13 +149,33 @@ class PriceComposer extends GrailsComposer {
 
             $('#teenung').val(s1)
             $('#rong').val(results2[0].theaters.theaterId)
-            $('#mony').val(sumprice)
+            if(session.statusSeats=="ปกติ"){
+                $('#mony').val(sumprice)
+            }else{
+                $('#mony').val("0")
+            }
+            String ss1=""
+            for(c in results2){
+                    def a = c.bSeatNumber
+                    def seats1 = Seats.findBySeatNumberAndTimeAndMovName("${a}",results2[0].bTime,results2[0].theaters.movies.movName)
+                    seats1.id
+                    ss1 = ss1+" , "+seats1.id
+                    
+                }
+           // def seats1 = Seats.findBySeatNumberAndTime()
+
+            $('#idsit').val(ss1)
 
             $('#mov2').val(results2[0].theaters.movies.movName)
             $('#rob2').val(results2[0].bTime)
             $('#teenung2').val(s1)
             $('#rong2').val(results2[0].theaters.theaterId)
-            $('#mony2').val(sumprice)
+            if(session.statusSeats=="ปกติ"){
+                $('#mony2').val(sumprice)
+            }else{
+                $('#mony2').val("0")
+            }
+
             //==================================================================================
 
             if(results2[0].theaters.movies.promotion=="Empty"){
@@ -268,7 +293,10 @@ class PriceComposer extends GrailsComposer {
             redirect(uri:'/showTimesTicket.zul')
         })
 
+//=================================================================
+    alert(session.statusSeats)
 
+//==================================================================
         
 
         }
