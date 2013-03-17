@@ -11,13 +11,13 @@ import org.junit.*
 @TestFor(Theater)
 class TheaterTests {
 
-	def m = new Movie()
+	def k = new Movie()
 
     void testTheaterDomain() {
 
-       def a = new Theater(theaterId:"1",movies:m)
+       def a = new Theater(theaterId:"1",movies:k)
        assert a.theaterId == "1"
-       assert a.movies == m
+       assert a.movies == k
 
        assert a.validate() == true
     }
@@ -27,7 +27,7 @@ class TheaterTests {
     //=====================================================================================
     void testNullTheaterId() {
 
-       def a = new Theater(theaterId:"",movies:m)
+       def a = new Theater(theaterId:"",movies:k)
 
        assert a.validate() == false
     }
@@ -35,23 +35,6 @@ class TheaterTests {
     void testNullMovies() {
 
        def a = new Theater(theaterId:"1")
-
-       assert a.validate() == false
-    }
-
-    //=====================================================================================
-    // Matches Digit Test
-    //=====================================================================================
-    void testMoreDigit() {
-
-       def a = new Theater(theaterId:"11",movies:m)
-
-       assert a.validate() == false
-    }
-
-    void testNonDigit() {
-
-       def a = new Theater(theaterId:"a",movies:m)
 
        assert a.validate() == false
     }
