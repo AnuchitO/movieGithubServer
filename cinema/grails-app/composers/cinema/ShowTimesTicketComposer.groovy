@@ -56,7 +56,6 @@ class ShowTimesTicketComposer extends GrailsComposer {
         })
 
        $("#btnChangeMovie").on("click", {
-
        		String cId	=$('#txtIdChange').getText()
        		if(cId!=""){       			
        		def seastChang = Seats.findById(cId)
