@@ -15,12 +15,13 @@ class ShowTimesTicketComposer extends GrailsComposer {
                 redirect(uri:'/login.zul')
 
             })
-        // initialize components here
+        //initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
        String	status = "ปกติ"
        $("#btnChangeSeat").on("click", {
-       		String cId	=   $('#txtIdChange').val()
+       	alert("AA")
+       	/*	String cId	=   $('#txtIdChange').getText()
        		if(cId!=""){
        			def seastChang = Seats.findById(cId)
        			if(seastChang){
@@ -51,15 +52,15 @@ class ShowTimesTicketComposer extends GrailsComposer {
 	        }else{
 	        	alert("กรุณากรอกรหัส")
 	        	$('#txtIdChange').val("")
-	        }
+	        }*/
         })
 
        $("#btnChangeMovie").on("click", {
-       		String cId	=   $('#txtIdChange').val()
-       		if(cId!=""){
-       			def seastChang = Seats.findById(cId)
-       			if(seastChang){
-       			//def movieChange= Seats.get(cId.id)
+
+       		String cId	=$('#txtIdChange').getText()
+       		if(cId!=""){       			
+       		def seastChang = Seats.findById(cId)
+       			if(seastChang){       			
        				seastChang.delete()
        				if(seastChang.validate()){
        				alert("ทำรายการสำเร็จ\nโปรดเลือกหนัง")
@@ -77,7 +78,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
 	        	$('#txtIdChange').val("")
 	        }
               
-               
+              
                 
 
         })
