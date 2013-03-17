@@ -18,6 +18,8 @@ class Amount {
     	name				blank:false
     	movieName			blank:false
     	showtime			blank:false
+    	theaTer				blank:false
+    	seat 				blank:false
 
     	seats 				nullable:true
     	individual 			nullable:true

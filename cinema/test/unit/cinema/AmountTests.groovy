@@ -35,13 +35,24 @@ class AmountTests {
   		assert a.validate() == false
    	}
    	void testMovieNameNull() {
-   		def a = new Amount(price:1234 ,name:"",movieName:"",showtime:"9.00",theaTer:"room",seat:"k1,k2")
+   		def a = new Amount(price:1234 ,name:"apichat eakwongsa",movieName:"",showtime:"9.00",theaTer:"room",seat:"k1,k2")
    		
   		assert a.validate() == false
    	}
    	void testShowtimeNull() {
-   		def a = new Amount(price:1234 ,name:"",movieName:"spiderman",showtime:"",theaTer:"room",seat:"k1,k2")
+   		def a = new Amount(price:1234 ,name:"apichat eakwongsa",movieName:"spiderman",showtime:"",theaTer:"room",seat:"k1,k2")
    		
   		assert a.validate() == false
    	}
+   	void testTheaTerNull() {
+   		def a = new Amount(price:1234 ,name:"apichat eakwongsa",movieName:"spiderman",showtime:"9.00",theaTer:"",seat:"k1,k2")
+   		
+  		assert a.validate() == false
+   	}
+   	void testSeatNull() {
+   		def a = new Amount(price:null ,name:"apichat eakwongsa",movieName:"spiderman",showtime:"9.00",theaTer:"room",seat:"")
+
+  		assert a.validate() == false
+   	}
+
 }
