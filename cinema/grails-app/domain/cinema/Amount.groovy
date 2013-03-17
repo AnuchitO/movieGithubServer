@@ -13,9 +13,14 @@ class Amount {
 		static 	belongsTo  = [individual:Individual]
 
     static constraints = {
-    	price 	nullable:true
-    	seats 	nullable:true
-    	individual nullable:true
+
+    	price 				blank:false,matches:/\d/
+    	name				blank:false
+    	movieName			blank:false
+    	showtime			blank:false
+
+    	seats 				nullable:true
+    	individual 			nullable:true
 
     }
 }
