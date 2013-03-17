@@ -21,15 +21,15 @@ class DataDeposit {
 
      idDep blank: false,unique: true,maxSize: 7
 	 numDep blank: false,unique: true,maxSize: 7    
-	 timeDep blank: false,unique: true
-	 nameDep blank: false,unique: true
-	 lnameDep blank: false,unique: true
-	 genderDep blank: false,unique: true
-	 inDep blank: false,unique: true
-	 phoneDep blank: false,unique: true
-	 addressDep blank: false,unique: true
-	 emailDep blank: false,unique: true,minSize: 11
-	 statusDep blank: false,unique: true,maxSize: 11
+	 timeDep blank: false
+	 nameDep blank: false
+	 lnameDep blank: false
+	 genderDep blank: false
+	 inDep blank: false
+	 phoneDep blank: false
+	 addressDep blank: false
+	 emailDep blank: false,minSize: 11
+	 statusDep blank: false
 
     }
 }
