@@ -28,7 +28,7 @@ class SeatsTicketComposer extends GrailsComposer {
         redirect(uri:'/showTimesTicket.zul')
         }
 
-})
+      })
         // initialize components here      
    /*     //$("#labRound").val(new Date())
         def rooms=session.roomFromShowTimes
@@ -40,7 +40,7 @@ class SeatsTicketComposer extends GrailsComposer {
         Date cycleDay =new Date()
         def theater = session.theaterShow
         def showTime = session.theaterShowTime
-
+        
 // alert("${showTime}")
         $('#labNameMovieEng').val("${theater.movies.movName}")
         $('#labTheater').val("${theater.theaterId}")             
@@ -49,8 +49,12 @@ class SeatsTicketComposer extends GrailsComposer {
 //alert("${showDay}")
       // label( value: f.date.format("dd MMMM yyyy"))
         $('#labTime').val("${showTime}")
+<<<<<<< HEAD
         $('#labType').val("${theater.movies.movType}")
         $('#labPromotion').val("${theater.movies.promotion}")
+=======
+      $('#labType').val("${theater.movies.movType}")
+>>>>>>> issue-5644
         
        
         int j=0;
@@ -3377,6 +3381,8 @@ int a00=0;
                   def seatSave = new Seats(seatNumber:"${buff.bSeatNumber}",time:"${buff.bTime}",movName:"${buff.bMovName}",theaters:theater)
                   seatSave.save()
                 }
+                String statusSeats
+                session.statusSeats = session.status
               redirect(uri:'price.zul')
               }else{
 
