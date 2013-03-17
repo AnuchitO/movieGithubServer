@@ -208,7 +208,7 @@
                                 <vbox align="center">
                                 <groupbox mold="3d" width="750px" height="135px" style="margin-left: auto;margin-right: auto ;vertical-align:left;background-image:url(./ext/seatsTicket/result.png) ;background-repeat:repeat;" >
                                     <hbox width="700px" height="135px">
-                                        <image id="imgMovieSeats" width="100px" height="123px" src="${z.resource(dir:'showTimeTicketPicture', file:'movie_picture_beautiful-creatures-big-140x210.jpg')}"/>
+                                        <image id="imgMovieSeats" width="100px" height="123px"/>
                                         <separator width="3px"/>
                                     <vbox>
                                         <label id="labNameMovieEng" style="font-size:15pt;text-align: left;" class="theater-name">Beautiful Creatures</label>

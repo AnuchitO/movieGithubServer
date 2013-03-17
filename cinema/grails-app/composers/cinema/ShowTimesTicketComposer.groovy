@@ -159,10 +159,13 @@ def addToListbox(dataTheater,dataShowTime,dataStatus){
                             }
                 		}
                 		separator(width:"10px")
-                		image(src:"./ext/showTimeTicketPicture/movie_picture_beautiful-creatures-big-140x210.jpg",height:"210px",width:"140px");
+                		if(dataTheater.movies.movPicture140!=null){
+                		image(src:"${dataTheater.movies.movPicture140}",height:"210px",width:"140px");
+                		}
 	                	separator(width:"10px")
 	                	vbox(){
 	                		separator(width:"5px")
+
 	                		label(value:"${dataTheater.movies.movName}",style:"color:gray ;font-size:20pt; display:block;line-height: 40px;font-weight: bolder;text-align: left;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.51);")
 	                		separator(width:"25px")
 
@@ -193,6 +196,8 @@ $("#box listitem listcell button[id='${dataTheater.movies.movName+showTime.showT
  	def theaterShowTime
  	def showDayFromShowTimes
  	String  status 
+ 	def img 
+ 		session.img = dataTheater.movies.movPicture140
  		session.status = dataStatus
  		session.theaterShow = dataTheater
  		session.theaterShowTime = showTime.showTime
