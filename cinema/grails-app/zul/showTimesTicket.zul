@@ -146,12 +146,7 @@
                             <div id="div-a" class="div-a" style="background-color:transparent;" height="50px">
                                 <hbox align="center" height="50px">
                                     <button id="btnheaderBodyButton" class="button" image="${z.resource(dir:'images', file:'headerBodyButton.png')}"   style="background-color:transparent;"  height="50px"  />
-                                    <separator width="70px"/>
-                                    <textbox id="txtIdChange" width="250px" height="20px" style="font-size:14pt;"/>
-                                    <separator width="10px"/>
-                                    <button id="btnChangeSeat" height="40px">เปลี่ยนที่นั่ง</button>
-                                    <button id="btnChangeMovie" height="40px">เปลี่ยนหนัง</button>
-                                    <separator width="115px"/>
+                                    <separator width="630px"/>
                                     <button id="logout" src="${z.resource(dir:'images',file:'exit.png')}">ออกจากระบบ</button>
                                     <!-- <textbox width="250px" height="20px" style="font-size:14pt;" /> -->
                                     <!-- <button id="btnShowTime" class="button" image="${z.resource(dir:'images', file:'showTimes.png')}" 
