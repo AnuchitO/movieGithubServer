@@ -148,18 +148,55 @@ class MovieUIComposer extends GrailsComposer {
                 }else {
                     t = new Theater(
                         theaterId:a,
-                        movie:s
+                        movies:s
                     )
+
+                    if (t.validate()) {
+                        t.save()
+
+                        show = new Show(
+                            showTime:b,
+                            theaters:t,
+                            movies:s
+                        )
+                        if(show.validate()){
+                            show.save()
+
+                            alert("Save Complite")
+
+                            $('#txtId').val("")
+                            $('#txtType').val("")
+                            $('#txtName').val("")
+                            $('#txtSuperintendent').val("")
+                            $('#txtCost').val("")
+                            $('#txtDetail').val("")
+                            $('#txtDate').val("")
+                            $('#txtDateEnd').val("")
+                            $('#txtPic')[0].src = ""
+                            $('#txtTime').val("")
+                            $('#theater').setText("")
+                            $('#show').setText("")
+                        }else alert("Save False")
+                    }else alert("Theater Not Validate")                  
+                }
+            }else if (b==""){
+                alert("Please Selected Show") 
+            }else {
+                t = new Theater(
+                    theaterId:a,
+                    movies:s
+                )
+
+                if (t.validate()) {
+                    t.save()
 
                     show = new Show(
                         showTime:b,
                         theaters:t,
                         movies:s
                     )
-
-                    if (t.validate()) {
-                       t.save()
-                       show.save()
+                    if(show.validate()){
+                        show.save()
 
                         alert("Save Complite")
 
@@ -171,43 +208,27 @@ class MovieUIComposer extends GrailsComposer {
                         $('#txtDetail').val("")
                         $('#txtDate').val("")
                         $('#txtDateEnd').val("")
-                        $('#txtPic').val("")
+                        $('#txtPic')[0].src = ""
                         $('#txtTime').val("")
+                        $('#theater').setText("")
+                        $('#show').setText("")
 
+                        if(s.longTime<=120){
+                            for(int i=0;i<=6;i++){
+                                $('#show > comboitem').detach()
+                            }
+                        } else if(s.longTime>120&&s.longTime<=180){
+                            for(int i=0;i<=5;i++){
+                                $('#show > comboitem').detach()
+                            }
+                        }else(s.longTime>180){
+                            for(int i=0;i<=4;i++){
+                                $('#show > comboitem').detach()
+                            }
+                        }
                     }else alert("Save False") 
-                }
-            }else if (b==""){
-                alert("Please Selected Show") 
-            }else {
-                t = new Theater(
-                    theaterId:a,
-                    movie:s
-                )
 
-                show = new Show(
-                    showTime:b,
-                    theaters:t,
-                    movies:s
-                )
-
-                if (t.validate()) {
-                    t.save()
-                    show.save()
-
-                    alert("Save Complite")
-
-                    $('#txtId').val("")
-                    $('#txtType').val("")
-                    $('#txtName').val("")
-                    $('#txtSuperintendent').val("")
-                    $('#txtCost').val("")
-                    $('#txtDetail').val("")
-                    $('#txtDate').val("")
-                    $('#txtDateEnd').val("")
-                    $('#txtPic').val("")
-                    $('#txtTime').val("")
-
-                }else alert("Save False")                 
+                }else alert("Theater Not Validate")                 
             }
         })
         $("#movie").on('click',{

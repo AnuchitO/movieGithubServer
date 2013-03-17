@@ -106,11 +106,11 @@ class BootStrap {
 		 	movName:'Demo',
 		 	movSuperintendent:"pad Nong",
 		 	movDetail:"Love",
-		 	movCost:"2k",
+		 	movCost:"2000k",
 		 	movDate:"1/1/1111",
 			movDateEnd:"1/2/1111",
-		 	movPicture640:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
-		 	movPicture140:"http://www.bloggang.com/data/treehousedream/picture/1200725803.jpg",
+		 	movPicture640:"./ext/logoMovie/1200725803.jpg",
+		 	movPicture140:"./ext/logoMovie/1200725803.jpg",
             promotion:"Empty",
 			longTime:120	
     	).save()
@@ -121,9 +121,11 @@ class BootStrap {
             movName:"COCO",
             movSuperintendent:"9Deng",
             movDetail:"BOOM",
-            movCost:"3k",
+            movCost:"3000k",
             movDate:"1/2/1111",
             movDateEnd:"1/3/1111", 
+            movPicture640:"./ext/logoMovie/coco.jpg",
+            movPicture140:"./ext/logoMovie/coco.jpg",
             promotion:"Empty",
             longTime:160   
         ).save()
@@ -134,9 +136,11 @@ class BootStrap {
             movName:"Core",
             movSuperintendent:"Kopeeno",
             movDetail:"Earth",
-            movCost:"2k",
+            movCost:"2000k",
             movDate:"1/3/1111",
             movDateEnd:"1/4/1111", 
+            movPicture640:"./ext/logoMovie/core.jpg",
+            movPicture140:"./ext/logoMovie/core.jpg",
             promotion:"Empty",
             longTime:180   
         ).save()
