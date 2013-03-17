@@ -18,6 +18,54 @@ class ShowTimesTicketComposer extends GrailsComposer {
         // initialize components here
         //def rooms 	= Rooms.findByRoomId("Room1")
        // def rooms 	= Theatre.findByRoomId("Room1")
+       
+       $("#btnChangeSeat").on("click", {
+       		String cId	=   $('#txtIdChange').val()
+       		if(cId!=""){
+       			def seastChang = Seats.findById(cId)
+       			if(seastChang){
+       			def theaterShow
+ 				def theaterShowTime
+ 				def showDayFromShowTimes
+ 				def seatIs
+ 				def movie = Movie.findAllWhere(movName:"${seastChang.movName}")
+ 				def theater = Theater.findAllWhere(movies:movie.Id)
+		 		session.theaterShow = seastChang.theaters
+		 		session.theaterShowTime = seastChang.time
+		 		session.showDayFromShowTimes = seastChang.movName
+		 		session.seatIs = seastChang.seatNumber
+		 		//redirect(uri:'/seatsTicket.zul')
+               alert("${seastChang.theaters}")
+              /*  alert("${seastChang.time}")
+                alert("${seastChang.movName}")
+                alert("${seastChang.seatNumber}")
+                */
+            	}else{
+	        	alert("ไม่พบข้อมูล")
+	        	}
+	        }else{
+	        	alert("กรุณากรอกรหัส")
+	        }
+        })
+
+       $("#btnChangeMovie").on("click", {
+       		String cId	=   $('#txtIdChange').val()
+       		if(cId!=""){
+       			def seastChang = Seats.findById(cId)
+       			if(seastChang){
+       			def movieChange= Seats.get(cId.id)
+       			}else{
+	        	alert("ไม่พบข้อมูล")
+	        	}
+       		}else{
+	        	alert("กรุณากรอกรหัส")
+	        }
+              
+               
+                
+
+        })
+
         def theaters	= Theater.findAll([sort:'theaterId', order:'asc'])
         def showTimes
         if (theaters) {     

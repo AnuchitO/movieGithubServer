@@ -42,14 +42,14 @@ class SeatsTicketComposer extends GrailsComposer {
         def showTime = session.theaterShowTime
 
 // alert("${showTime}")
-        $('#labNameMovieEng').val("${theater.movies.movName}")
+//$('#labNameMovieEng').val("${theater.movies.movName}")
         $('#labTheater').val("${theater.theaterId}")             
         $('#labShow').val(showDay.format("dd MMMM yyyy"))
 //  $('#labRound').val(cycleDay.format("dd MMMM yyyy"))
 //alert("${showDay}")
       // label( value: f.date.format("dd MMMM yyyy"))
         $('#labTime').val("${showTime}")
-        $('#labType').val("${theater.movies.movType}")
+//$('#labType').val("${theater.movies.movType}")
         
        
         int j=0;
