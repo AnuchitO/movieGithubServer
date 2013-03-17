@@ -30,5 +30,6 @@ class Movie {
 		movPicture140		nullable:true
 		promotion 			blank:false
 		longTime			null:false,matches:/\d/
+		
     }
 }
