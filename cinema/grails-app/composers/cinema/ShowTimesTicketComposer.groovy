@@ -31,8 +31,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
 
  				def movieSeat = Movie.findAllWhere(movName:seastChang.movName)
  				def theater = Theater.findAllWhere(movies:seastChang)
- 				def 
-		 		session.theaterShow = seastChang.theaters
+ 			 	session.theaterShow = seastChang.theaters
 		 		session.theaterShowTime = seastChang.time
 		 		session.showDayFromShowTimes = seastChang.movName
 		 		session.seatIs = seastChang.seatNumber
