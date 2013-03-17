@@ -8,7 +8,10 @@ import org.zkoss.zk.ui.select.annotation.Listen
 class ShowTimesTicketComposer extends GrailsComposer {
 
     def afterCompose = { window ->
-
+    if (!session['user'])
+	redirect(uri:'/login.zul')
+	else {
+	window.visible = true
 
     	$("#logout").on("click", {
                 session.user = null
@@ -20,7 +23,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
        // def rooms 	= Theatre.findByRoomId("Room1")
        String	status = "ปกติ"
        $("#btnChangeSeat").on("click", {
-       	alert("AA")
+       //	alert("AA")
        		String cId	=   $('#txtIdChange').val()
        		if(cId!=""){
        			def seastChang = Seats.findById(cId)
@@ -136,6 +139,7 @@ class ShowTimesTicketComposer extends GrailsComposer {
      	 Executions.sendRedirect("/indexShowIndividual.zul");
      	 })
 		}
+	}
 
 def addToListbox(dataTheater,dataShowTime,dataStatus){
 	String btnName
