@@ -11,5 +11,6 @@ class Show {
     	showTime 	blank:false
     	showDay		nullable:false
     	theaters	nullable:false
+        
     }
 }
