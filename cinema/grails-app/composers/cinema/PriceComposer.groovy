@@ -175,6 +175,29 @@ class PriceComposer extends GrailsComposer {
                 //$('#pro8').setVisible(false)
 
             }
+            if(results2[0].theaters.movies.promotion=="Free_PopCorn"){
+                $('#pro1').setVisible(false)
+                $('#pro2').setVisible(false)
+                //$('#pro3').setVisible(false)
+                $('#pro4').setVisible(false)
+                $('#pro5').setVisible(false)
+                $('#pro6').setVisible(false)
+                //$('#pro7').setVisible(false)
+                $('#pro8').setVisible(false)
+
+            }
+            if(results2[0].theaters.movies.promotion=="Free_Coke_and_Hanami"){
+                //$('#pro1').setVisible(false)
+                //$('#pro2').setVisible(false)
+                $('#pro3').setVisible(false)
+                $('#pro4').setVisible(false)
+                //$('#pro5').setVisible(false)
+                //$('#pro6').setVisible(false)
+                $('#pro7').setVisible(false)
+                $('#pro8').setVisible(false)
+
+            }
+            
 
             //=================================================================================
             $('#C').setSelected(true)
