@@ -206,7 +206,9 @@ class IndexmarketComposer extends GrailsComposer {
 
              $("#savebtn").on("click", {
                $("grid rows").detach()
-               $("grid").append{rows() }
+               $("grid").append{rows()
+               $("#total").val("")
+                }
                i++; 
             })
 
