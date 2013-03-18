@@ -260,13 +260,11 @@
                                                         <column label="ชื่อ"  width ="100px"/>
                                                         <column label="นามสกุล"  width ="100px"/>
                                                         <column label="เพศ"  width ="50px"/>
-                                                        <column label="ที่อยู่"  width ="180px"/>
-                                                        <column label="เบอร์โทร"  width ="120px"/>
-                                                       
+                                                        <column label="ที่อยู่"  width ="250px"/>
+                                                        <column label="เบอร์โทร"  width ="150px"/>
+                                                        <column label="แจ้งเตือน"  width ="100px"/>
+                          
                                                         <column label="คืนลูกค้า"  width ="70px"/>
-                                                        <column label="ก่อนหน้า"  width ="65px"/>
-                                                        <column label="แจ้งเตือน"  width ="65px"/>
-                                                        <column label="เวลา"  width ="65px"/>
                                                         </columns>
 
                                                         <rows id = "grow">
