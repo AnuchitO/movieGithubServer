@@ -13,6 +13,7 @@ class DataDeposit {
 	String addressDep
 	String emailDep
 	String statusDep
+	String inTime
 
 	static 	belongsTo  = [individual:Individual]
 

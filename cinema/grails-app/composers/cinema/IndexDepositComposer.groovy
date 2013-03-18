@@ -73,6 +73,11 @@ class IndexDepositComposer extends GrailsComposer {
 					s.emailDep = ($('#email').getText())
 					s.statusDep = ("no")
 
+					def t=$('#time').getText()
+					def b=t.getAt(0..1) as int
+					int x=b+3
+					s.inTime =x+":00:00"
+					
 				s.save()
 
 				alert('กรอกข้อมูลเรียบร้อย')
@@ -109,7 +114,7 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
-							//label( value: f.emailDep)
+							label( value: f.inTime)
 
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
@@ -150,7 +155,7 @@ class IndexDepositComposer extends GrailsComposer {
 							label( value: f.genderDep)
 							label( value: f.addressDep)
 							label( value: f.phoneDep)
-							//label( value: f.emailDep)
+							label( value: f.inTime)
 							
 							
 							button(label: "คืน" ,height: "20",width : "50px",mold:"trendy",onClick : {e ->
