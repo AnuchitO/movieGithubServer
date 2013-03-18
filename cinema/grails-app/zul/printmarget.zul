@@ -11,14 +11,60 @@
         <separator/> 
         <separator/> 
         <separator/> 
-        <hbox>
-       
+        
             <vbox>
-                <label value="สรุปยอดการขายทั้งหมด" width="150px" style="font-size:24px" />   
+                <label value="ยอดการขายของร้านจำหน่ายสินค้า" width="150px" style="font-size:24px" />   
                 <label>___________________________________________________________________________________________</label> 
             </vbox> 
+            <vbox>
+                 <separator/> 
+                 <separator/> 
+                 <hbox>
+                  <label>วันที่พิมพ์ :</label>
+                 <label id="dataprint" style="color:blue"></label>
+                  </hbox>
+                 <separator/> 
+                 <separator/> 
+                    <grid height="250px" width="650px">  
+                        <columns>                
+                            <column label="วันที่" align="center" width="120px" />
+                            <column label="รายการขาย" align="center"/>
+                            <column label="จำนวน" align="center" width="80px" />
+                             <column label="ราคา(บาท)" align="center" width="80px" />
+                        </columns>                           
+                            <rows id="row2">
+                                
+                            </rows>         
+                    </grid>
 
-        </hbox>
+                     <separator/>
+                        <hbox>
+                            <separator width="455px"/>
+                            <label value=" รวม:  " width="150px" style="font-size:18px" />
+                            <textbox id="total2" width="70px" height="20px" style="font-size:18px" />
+                            <textbox id="total"  width="70px" height="20px" style="font-size:18px" />
+                        </hbox>  
+            </vbox>
+             <separator/> 
+              <separator/> 
+               
+            <hbox>
+                <separator width="15px"/> 
+                <vbox>
+                 <separator width="15px"/> 
+                 <label>........................</label>
+                 <label> (ผู้ตรวจสอบ)</label>
+                </vbox>
+
+                 <separator width="200px"/> 
+                <vbox>
+                 <separator width="15px"/> 
+                 <label>........................</label>
+                 <label> (ผู้จัดการร้าน)</label>
+                </vbox>
+            </hbox>
+
+        
 
     </window>
 
