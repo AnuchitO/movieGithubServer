@@ -18,9 +18,9 @@ class SeatsTests {
     	def theater	= new Theater(theaterId:"9")
     	def seats= new Seats(seatNumber:"K00",time:"09.00",movName:"test",theaters:theater)
     	assert seats.validate() == true
-    	assert seats.bSeatNumber == "K00" //Assert Check value
-		assert seats.bTime == "09.00"
-		assert seats.bMovName=="test"
+    	assert seats.seatNumber == "K00" //Assert Check value
+		assert seats.time == "09.00"
+		assert seats.movName=="test"
 		seats.save()
     	
     }
