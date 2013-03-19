@@ -25,7 +25,8 @@ class DataDepositTests {
 		 phoneDep:"080-1234567",
 		 addressDep:"111 ถนนมุกดาอุทิศ",
 		 emailDep:"aabba@hotmail.com",
-		 statusDep:"no"||"yes"
+		 statusDep:"no"||"yes",
+		 inTime:""
 	    )
 	     assert a.idDep=="ID-1234"
 		 assert a.numDep=="No.0001"
@@ -38,7 +39,7 @@ class DataDepositTests {
 		 assert a.addressDep=="111 ถนนมุกดาอุทิศ"
 		 assert a.emailDep=="aabba@hotmail.com"
 		 assert a.statusDep=="no"||"yes"
-
+		 assert	a.inTime==""
 		 assert a.validate()==true
 	}
 

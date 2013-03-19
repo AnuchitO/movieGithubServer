@@ -19,7 +19,7 @@ class BufferSeatsTests {
     	def theater	= new Theater(theaterId:"9")
     	def seats= new BufferSeats(bSeatNumber:"K00",bTime:"09.00",bMovName:"test",theaters:theater)
     	assert seats.validate() == true
-    	assert seats.bSeatNumber == "K0" //Assert Check value
+    	assert seats.bSeatNumber == "K00" //Assert Check value
 		assert seats.bTime == "09.00"
 		assert seats.bMovName=="test"
 		seats.save()
